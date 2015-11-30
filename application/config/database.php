@@ -74,7 +74,7 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> 'pgsql:host=localhost;dbname=codeigniter-hmvc',		
+	'dsn'	=> 'pgsql:host=localhost;dbname=open-idea',
 	'hostname' => '',
 	'username' => 'postgres',
 	'password' => 'postgres',

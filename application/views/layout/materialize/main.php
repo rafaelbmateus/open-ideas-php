@@ -177,7 +177,12 @@
     <!-- START CONTENT -->
     <section id="content">
       <!-- TODO, Rafael Mateus -->
+      <div class="container">
+        <div class="section">
           <?php if(isset($view)){ $this->load->view($view); } ?>
+        </div>
+      </div>
+
     </section>
     <!-- END CONTENT -->
 

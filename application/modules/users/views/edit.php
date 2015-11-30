@@ -1,5 +1,3 @@
-<?php $this->load->view($this->config->item ( 'app_layout' ).'alert'); ?>
-
 <form action="<?php echo base_url();?>users/update" method="POST"
 	data-parsley-validate enctype="multipart/form-data">
 	<legend>Edit User</legend>

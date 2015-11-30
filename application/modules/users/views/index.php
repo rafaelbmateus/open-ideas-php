@@ -1,8 +1,5 @@
-<?php $this->load->view($this->config->item ( 'app_layout' ).'alert'); ?>
+<a href="<?php echo base_url();?>users/create" class="btn btn-primary"><i class="glyphicon glyphicon-plus glyphicon-white"></i> Adicionar</a>
 
-<a href="<?php echo base_url();?>users/create" class="btn btn-primary"><i
-	class="glyphicon glyphicon-plus glyphicon-white"></i> Adicionar</a>
-	
 <h2>List users</h2>
 
 <!-- list users -->
@@ -80,7 +77,7 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-   $(document).on('click', 'a', function(event) { 
+   $(document).on('click', 'a', function(event) {
         var rs = $(this).attr('register');
         $('#id_modal').val(rs);
     });
