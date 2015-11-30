@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="msapplication-tap-highlight" content="no">
-  <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
-  <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
-  <title>Register Page | Materialize - Material Design Admin Template</title>
+  <meta name="description" content="Plataforma de inovação aberta. ">
+  <meta name="keywords" content="open innovation, inovação aberta, innovation, inovação,">
+  <title><?php echo $this->config->item ( 'app_title' ); ?></title>
 
   <!-- Favicons-->
   <link rel="icon" href="<?php echo base_url(); ?>assets/plugins/materialize/images/favicon/favicon-32x32.png" sizes="32x32">
@@ -42,7 +42,8 @@
 
   <div id="login-page" class="row">
     <div class="col s12 z-depth-4 card-panel">
-      <form class="login-form">
+      <form class="login-form" action="<?php echo base_url();?>users/add" method="POST">
+
         <div class="row">
           <div class="input-field col s12 center">
             <h4>Register</h4>
@@ -52,8 +53,8 @@
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-social-person-outline prefix"></i>
-            <input id="username" type="text">
-            <label for="username" class="center-align">Username</label>
+            <input id="first_name" type="text">
+            <label for="first_name" class="center-align">Nome</label>
           </div>
         </div>
         <div class="row margin">
@@ -79,7 +80,7 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <a href="index.html" class="btn waves-effect waves-light col s12">Register Now</a>
+            <button type="submit" class="btn waves-effect waves-light col s12">Registrar</button>
           </div>
           <div class="input-field col s12">
             <p class="margin center medium-small sign-up">Already have an account? <a href="page-login.html">Login</a></p>
@@ -99,7 +100,6 @@
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/prism.js"></script>
   <!--scrollbar-->
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-
   <!--plugins.js - Some Specific JS codes for Plugin Settings-->
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins.js"></script>
 

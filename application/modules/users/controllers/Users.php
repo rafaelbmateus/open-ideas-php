@@ -27,13 +27,18 @@ class Users extends CI_Controller {
 	}
 	public function add() {
 		$this->load->library ( 'form_validation' );
+		$this->form_validation->set_rules ( 'email', 'User name', 'trim|required' );
 		$this->form_validation->set_rules ( 'user_name', 'User name', 'trim|required' );
 		if ($this->form_validation->run () == false) {
 			$this->session->set_flashdata ( 'error', (validation_errors () ? validation_errors () : false) );
 		} else {
-			$name = $this->input->post ( 'user_name', TRUE );
-			
-			if ($this->User->add ( $name, date ( "Y-m-d H:i:s" ) )) {
+			$email = $this->input->post ( 'email', TRUE );
+			$password = $this->input->post ( 'password', TRUE );
+			$first_name = $this->input->post ( 'user_first_name', TRUE );
+			$last_name = $this->input->post ( 'user_last_name', TRUE );
+			$job = $this->input->post ( 'job', TRUE );
+
+			if ($this->User->add ( $email, $password, $first_name, $last_name, $job, date ( "Y-m-d H:i:s" ) ) ) {
 				$this->session->set_flashdata ( 'success', 'Successfully registered record!' );
 			} else {
 				$this->session->set_flashdata ( 'error', 'Error registering the record.' );
@@ -59,7 +64,7 @@ class Users extends CI_Controller {
 		} else {
 			$user_id = $this->input->post ( 'user_id', TRUE );
 			$name = $this->input->post ( 'user_name', TRUE );
-			
+
 			if ($this->User->update ( $user_id, $name, date ( "Y-m-d H:i:s" ) )) {
 				$this->session->set_flashdata ( 'success', 'Successfully updated record!' );
 			} else {

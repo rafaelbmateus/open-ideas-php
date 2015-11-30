@@ -34,9 +34,13 @@ class User extends CI_Model {
 		$this->db->where ( $field, $content );
 		return $this->db->get ()->result ();
 	}
-	function add($name, $timestamp) {
+	function add($email, $password, $first_name = "", $last_name = "", $job = "", $timestamp) {
 		$data = array (
-				'user_name' => $name,
+				'user_email' => $email,
+				'user_password' => $password,
+				'user_first_name' => $first_name,
+				'user_last_name' => $last_name,
+				'user_job_title' => $job,
 				$this->date_created_field => $timestamp
 		);
 		return $this->db->insert ( $this->table, $data );
