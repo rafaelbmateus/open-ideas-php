@@ -752,12 +752,7 @@ if ( ! function_exists('html_escape'))
 
 		if (is_array($var))
 		{
-			foreach (array_keys($var) as $key)
-			{
-				$var[$key] = html_escape($var[$key], $double_encode);
-			}
-
-			return $var;
+			return array_map('html_escape', $var, array_fill(0, count($var), $double_encode));
 		}
 
 		return htmlspecialchars($var, ENT_QUOTES, config_item('charset'), $double_encode);

@@ -3,6 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
+| Config Application
+|--------------------------------------------------------------------------
+|
+ */
+$config['app_layout'] = 'layout/theme-bootstrap/';
+$config['app_title'] = 'Get Started CodeIgniter - HMVC';
+$config['app_footer'] = 'This Project to Get Started with <a href="http://rafaelbmateus.github.io/aboutme/"><strong>CodeIgniter 3.0 - HMVC</strong></a>';
+
+
+/*
+|--------------------------------------------------------------------------
 | Base Site URL
 |--------------------------------------------------------------------------
 |
@@ -11,18 +22,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 |	http://example.com/
 |
-| WARNING: You MUST set this value!
-|
-| If it is not set, then CodeIgniter will try guess the protocol and path
-| your installation, but due to security concerns the hostname will be set
-| to $_SERVER['SERVER_ADDR'] if available, or localhost otherwise.
-| The auto-detection mechanism exists only for convenience during
-| development and MUST NOT be used in production!
-|
-| If you need to allow multiple domains, remember that this file is still
-| a PHP script and you can easily do that on your own.
+| If this is not set then CodeIgniter will try guess the protocol, domain
+| and path to your installation. However, you should always configure this
+| explicitly and never rely on auto-guessing, especially in production
+| environments.
 |
 */
+//$config['base_url'] = '';
 $config['base_url'] = 'http://localhost:8080/open-idea-php/';
 
 /*

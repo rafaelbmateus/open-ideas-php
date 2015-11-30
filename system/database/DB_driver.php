@@ -668,13 +668,7 @@ abstract class CI_DB_driver {
 				{
 					do
 					{
-						$trans_depth = $this->_trans_depth;
 						$this->trans_complete();
-						if ($trans_depth === $this->_trans_depth)
-						{
-							log_message('error', 'Database: Failure during an automated transaction commit/rollback!');
-							break;
-						}
 					}
 					while ($this->_trans_depth !== 0);
 				}
@@ -819,16 +813,24 @@ abstract class CI_DB_driver {
 	 * Start Transaction
 	 *
 	 * @param	bool	$test_mode = FALSE
-	 * @return	bool
+	 * @return	void
 	 */
 	public function trans_start($test_mode = FALSE)
 	{
 		if ( ! $this->trans_enabled)
 		{
-			return FALSE;
+			return;
 		}
 
-		return $this->trans_begin($test_mode);
+		// When transactions are nested we only begin/commit/rollback the outermost ones
+		if ($this->_trans_depth > 0)
+		{
+			$this->_trans_depth += 1;
+			return;
+		}
+
+		$this->trans_begin($test_mode);
+		$this->_trans_depth += 1;
 	}
 
 	// --------------------------------------------------------------------
@@ -843,6 +845,17 @@ abstract class CI_DB_driver {
 		if ( ! $this->trans_enabled)
 		{
 			return FALSE;
+		}
+
+		// When transactions are nested we only begin/commit/rollback the outermost ones
+		if ($this->_trans_depth > 1)
+		{
+			$this->_trans_depth -= 1;
+			return TRUE;
+		}
+		else
+		{
+			$this->_trans_depth = 0;
 		}
 
 		// The query() function will set this flag to FALSE in the event that a query failed
@@ -862,7 +875,8 @@ abstract class CI_DB_driver {
 			return FALSE;
 		}
 
-		return $this->trans_commit();
+		$this->trans_commit();
+		return TRUE;
 	}
 
 	// --------------------------------------------------------------------
@@ -875,87 +889,6 @@ abstract class CI_DB_driver {
 	public function trans_status()
 	{
 		return $this->_trans_status;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Begin Transaction
-	 *
-	 * @param	bool	$test_mode
-	 * @return	bool
-	 */
-	public function trans_begin($test_mode = FALSE)
-	{
-		if ( ! $this->trans_enabled)
-		{
-			return FALSE;
-		}
-		// When transactions are nested we only begin/commit/rollback the outermost ones
-		elseif ($this->_trans_depth > 0)
-		{
-			$this->_trans_depth++;
-			return TRUE;
-		}
-
-		// Reset the transaction failure flag.
-		// If the $test_mode flag is set to TRUE transactions will be rolled back
-		// even if the queries produce a successful result.
-		$this->_trans_failure = ($test_mode === TRUE);
-
-		if ($this->_trans_begin())
-		{
-			$this->_trans_depth++;
-			return TRUE;
-		}
-
-		return FALSE;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Commit Transaction
-	 *
-	 * @return	bool
-	 */
-	public function trans_commit()
-	{
-		if ( ! $this->trans_enabled OR $this->_trans_depth === 0)
-		{
-			return FALSE;
-		}
-		// When transactions are nested we only begin/commit/rollback the outermost ones
-		elseif ($this->_trans_depth > 1 OR $this->_trans_commit())
-		{
-			$this->_trans_depth--;
-			return TRUE;
-		}
-
-		return FALSE;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Rollback Transaction
-	 *
-	 * @return	bool
-	 */
-	public function trans_rollback()
-	{
-		if ( ! $this->trans_enabled OR $this->_trans_depth === 0)
-		{
-			return FALSE;
-		}
-		// When transactions are nested we only begin/commit/rollback the outermost ones
-		elseif ($this->_trans_depth > 1 OR $this->_trans_rollback())
-		{
-			$this->_trans_depth--;
-			return TRUE;
-		}
-
-		return FALSE;
 	}
 
 	// --------------------------------------------------------------------
