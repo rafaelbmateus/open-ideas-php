@@ -7,18 +7,17 @@ class User extends CI_Model {
 	public $is_deleted_field = 'is_deleted';
 	public function __construct() {
 		parent::__construct ();
-		$this->create_table ();
+		//$this->create_table ();
 	}
 	function create_table() {
 		if (! $this->db->table_exists ( $this->table )) {
 			$query = 'CREATE TABLE tb_user(
-						user_id SERIAL, 
-						user_name character varying(255) NOT NULL, 
-						created_at timestamp without time zone, 
-  						updated_at timestamp without time zone, 
+							user_id SERIAL,
+							user_name character varying(255) NOT NULL,
+							created_at timestamp without time zone,
+  						updated_at timestamp without time zone,
 	  					is_deleted boolean
 					)';
-			
 			return $this->db->query($query);
 		}
 	}
@@ -38,21 +37,21 @@ class User extends CI_Model {
 	function add($name, $timestamp) {
 		$data = array (
 				'user_name' => $name,
-				$this->date_created_field => $timestamp 
+				$this->date_created_field => $timestamp
 		);
 		return $this->db->insert ( $this->table, $data );
 	}
 	function update($id, $name, $timestamp) {
 		$data = array (
 				'user_name' => $name,
-				$this->date_updated_field => $timestamp 
+				$this->date_updated_field => $timestamp
 		);
 		$this->db->where ( $this->primary_key, $id );
 		return $this->db->update ( $this->table, $data );
 	}
 	function delete($id) {
 		$data = array (
-				$this->is_deleted_field => true 
+				$this->is_deleted_field => true
 		);
 		$this->db->where ( $this->primary_key, $id );
 		return $this->db->update ( $this->table, $data );
