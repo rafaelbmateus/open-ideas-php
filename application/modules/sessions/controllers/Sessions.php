@@ -5,11 +5,13 @@ class Sessions extends CI_Controller {
 		parent::__construct ();
 		$this->load->helper ( 'url' );
 		date_default_timezone_set ( 'America/Sao_Paulo' );
-		$this->load->model ( 'User' );
+		//$this->load->model ( 'User' );
 	}
 	public function index() {
-		$this->data ['view'] = 'login';
-		$this->load->view ( $this->config->item ( 'app_layout' ) . 'template', $this->data );
+		$this->load->view ( 'login');
+	}
+	public function register() {
+		$this->load->view ( 'register');
 	}
 	public function login(){
 		$this->load->library ( 'form_validation' );
@@ -22,16 +24,13 @@ class Sessions extends CI_Controller {
 			$password = $this->input->post ( 'password', TRUE );
 			//TODO, login
 
-			//$this->data ['view'] = 'lock';
-			$this->load->view ( $this->config->item ( 'app_layout' ) . 'template', $this->data );
+			$this->load->view ( $this->config->item ( 'app_layout' ) . 'template');
 		}
 	}
 	public function lock(){
-		$this->data ['view'] = 'lock';
-		$this->load->view ( $this->config->item ( 'app_layout' ) . 'template', $this->data );
+		$this->load->view ( 'lock');
 	}
 	public function logout(){
-		$this->data ['view'] = 'logout';
-		$this->load->view ( $this->config->item ( 'app_layout' ) . 'template', $this->data );
+		$this->load->view ( 'login');
 	}
 }
