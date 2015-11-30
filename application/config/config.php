@@ -7,7 +7,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |--------------------------------------------------------------------------
 |
  */
-$config['app_layout'] = 'layout/theme-bootstrap/';
+//$config['app_layout'] = 'layout/theme-bootstrap/';
+$config['app_layout'] = 'layout/materialize/';
 $config['app_title'] = 'Get Started CodeIgniter - HMVC';
 $config['app_footer'] = 'This Project to Get Started with <a href="http://rafaelbmateus.github.io/aboutme/"><strong>CodeIgniter 3.0 - HMVC</strong></a>';
 
