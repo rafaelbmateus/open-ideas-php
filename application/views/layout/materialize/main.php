@@ -1,4 +1,4 @@
-<!-- START MAIN -->
+<!-- start main -->
 <div id="main">
   <!-- START WRAPPER -->
   <div class="wrapper">
@@ -9,23 +9,25 @@
             <li class="user-details cyan darken-2">
                 <div class="row">
                     <div class="col col s4 m4 l4">
+                      <!-- TODO, alterar imagem do avatar -->
                         <img src="<?php echo base_url(); ?>assets/plugins/materialize/images/avatar.jpg" alt="" class="circle responsive-img valign profile-image">
                     </div>
                     <div class="col col s8 m8 l8">
                         <ul id="profile-dropdown" class="dropdown-content">
-                            <li><a href="#"><i class="mdi-action-face-unlock"></i> Profile</a>
+                            <li><a href="#"><i class="mdi-action-face-unlock"></i> Perfil</a>
                             </li>
-                            <li><a href="#"><i class="mdi-action-settings"></i> Settings</a>
+                            <li><a href="#"><i class="mdi-action-settings"></i> Configuração</a>
                             </li>
-                            <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a>
+                            <li><a href="#"><i class="mdi-communication-live-help"></i> Ajuda</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a>
+                            <li><a href="<?php echo base_url();?>sessions/lock"><i class="mdi-action-lock-outline"></i> Lock</a>
                             </li>
-                            <li><a href="#"><i class="mdi-hardware-keyboard-tab"></i> Logout</a>
+                            <li><a href="<?php echo base_url();?>sessions/logout"><i class="mdi-hardware-keyboard-tab"></i> Sair</a>
                             </li>
                         </ul>
                         <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">John Doe<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                        <!-- TODO, pegar o perfil do usuário -->
                         <p class="user-roal">Administrator</p>
                     </div>
                 </div>

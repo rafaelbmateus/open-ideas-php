@@ -23,7 +23,7 @@ class Sessions extends CI_Controller {
 			$email = $this->input->post ( 'email', TRUE );
 			$password = $this->input->post ( 'password', TRUE );
 			//TODO, login
-
+			//TODO, Criar sessão
 			$this->load->view ( $this->config->item ( 'app_layout' ) . 'template');
 		}
 	}
@@ -31,6 +31,7 @@ class Sessions extends CI_Controller {
 		$this->load->view ( 'lock');
 	}
 	public function logout(){
+		//TODO, matar sessão
 		$this->load->view ( 'login');
 	}
 }

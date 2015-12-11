@@ -46,27 +46,27 @@
         <div class="row">
           <div class="input-field col s12 center">
             <img src="<?php echo base_url(); ?>assets/plugins/materialize/images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
-            <p class="center login-form-text">Material Design Admin Template</p>
+            <p class="center login-form-text">Comunidade Open Idea</p>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-social-person-outline prefix"></i>
             <input id="email" name="email" type="text">
-            <label for="username" class="center-align">Username</label>
+            <label for="email" class="center-align">E-mail</label>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
             <input id="password" name="password" type="password">
-            <label for="password">Password</label>
+            <label for="password">Senha</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12 m12 l12  login-text">
               <input type="checkbox" id="remember-me" />
-              <label for="remember-me">Remember me</label>
+              <label for="remember-me">Lembrar-me</label>
           </div>
         </div>
         <div class="row">
@@ -76,10 +76,10 @@
         </div>
         <div class="row">
           <div class="input-field col s6 m6 l6">
-            <p class="margin medium-small"><a href="page-register.html">Register Now!</a></p>
+            <p class="margin medium-small"><a href="<?php echo base_url();?>sessions/register">Cadastrar-se agora!</a></p>
           </div>
           <div class="input-field col s6 m6 l6">
-              <p class="margin right-align medium-small"><a href="page-forgot-password.html">Forgot password ?</a></p>
+              <p class="margin right-align medium-small"><a href="#">Esqueceu sua senha?</a></p>
           </div>
         </div>
 

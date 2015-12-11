@@ -3,7 +3,7 @@
     <div class="footer-copyright">
       <div class="container">
         <span><?php echo $this->config->item ( 'app_footer' ); ?></span>
-        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://geekslabs.com/">GeeksLabs</a></span>
+        <span class="right"><?php echo $this->config->item ( 'app_footer_right' ); ?></span>
         </div>
     </div>
   </footer>

@@ -47,7 +47,7 @@
         <div class="row">
           <div class="input-field col s12 center">
             <h4>Register</h4>
-            <p class="center">Join to our community now !</p>
+            <p class="center">Junte-se a nossa comunidade agora!</p>
           </div>
         </div>
         <div class="row margin">
@@ -61,21 +61,21 @@
           <div class="input-field col s12">
             <i class="mdi-communication-email prefix"></i>
             <input id="email" type="email">
-            <label for="email" class="center-align">Email</label>
+            <label for="email" class="center-align">E-mail</label>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
             <input id="password" type="password">
-            <label for="password">Password</label>
+            <label for="password">Senha</label>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
             <input id="password-again" type="password">
-            <label for="password-again">Password again</label>
+            <label for="password-again">Repita a senha</label>
           </div>
         </div>
         <div class="row">
@@ -83,7 +83,7 @@
             <button type="submit" class="btn waves-effect waves-light col s12">Registrar</button>
           </div>
           <div class="input-field col s12">
-            <p class="margin center medium-small sign-up">Already have an account? <a href="page-login.html">Login</a></p>
+            <p class="margin center medium-small sign-up">Já tem uma conta?<a href="<?php echo base_url();?>sessions">Login</a></p>
           </div>
         </div>
       </form>
