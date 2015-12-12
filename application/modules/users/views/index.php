@@ -1,17 +1,17 @@
 <a href="<?php echo base_url();?>users/create" class="btn btn-primary"><i class="glyphicon glyphicon-plus glyphicon-white"></i> Adicionar</a>
 
-<h2>List users</h2>
+<h4>List users</h4>
 
 <!-- list users -->
 <table class="table table-striped table-bordered">
 	<thead>
 		<tr>
 			<th width="5%">#</th>
-			<th width="70%">Name</th>
-			<th width="10%">Created at</th>
-			<th width="10%">Updated at</th>
-			<th width="2%">Edit</th>
-			<th width="2%">Delete</th>
+			<th width="70%">Nome</th>
+			<th width="10%">Criado em</th>
+			<th width="10%">Atualizado em</th>
+			<th width="2%">Editar</th>
+			<th width="2%">Excluir</th>
 		</tr>
 	</thead>
 	<?php

@@ -16,7 +16,7 @@
                         <ul id="profile-dropdown" class="dropdown-content">
                             <li><a href="#"><i class="mdi-action-face-unlock"></i> Perfil</a>
                             </li>
-                            <li><a href="#"><i class="mdi-action-settings"></i> Configuração</a>
+                            <li><a href="#"><i class="mdi-action-settings"></i> Config</a>
                             </li>
                             <li><a href="#"><i class="mdi-communication-live-help"></i> Ajuda</a>
                             </li>

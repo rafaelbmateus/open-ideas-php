@@ -68,7 +68,7 @@
             <p class="margin medium-small"><a href="<?php echo base_url();?>sessions/register">Cadastrar-se agora!</a></p>
           </div>
           <div class="input-field col s6 m6 l6">
-              <p class="margin right-align medium-small"><a href="#">Forgot password ?</a></p>
+              <p class="margin right-align medium-small"><a href="#">Esqueceu sua senha?</a></p>
           </div>
         </div>
 
