@@ -11,6 +11,11 @@ $lang['regiter_now'] = "Cadastrar-se!";
 $lang['forgot_password'] = "Lembrar senha";
 // Page login - end
 
+// Menu - start
+$lang['challanges'] = "Desafios";
+$lang['ideas'] = "Ideias";
+// Menu - end
+
 // Menu config profile - start
 $lang['profile'] = "Perfil";
 $lang['config'] = "Config";
