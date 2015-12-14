@@ -13,30 +13,40 @@
 
   <!-- jQuery Library -->
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/jquery-1.11.2.min.js"></script>
-  <!--materialize js-->
+  <!-- Materialize js -->
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/materialize.js"></script>
-  <!--prism-->
+  <!-- prism-->
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/prism.js"></script>
-  <!--scrollbar-->
+  <!-- Scrollbar-->
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-  <!-- chartist -->
+  <!-- Chartist -->
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins/chartist-js/chartist.min.js"></script>
 
-  <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+  <!-- Data tables -->
+  <script src="<?php echo base_url();?>assets/plugins/datatables/datatables.min.js"></script>
+
+  <!-- plugins.js - Some Specific JS codes for Plugin Settings -->
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins.js"></script>
 
   <script type="text/javascript">
-    $(document).ready(function () {
+    window.onload = function(){
       // toast success
-      <?php	if ($this->session->flashdata('success')) { ?>
-        setTimeout(function() {Materialize.toast('<?php echo $this->session->flashdata('success'); ?>', 3000, 'rounded');}, 1500);
-  		<?php } ?>
+      <?php
+      if ($this->session->flashdata('success')){
+      ?>
+      setTimeout(function(){Materialize.toast("<?php echo $this->session->flashdata('success'); ?>", 3000, 'rounded');}, 1500);
+      <?php
+      }
+      ?>
       // toast error
-      <?php	if ($this->session->flashdata('error')) { ?>
-        setTimeout(function() {Materialize.toast('<?php echo $this->session->flashdata('error'); ?>', 3000, 'rounded');}, 1500);
-  		<?php } ?>
-    });
+      <?php
+      if ($this->session->flashdata('error')){
+      ?>
+      setTimeout(function(){Materialize.toast("<?php echo $this->session->flashdata('error'); ?>", 3000, 'rounded');}, 1500);
+      <?php
+      }
+      ?>
+    }
   </script>
-
-</body>
+  </body>
 </html>

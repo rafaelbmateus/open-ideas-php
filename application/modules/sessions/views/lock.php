@@ -39,38 +39,37 @@
   </div>
   <!-- End Page Loading -->
 
-
-
   <div id="login-page" class="row">
     <div class="col s12 z-depth-4 card-panel">
-      <form class="login-form">
+      <form class="login-form" action="<?php echo base_url() . $module .'/login';?>" method="post">
         <div class="row">
           <div class="input-field col s12 center">
+            <input name="email" type="text" hidden
+              value="<?php echo $user->user_id;?>"/>
             <img src="<?php echo base_url(); ?>assets/plugins/materialize/images/avatar.jpg" alt="" class="circle responsive-img valign profile-image-login">
-            <h4 class="header">John Doe</h4>
+            <h4 class="header"><?php echo $user->user_name;?></h4>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
             <input id="password" type="password">
-            <label for="password">Senha</label>
+            <label for="password"><?php echo $this->lang->line('password');?></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <a href="index.html" class="btn waves-effect waves-light col s12">Login</a>
+            <button type="submit" class="btn waves-effect waves-light col s12"><?php echo $this->lang->line('login');?></button>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6 m6 l6">
-            <p class="margin medium-small"><a href="<?php echo base_url();?>sessions/register">Cadastrar-se agora!</a></p>
+            <p class="margin medium-small"><a href="<?php echo base_url();?>sessions/goto_register"><?php echo $this->lang->line('register_now');?></a></p>
           </div>
           <div class="input-field col s6 m6 l6">
-              <p class="margin right-align medium-small"><a href="#">Esqueceu sua senha?</a></p>
+              <p class="margin right-align medium-small"><a href="#"><?php echo $this->lang->line('forgot_password');?></a></p>
           </div>
         </div>
-
       </form>
     </div>
   </div>
@@ -89,6 +88,25 @@
   <!--plugins.js - Some Specific JS codes for Plugin Settings-->
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins.js"></script>
 
-</body>
-
+  <script type="text/javascript">
+    window.onload = function(){
+      // toast success
+      <?php
+      if ($this->session->flashdata('success')){
+      ?>
+      setTimeout(function(){Materialize.toast("<?php echo $this->session->flashdata('success'); ?>", 3000, 'rounded');}, 1500);
+      <?php
+      }
+      ?>
+      // toast error
+      <?php
+      if ($this->session->flashdata('error')){
+      ?>
+      setTimeout(function(){Materialize.toast("<?php echo $this->session->flashdata('error'); ?>", 3000, 'rounded');}, 1500);
+      <?php
+      }
+      ?>
+    }
+  </script>
+  </body>
 </html>

@@ -1,0 +1,13 @@
+{
+  "emptyTable": "Não há dados disponíveis na tabela",
+  "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+  "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+  "sLengthMenu": "Mostrar _MENU_ registros",
+  "sSearch": "Busca Rápida:",
+  "paginate": {
+      "sFirst": "Primeiro",
+      "last": "Último",
+      "sNext": "Próximo",
+      "sPrevious": "Anterior"
+  }
+}

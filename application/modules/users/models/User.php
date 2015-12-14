@@ -46,17 +46,17 @@ class User extends CI_Model{
 	function add($name, $job, $email, $password, $timestamp){
 		$data = array (
 				'user_name' => $name,
-				'user_job' => $job,
+				'job_id' => $job,
 				'user_email' => $email,
 				'user_password' => $password,
 				$this->date_created_field => $timestamp
 		);
 		return $this->db->insert($this->table, $data);
 	}
-	function update($id, $name, $job, $email, $password, $timestamp){
+	function update($id, $name, $job, $email, $timestamp){
 		$data = array (
 				'user_name' => $name,
-				'user_job' => $job,
+				'job_id' => $job,
 				'user_email' => $email,
 				'user_password' => $password,
 				$this->date_updated_field => $timestamp

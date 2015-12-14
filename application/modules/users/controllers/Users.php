@@ -27,19 +27,18 @@ class Users extends CI_Controller{
 	}
 	public function add(){
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('email', 'User name', 'trim|required');
-		$this->form_validation->set_rules('name', 'User name', 'trim|required');
+		$this->form_validation->set_rules('name', 'E-mail', 'trim|required');
+		$this->form_validation->set_rules('job', 'Job', 'trim|required');
+		$this->form_validation->set_rules('email', 'E-mail', 'trim|required');
+
 		if ($this->form_validation->run() == false){
 			$this->session->set_flashdata ('error', (validation_errors() ? validation_errors() : false));
 		}else{
 			$name = $this->input->post ( 'name', true );
-			//$last_name = $this->input->post ( 'user_last_name', true );
 			$job = $this->input->post ( 'job', true );
 			$email = $this->input->post ( 'email', true );
-			$password = md5($this->input->post ( 'password', true ));
-			$password = md5($this->input->post ( 'password-again', true ));
 
-			if ($this->User->add($name, $job, $email, $password, date('Y-m-d H:i:s'))){
+			if ($this->User->add($name, $job, $email, date('Y-m-d H:i:s'))){
 				$this->session->set_flashdata('success', $this->lang->line('save_success'));
 			} else {
 				$this->session->set_flashdata('error', $this->lang->line('save_error'));
@@ -63,15 +62,15 @@ class Users extends CI_Controller{
 		if ($this->form_validation->run() == false){
 			$this->session->set_flashdata('error', (validation_errors() ? validation_errors() : false));
 		}else{
-			$id = $this->input->post ( 'user_id', true );
-			$name = $this->input->post ( 'name', true );
+			$id = $this->input->post('user_id', true);
+			$name = $this->input->post('name', true);
 			//$last_name = $this->input->post ( 'user_last_name', true );
-			$job = $this->input->post ( 'job', true );
-			$email = $this->input->post ( 'email', true );
-			$password = md5($this->input->post ( 'password', true ));
-			$password_again = md5($this->input->post ( 'password-again', true ));
+			$job = $this->input->post('job', true);
+			$email = $this->input->post('email', true);
+			$password = md5($this->input->post('password', true));
+			$password_again = md5($this->input->post('password-again', true));
 			if ($password == $password_again){
-				if ($this->User->update($id, $name, $job, $email, $password, date('Y-m-d H:i:s'))){
+				if ($this->User->update($id, $name, $job, $email, date('Y-m-d H:i:s'))){
 					$this->session->set_flashdata('success', $this->lang->line('update_success'));
 				}else{
 					$this->session->set_flashdata('error', $this->lang->line('update_error'));

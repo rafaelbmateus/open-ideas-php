@@ -57,6 +57,20 @@
           </div>
         </div>
         <div class="row margin">
+          <div class="input-field col s2">
+            <i class="mdi-social-person-outline prefix"></i>
+          </div>
+          <div class="input-field col s10">
+            <select name="job_id" required>
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+
+          </div>
+        </div>
+        <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-communication-email prefix"></i>
             <input name="email" type="email">
@@ -103,18 +117,24 @@
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins.js"></script>
 
   <script type="text/javascript">
-    $(document).ready(function () {
+    window.onload = function(){
       // toast success
-      <?php	if ($this->session->flashdata('success')) { ?>
-        setTimeout(function() {Materialize.toast('<?php echo $this->session->flashdata('success'); ?>', 3000, 'rounded');}, 1500);
-  		<?php } ?>
+      <?php
+      if ($this->session->flashdata('success')){
+      ?>
+      setTimeout(function(){Materialize.toast("<?php echo $this->session->flashdata('success'); ?>", 3000, 'rounded');}, 1500);
+      <?php
+      }
+      ?>
       // toast error
-      <?php	if ($this->session->flashdata('error')) { ?>
-        setTimeout(function() {Materialize.toast('<?php echo $this->session->flashdata('error'); ?>', 3000, 'rounded');}, 1500);
-  		<?php } ?>
-    });
+      <?php
+      if ($this->session->flashdata('error')){
+      ?>
+      setTimeout(function(){Materialize.toast("<?php echo $this->session->flashdata('error'); ?>", 3000, 'rounded');}, 1500);
+      <?php
+      }
+      ?>
+    }
   </script>
-
-</body>
-
+  </body>
 </html>

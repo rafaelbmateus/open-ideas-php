@@ -8,7 +8,6 @@ class Sessions extends CI_Controller{
 		$this->data['module'] = $this->module;
 	}
 	public function index(){
-		//$this->session->unset_userdata('user_id');
 		if($this->session->userdata('user_id')){
 			redirect(base_url() . 'challenges');
 		}else{
@@ -16,6 +15,7 @@ class Sessions extends CI_Controller{
 		}
 	}
 	public function goto_register(){
+		
 		$this->load->view('register', $this->data);
 	}
 	public function register(){
@@ -29,14 +29,15 @@ class Sessions extends CI_Controller{
 			$this->session->set_flashdata('error', (validation_errors() ? validation_errors() : false));
 			$this->load->view('register');
 		}else{
-			$name = $this->input->post('name', true );
-			$email = $this->input->post('email', true );
+			$name = $this->input->post('name', true);
+			$email = $this->input->post('email', true);
+			$job = $this->input->post('job_id', true);
 			$password = md5($this->input->post('password', true));
 			$password_again = md5($this->input->post('password-again', true));
 			if ($password == $password_again){
 				$this->load->model('users/User');
 				if (!$this->User->getWhere('user_email', $email)){
-					if ($this->User->add($email, $password, $name, '', '', date('Y-m-d H:i:s'))){
+					if ($this->User->add($name, $job, $email, $password, date('Y-m-d H:i:s'))){
 						$user = $this->User->getWhere('user_email', $email);
 						$this->session->set_flashdata('success', $this->lang->line('welcome') . ' ' . $user->user_first_name);
 						$this->create_session($user->user_id);
@@ -62,16 +63,14 @@ class Sessions extends CI_Controller{
 		if ($this->form_validation->run() == false) {
 			$this->session->set_flashdata ('error', (validation_errors() ? validation_errors() : false));
 		} else {
-			$email = $this->input->post('email', true );
-			$password = md5($this->input->post('password', true ));
-			//TODO, login
+			$email = $this->input->post('email', true);
+			$password = md5($this->input->post('password', true));
 			$user = $this->Session->login($email, $password);
 			if ($user){
 				$this->create_session($user->user_id);
 				$this->session->set_flashdata('success', $this->lang->line('welcome_again') . ' ' . $user->user_name);
 			}else{
-				//$this->session->unset_userdata('user_id');
-				$this->session->sess_destroy();
+				$this->session->set_flashdata('success', $this->lang->line('login_incorrect') . ' ' . $user->user_name);
 			}
 			redirect(base_url() . $this->module);
 		}
@@ -80,10 +79,14 @@ class Sessions extends CI_Controller{
 		$this->load->model('users/User');
 		$user = $this->User->getWhere('user_id', $user_id);
 		$this->session->set_userdata('user_id', $user->user_id);
+		$this->session->set_userdata('user_name', $user->user_name);
 		$this->session->set_userdata('user_email', $user->user_email);
 	}
 	public function lock(){
-		$this->load->view('lock');
+		$id = $this->session->userdata('user_id');
+		$this->load->model('users/User');
+		$this->data['user'] = $this->User->get($id);
+		$this->load->view('lock', $this->data);
 	}
 	public function logout(){
 		$this->session->sess_destroy();

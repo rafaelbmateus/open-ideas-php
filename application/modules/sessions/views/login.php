@@ -41,48 +41,46 @@
 
   <div id="login-page" class="row">
     <div class="col s12 z-depth-4 card-panel">
-      <form class="login-form" action="<?php echo base_url();?>sessions/login" method="POST">
-
+      <form class="login-form" action="<?php echo base_url() . $module .'/login';?>" method="post">
         <div class="row">
           <div class="input-field col s12 center">
             <img src="<?php echo base_url(); ?>assets/plugins/materialize/images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
-            <p class="center login-form-text">Comunidade Open Idea</p>
+            <p class="center login-form-text"><?php echo $this->lang->line('community');?> Open Idea</p>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-social-person-outline prefix"></i>
             <input id="email" name="email" type="text">
-            <label for="email" class="center-align">E-mail</label>
+            <label for="email" class="center-align"><?php echo $this->lang->line('email');?></label>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
             <input id="password" name="password" type="password">
-            <label for="password">Senha</label>
+            <label for="password"><?php echo $this->lang->line('password');?></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12 m12 l12  login-text">
               <input type="checkbox" id="remember-me" />
-              <label for="remember-me">Lembrar-me</label>
+              <label for="remember-me"><?php echo $this->lang->line('remember');?></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <button type="submit" class="btn waves-effect waves-light col s12">Login</button>
+            <button type="submit" class="btn waves-effect waves-light col s12"><?php echo $this->lang->line('login');?></button>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6 m6 l6">
-            <p class="margin medium-small"><a href="<?php echo base_url();?>sessions/goto_register">Cadastrar-se agora!</a></p>
+            <p class="margin medium-small"><a href="<?php echo base_url();?>sessions/goto_register"><?php echo $this->lang->line('register_now');?></a></p>
           </div>
           <div class="input-field col s6 m6 l6">
-              <p class="margin right-align medium-small"><a href="#">Esqueceu sua senha?</a></p>
+              <p class="margin right-align medium-small"><a href="#"><?php echo $this->lang->line('forgot_password');?></a></p>
           </div>
         </div>
-
       </form>
     </div>
   </div>
@@ -101,18 +99,24 @@
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins.js"></script>
 
   <script type="text/javascript">
-    $(document).ready(function () {
+    window.onload = function(){
       // toast success
-      <?php	if ($this->session->flashdata('success')) { ?>
-        setTimeout(function() {Materialize.toast('<?php echo $this->session->flashdata('success'); ?>', 3000, 'rounded');}, 1500);
-  		<?php } ?>
+      <?php
+      if ($this->session->flashdata('success')){
+      ?>
+      setTimeout(function(){Materialize.toast("<?php echo $this->session->flashdata('success'); ?>", 3000, 'rounded');}, 1500);
+      <?php
+      }
+      ?>
       // toast error
-      <?php	if ($this->session->flashdata('error')) { ?>
-        setTimeout(function() {Materialize.toast('<?php echo $this->session->flashdata('error'); ?>', 3000, 'rounded');}, 1500);
-  		<?php } ?>
-    });
+      <?php
+      if ($this->session->flashdata('error')){
+      ?>
+      setTimeout(function(){Materialize.toast("<?php echo $this->session->flashdata('error'); ?>", 3000, 'rounded');}, 1500);
+      <?php
+      }
+      ?>
+    }
   </script>
-
-</body>
-
+  </body>
 </html>
