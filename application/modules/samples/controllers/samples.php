@@ -1,94 +1,89 @@
-<?php defined ( 'BASEPATH' ) or exit ( 'No direct script access allowed' );
-//TODO, Atulizar nome da classe
-class Samples extends CI_Controller {
+<?php defined ('BASEPATH') or exit ('No direct script access allowed');
+//TODO, Replace Samples to ClassName
+class Samples extends CI_Controller{
 	private $module = 'samples';
-	public function __construct() {
-		parent::__construct ();
-		$this->lang->load("app","pt-br");
+	public function __construct(){
+		parent::__construct();
 		//date_default_timezone_set ( 'America/Sao_Paulo' );
-		//TODO, Alterar nome do Model
-		$this->load->model ( 'Sample' );
-		$this->data ['module'] = $this->module;
+		$this->load->model('Sample');
+		$this->data['module'] = $this->module;
 	}
-	public function index() {
-		//TODO, Alterar nome do Model
-		$this->data ['list'] = $this->Sample->get ();
-		$this->data ['view'] = 'index';
-		$this->load->view ( $this->config->item ( 'app_layout' ) . 'template', $this->data );
+	public function index(){
+		$this->data['list'] = $this->Sample->get();
+		$this->data['view'] = 'index';
+		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 	}
-	public function show() {
-		$id = $this->uri->segment ( 3 );
-		if ($id) {
-			//TODO, Alterar nome do Model
-			$this->data ['item'] = $this->Sample->get ( $id );
-			$this->load->view ( 'show', $this->data );
-		} else {
-			redirect ( base_url () . $this->module );
+	public function show(){
+		$id = $this->uri->segment(3);
+		if ($id){
+			$this->data['item'] = $this->Sample->get($id);
+			$this->load->view('show', $this->data);
+		}else{
+			redirect(base_url() . $this->module);
 		}
 	}
-	public function create() {
-		$this->data ['view'] = 'new';
-		$this->load->view ( $this->config->item ( 'app_layout' ) . 'template', $this->data );
+	public function create(){
+		$this->data['view'] = 'new';
+		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 	}
-	public function add() {
-		$this->load->library ( 'form_validation' );
-		//TODO, Validar campos obrigatórios
-		$this->form_validation->set_rules ( 'sample_name', 'User name', 'trim|required' );
-		if ($this->form_validation->run () == false) {
-			$this->session->set_flashdata ( 'error', (validation_errors () ? validation_errors () : false) );
+	public function add(){
+		$this->load->library('form_validation');
+		//TODO, validete field
+		$this->form_validation->set_rules('sample_name', 'User name', 'trim|required');
+		if ($this->form_validation->run() == false) {
+			$this->session->set_flashdata('error', (validation_errors() ? validation_errors() : false));
 		} else {
-			//TODO, Pegar os campos
+			//TODO, get field
 			$name = $this->input->post ( 'sample_name', TRUE );
 
-			//TODO, Alterar nome do Model
-			//TODO, Alterar assinatura do método
-			if ($this->Sample->add ( $name, date ( "Y-m-d H:i:s" ) ) ) {
-				$this->session->set_flashdata ( 'success', $this->lang->line('save_success') );
+			//TODO, replace method parameters
+			if ($this->Sample->add ($name, date ( 'Y-m-d H:i:s' ))){
+				$this->session->set_flashdata ('success', $this->lang->line('save_success'));
 			} else {
-				$this->session->set_flashdata ( 'error', $this->lang->line('save_error') );
+				$this->session->set_flashdata ('error', $this->lang->line('save_error'));
 			}
 		}
-		redirect ( base_url () . $this->module );
+		redirect (base_url() . $this->module);
 	}
-	public function edit() {
-		$id = $this->uri->segment ( 3 );
-		if ($id) {
-			//TODO, Alterar nome do Model
-			$this->data ['item'] = $this->Sample->get ( $id );
-			$this->data ['view'] = 'edit';
-			$this->load->view ( $this->config->item ( 'app_layout' ) . 'template', $this->data );
-		} else {
-			redirect ( base_url () . $this->module );
+	public function edit(){
+		$id = $this->uri->segment(3);
+		if ($id){
+			$this->data['item'] = $this->Sample->get($id);
+			$this->data['view'] = 'edit';
+			$this->load->view ($this->config->item('app_layout') . 'template', $this->data);
+		}else{
+			$this->session->set_flashdata('error', $this->lang->line('update_error'));
+			redirect (base_url() . $this->module);
 		}
 	}
-	public function update() {
-		$this->load->library ( 'form_validation' );
-		$this->form_validation->set_rules ( 'sample_name', 'User name', 'trim|required' );
-		if ($this->form_validation->run () == false) {
-			$this->session->set_flashdata ( 'error', (validation_errors () ? validation_errors () : false) );
-		} else {
-			$id = $this->input->post ( 'sample_id', TRUE );
-			$name = $this->input->post ( 'sample_name', TRUE );
+	public function update(){
+		$this->load->library ('form_validation');
+		$this->form_validation->set_rules('sample_name', 'Sample name', 'trim|required');
+		if ($this->form_validation->run() == false) {
+			$this->session->set_flashdata( 'error', (validation_errors() ? validation_errors() : false));
+		}else{
+			$id = $this->input->post('sample_id', true);
+			$name = $this->input->post('sample_name', true);
 
-			//TODO, Alterar nome do Model
-			if ($this->Sample->update ( $id, $name, date ( "Y-m-d H:i:s" ) )) {
-				$this->session->set_flashdata ( 'success', $this->lang->line('update_success') );
-			} else {
-				$this->session->set_flashdata ( 'error', $this->lang->line('update_error') );
+			if ($this->Sample->update($id, $name, date('Y-m-d H:i:s'))){
+				$this->session->set_flashdata('success', $this->lang->line('update_success'));
+			}else{
+				$this->session->set_flashdata('error', $this->lang->line('update_error'));
 			}
 		}
-		redirect ( base_url () . $this->module );
+		redirect(base_url() . $this->module);
 	}
-	public function delete() {
-		$id = $this->input->post ( 'id', TRUE );
-		if ($id) {
-			//TODO, Alterar nome do Model
-			if ($this->Sample->delete ( $id )) {
-				$this->session->set_flashdata ( 'success', $this->lang->line('delete_success') );
-			} else {
-				$this->session->set_flashdata ( 'error', $this->lang->line('delete_error') );
+	public function delete(){
+		$id = $this->input->post('id', true);
+		if ($id){
+			if ($this->Sample->delete($id)){
+				$this->session->set_flashdata('success', $this->lang->line('delete_success'));
+			}else{
+				$this->session->set_flashdata('error', $this->lang->line('delete_error'));
 			}
+		}else{
+			$this->session->set_flashdata('error', $this->lang->line('delete_error'));
 		}
-		redirect ( base_url () . $this->module );
+		redirect (base_url() . $this->module);
 	}
 }

@@ -8,7 +8,7 @@
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="description" content="Plataforma de inovação aberta. ">
   <meta name="keywords" content="open innovation, inovação aberta, innovation, inovação,">
-  <title><?php echo $this->config->item ( 'app_title' ); ?></title>
+  <title><?php echo $this->config->item('app_title'); ?></title>
 
   <!-- Favicons-->
   <link rel="icon" href="<?php echo base_url(); ?>assets/plugins/materialize/images/favicon/favicon-32x32.png" sizes="32x32">
@@ -99,6 +99,19 @@
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
   <!--plugins.js - Some Specific JS codes for Plugin Settings-->
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // toast success
+      <?php	if ($this->session->flashdata('success')) { ?>
+        setTimeout(function() {Materialize.toast('<?php echo $this->session->flashdata('success'); ?>', 3000, 'rounded');}, 1500);
+  		<?php } ?>
+      // toast error
+      <?php	if ($this->session->flashdata('error')) { ?>
+        setTimeout(function() {Materialize.toast('<?php echo $this->session->flashdata('error'); ?>', 3000, 'rounded');}, 1500);
+  		<?php } ?>
+    });
+  </script>
 
 </body>
 

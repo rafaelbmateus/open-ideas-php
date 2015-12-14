@@ -1,14 +1,26 @@
 <?php
 $lang['title'] = "Titulo";
 
+// Sessions - start
+$lang['welcome_again'] = "Bem-vindo";
+$lang['welcome_again'] = "Que bom revê-lo";
+// Session - end
+
 // Page login - start
 $lang['community'] = "Comunidade";
+$lang['name'] = "Nome";
+$lang['first_name'] = "Primeiro nome";
+$lang['last_name'] = "Ultimo nome";
+$lang['job'] = "Serviço";
 $lang['email'] = "E-mail";
 $lang['password'] = "Senha";
+$lang['password_again'] = "Senha novamente";
 $lang['remember'] = "Lembrar-me";
 $lang['login'] = "Entrar";
 $lang['regiter_now'] = "Cadastrar-se!";
 $lang['forgot_password'] = "Lembrar senha";
+$lang['password_error'] = "Senhas diferentes";
+$lang['email_error'] = "Usuário já cadastrado";
 // Page login - end
 
 // Menu - start
@@ -37,9 +49,6 @@ $lang['delete_error'] = "Ops, houve um erro ao excluir o registro. Estamos de ol
 $lang['new'] = "Novo";
 $lang['edit'] = "Editar";
 $lang['delete'] = "Excluir";
-$lang['name'] = "Nome";
-$lang['first_name'] = "Primeiro nome";
-$lang['last_name'] = "Ultimo nome";
 $lang['date'] = "Data";
 $lang['save'] = "Salvar";
 $lang['cancel'] = "Cancelar";

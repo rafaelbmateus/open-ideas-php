@@ -8,12 +8,10 @@ class Session extends CI_Model {
 
 	function login($email, $password) {
 		//TODO, login
-		$this->db->from ( $this->table );
-		$this->db->where ( 'user_email', $email );
-		$this->db->where ( 'user_password', md5($password));
-		return $this->db->get ()->row ();
-		//return true;
-
+		$this->db->from($this->table);
+		$this->db->where('user_email', $email);
+		$this->db->where('user_password', $password);
+		return $this->db->get()->row();
 	}
 	function logout($mail){
 		//TODO, Talvez, se for colocar um status de não logado.

@@ -27,9 +27,11 @@
 
   <script type="text/javascript">
     $(document).ready(function () {
+      // toast success
       <?php	if ($this->session->flashdata('success')) { ?>
         setTimeout(function() {Materialize.toast('<?php echo $this->session->flashdata('success'); ?>', 3000, 'rounded');}, 1500);
   		<?php } ?>
+      // toast error
       <?php	if ($this->session->flashdata('error')) { ?>
         setTimeout(function() {Materialize.toast('<?php echo $this->session->flashdata('error'); ?>', 3000, 'rounded');}, 1500);
   		<?php } ?>

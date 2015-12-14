@@ -8,7 +8,7 @@
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="description" content="Plataforma de inovação aberta. ">
   <meta name="keywords" content="open innovation, inovação aberta, innovation, inovação,">
-  <title><?php echo $this->config->item ( 'app_title' ); ?></title>
+  <title><?php echo $this->config->item('app_title'); ?></title>
 
   <!-- Favicons-->
   <link rel="icon" href="<?php echo base_url(); ?>assets/plugins/materialize/images/favicon/favicon-32x32.png" sizes="32x32">
@@ -18,7 +18,6 @@
   <meta name="msapplication-TileColor" content="#00bcd4">
   <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
   <!-- For Windows Phone -->
-
 
   <!-- CORE CSS-->
   <link href="<?php echo base_url(); ?>assets/plugins/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">

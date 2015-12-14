@@ -8,7 +8,7 @@
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="description" content="Plataforma de inovação aberta. ">
   <meta name="keywords" content="open innovation, inovação aberta, innovation, inovação,">
-  <title><?php echo $this->config->item ( 'app_title' ); ?></title>
+  <title><?php echo $this->config->item('app_title'); ?></title>
 
   <!-- Favicons-->
   <link rel="icon" href="<?php echo base_url(); ?>assets/plugins/materialize/images/favicon/favicon-32x32.png" sizes="32x32">
@@ -18,7 +18,6 @@
   <meta name="msapplication-TileColor" content="#00bcd4">
   <meta name="msapplication-TileImage" content="<?php echo base_url(); ?>assets/plugins/materialize/images/favicon/mstile-144x144.png">
   <!-- For Windows Phone -->
-
 
   <!-- CORE CSS-->
   <link href="<?php echo base_url(); ?>assets/plugins/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
@@ -42,7 +41,7 @@
 
   <div id="login-page" class="row">
     <div class="col s12 z-depth-4 card-panel">
-      <form class="login-form" action="<?php echo base_url();?>sessions/register" method="POST">
+      <form class="login-form" action="<?php echo base_url() . $module . '/register';?>" method="post">
 
         <div class="row">
           <div class="input-field col s12 center">
@@ -50,38 +49,31 @@
             <p class="center">Junte-se a nossa comunidade agora!</p>
           </div>
         </div>
-        <div>
-          <?php if ($this->session->flahdata('error')){ ?>
-            <div>
-              <?php echo $this->session->flahdata('error') ?>
-            </div>
-          <?php } ?>
-        </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-social-person-outline prefix"></i>
-            <input id="first_name" type="text">
-            <label for="first_name" class="center-align">Nome</label>
+            <input name="name" type="text">
+            <label for="name" class="center-align">Nome</label>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-communication-email prefix"></i>
-            <input id="email" type="email">
+            <input name="email" type="email">
             <label for="email" class="center-align">E-mail</label>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
-            <input id="password" type="password">
+            <input name="password" type="password">
             <label for="password">Senha</label>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
-            <input id="password-again" type="password">
+            <input name="password-again" type="password">
             <label for="password-again">Repita a senha</label>
           </div>
         </div>
@@ -90,7 +82,7 @@
             <button type="submit" class="btn waves-effect waves-light col s12">Registrar</button>
           </div>
           <div class="input-field col s12">
-            <p class="margin center medium-small sign-up">Já tem uma conta?<a href="<?php echo base_url();?>sessions">Login</a></p>
+            <p class="margin center medium-small sign-up">Já tem uma conta? <a href="<?php echo base_url() . $module;?>">Login</a></p>
           </div>
         </div>
       </form>
@@ -109,6 +101,19 @@
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
   <!--plugins.js - Some Specific JS codes for Plugin Settings-->
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // toast success
+      <?php	if ($this->session->flashdata('success')) { ?>
+        setTimeout(function() {Materialize.toast('<?php echo $this->session->flashdata('success'); ?>', 3000, 'rounded');}, 1500);
+  		<?php } ?>
+      // toast error
+      <?php	if ($this->session->flashdata('error')) { ?>
+        setTimeout(function() {Materialize.toast('<?php echo $this->session->flashdata('error'); ?>', 3000, 'rounded');}, 1500);
+  		<?php } ?>
+    });
+  </script>
 
 </body>
 
