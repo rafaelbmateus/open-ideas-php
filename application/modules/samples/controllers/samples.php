@@ -7,7 +7,7 @@ class Samples extends CI_Controller {
 		//date_default_timezone_set ( 'America/Sao_Paulo' );
 		//TODO, Alterar nome do Model
 		$this->load->model ( 'Sample' );
-		$this->data ['module'] = $module;
+		$this->data ['module'] = $this->module;
 	}
 	public function index() {
 		//TODO, Alterar nome do Model
@@ -22,7 +22,7 @@ class Samples extends CI_Controller {
 			$this->data ['item'] = $this->Sample->get ( $id );
 			$this->load->view ( 'show', $this->data );
 		} else {
-			redirect ( base_url () . $module );
+			redirect ( base_url () . $this->module );
 		}
 	}
 	public function create() {
@@ -36,16 +36,18 @@ class Samples extends CI_Controller {
 		if ($this->form_validation->run () == false) {
 			$this->session->set_flashdata ( 'error', (validation_errors () ? validation_errors () : false) );
 		} else {
+			//TODO, Pegar os campos
 			$name = $this->input->post ( 'sample_name', TRUE );
 
 			//TODO, Alterar nome do Model
-			if ($this->Samole->add ( $name, date ( "Y-m-d H:i:s" ) ) ) {
+			//TODO, Alterar assinatura do método
+			if ($this->Sample->add ( $name, date ( "Y-m-d H:i:s" ) ) ) {
 				$this->session->set_flashdata ( 'success', 'Successfully registered record!' );
 			} else {
 				$this->session->set_flashdata ( 'error', 'Error registering the record.' );
 			}
 		}
-		redirect ( base_url () . 'users' );
+		redirect ( base_url () . $this->module );
 	}
 	public function edit() {
 		$id = $this->uri->segment ( 3 );
@@ -55,7 +57,7 @@ class Samples extends CI_Controller {
 			$this->data ['view'] = 'edit';
 			$this->load->view ( $this->config->item ( 'app_layout' ) . 'template', $this->data );
 		} else {
-			redirect ( base_url () . $module );
+			redirect ( base_url () . $this->module );
 		}
 	}
 	public function update() {
@@ -74,7 +76,7 @@ class Samples extends CI_Controller {
 				$this->session->set_flashdata ( 'error', 'Error updating the record' );
 			}
 		}
-		redirect ( base_url () . $module );
+		redirect ( base_url () . $this->module );
 	}
 	public function delete() {
 		$id = $this->input->post ( 'id', TRUE );
@@ -86,6 +88,6 @@ class Samples extends CI_Controller {
 				$this->session->set_flashdata ( 'error', 'Error deleting the record.' );
 			}
 		}
-		redirect ( base_url () . $module );
+		redirect ( base_url () . $this->module );
 	}
 }

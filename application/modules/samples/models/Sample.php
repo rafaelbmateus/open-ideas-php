@@ -14,7 +14,7 @@ class Sample extends CI_Model {
 	function create_table() {
 		if (! $this->db->table_exists ( $this->table )) {
 			//TODO, Atualizar query da criação da tabela
-			$query = 'CREATE TABLE tb_user(
+			$query = 'CREATE TABLE tb_sample(
 							sample_id SERIAL,
 							sample_name character varying(255) NOT NULL,
 							created_at timestamp without time zone,
