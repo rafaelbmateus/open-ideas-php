@@ -14,10 +14,10 @@ $lang['regiter_now'] = "Cadastrar-se!";
 $lang['forgot_password'] = "Lembrar senha";
 // Page login - end
 
-// Menu config perfil - start
+// Menu config profile - start
 $lang['profile'] = "Perfil";
 $lang['config'] = "Config";
 $lang['help'] = "Ajuda";
 $lang['lock'] = "Lock";
 $lang['logout'] = "Sair";
-// Menu config perfil - end
+// Menu config profile - end

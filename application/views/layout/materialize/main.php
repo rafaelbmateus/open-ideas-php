@@ -14,7 +14,7 @@
                     </div>
                     <div class="col col s8 m8 l8">
                         <ul id="profile-dropdown" class="dropdown-content">
-                            <li><a href="#"><i class="mdi-action-face-unlock"></i> Perfil</a>
+                            <li><a href="#"><i class="mdi-action-face-unlock"></i><?php echo $this->lang->line('title');?></a>
                             </li>
                             <li><a href="#"><i class="mdi-action-settings"></i> Config</a>
                             </li>
