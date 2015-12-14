@@ -25,6 +25,16 @@
   <!--plugins.js - Some Specific JS codes for Plugin Settings-->
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins.js"></script>
 
-</body>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      <?php	if ($this->session->flashdata('success')) { ?>
+        setTimeout(function() {Materialize.toast('<?php echo $this->session->flashdata('success'); ?>', 3000, 'rounded');}, 1500);
+  		<?php } ?>
+      <?php	if ($this->session->flashdata('error')) { ?>
+        setTimeout(function() {Materialize.toast('<?php echo $this->session->flashdata('error'); ?>', 3000, 'rounded');}, 1500);
+  		<?php } ?>
+    });
+  </script>
 
+</body>
 </html>

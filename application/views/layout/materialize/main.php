@@ -1,5 +1,3 @@
-<?php $this->load->view($this->config->item ( 'app_layout' ). 'toast'); ?>
-
 <!-- start main -->
 <div id="main">
   <!-- START WRAPPER -->
@@ -34,22 +32,22 @@
                     </div>
                 </div>
             </li>
-            <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i><?php echo $this->lang->line('challanges');?></a></li>
-            <li class="bold"><a href="app-calendar.html" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i><?php echo $this->lang->line('ideas');?></a></li>
+            <li class="bold"><a href="#" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i><?php echo $this->lang->line('challanges');?></a></li>
+            <li class="bold"><a href="#" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i><?php echo $this->lang->line('ideas');?></a></li>
             <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
                     <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-invert-colors"></i>Menu</a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="css-typography.html">Menu 1</a>
+                                <li><a href="#">Menu 1</a>
                                 </li>
-                                <li><a href="css-icons.html">Menu 2</a>
+                                <li><a href="#">Menu 2</a>
                                 </li>
-                                <li><a href="css-shadow.html">Menu 3</a>
+                                <li><a href="#">Menu 3</a>
                                 </li>
-                                <li><a href="css-media.html">Menu 4</a>
+                                <li><a href="#">Menu 4</a>
                                 </li>
-                                <li><a href="css-sass.html">Menu 5</a>
+                                <li><a href="#">Menu 5</a>
                                 </li>
                             </ul>
                         </div>

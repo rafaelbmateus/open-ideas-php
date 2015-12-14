@@ -1,5 +1,5 @@
 <?php
-class Generic extends CI_Model {	
+class Generic extends CI_Model {
 	public function __construct() {
 		parent::__construct ();
 	}
