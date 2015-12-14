@@ -82,8 +82,8 @@ class Sessions extends CI_Controller{
 		$this->session->set_userdata('user_id', $user->user_id);
 		$this->session->set_userdata('user_name', $user->user_name);
 		$this->session->set_userdata('user_email', $user->user_email);
-		$this->session->set_userdata('user_type', $user->user_type);
-		$this->session->set_userdata('user_job', $user->user_job);
+		$this->session->set_userdata('user_type', $user->type_name);
+		$this->session->set_userdata('user_job', $user->job_name);
 	}
 	public function lock(){
 		$id = $this->session->userdata('user_id');

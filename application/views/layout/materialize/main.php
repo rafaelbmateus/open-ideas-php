@@ -26,7 +26,7 @@
                         </ul>
                         <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown"><?php echo $this->session->userdata('user_name'); ?><i class="mdi-navigation-arrow-drop-down right"></i></a>
                         <!-- TODO, pegar o perfil do usuário -->
-                        <p class="user-roal">Administrator</p>
+                        <p class="user-roal"><?php echo $this->lang->line($this->session->userdata('user_job')); ?></p>
                     </div>
                 </div>
             </li>

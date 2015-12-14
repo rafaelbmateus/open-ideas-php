@@ -24,7 +24,9 @@ class User extends CI_Model{
 	}
 	function get($id = null){
 		$this->db->from($this->table);
-		$this->db->where($this->is_deleted_field, null);
+		$this->db->where($this->table . '.' . $this->is_deleted_field, null);
+		$this->db->join('tb_job', 'tb_job.job_id = tb_user.job_id');
+		$this->db->join('tb_user_type', 'tb_user_type.type_id = tb_user.type_id');
 		if ($id){
 			$this->db->where($this->primary_key, $id);
 			$query = $this->db->get()->row();
@@ -36,6 +38,8 @@ class User extends CI_Model{
 	function getWhere($field = "", $content = ""){
 		$this->db->from($this->table);
 		$this->db->where($field, $content);
+		$this->db->join('tb_job', 'tb_job.job_id = tb_user.job_id');
+		$this->db->join('tb_user_type', 'tb_user_type.type_id = tb_user.type_id');
 		$query = $this->db->get();
 		if ($query->num_rows() == 1){
 			return $query->row();
