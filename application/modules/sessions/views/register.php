@@ -63,8 +63,8 @@
           <div class="input-field col s10">
             <select name="job_id" required>
               <option value="" disabled selected>Choose your option</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
+              <option value="1">admin</option>
+              <option value="2">corporate</option>
               <option value="3">Option 3</option>
             </select>
 

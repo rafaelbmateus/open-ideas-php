@@ -15,13 +15,14 @@ class Sessions extends CI_Controller{
 		}
 	}
 	public function goto_register(){
-		
+
 		$this->load->view('register', $this->data);
 	}
 	public function register(){
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('name', 'E-mail', 'trim|required');
+		$this->form_validation->set_rules('name', 'Nome', 'trim|required');
 		$this->form_validation->set_rules('email', 'E-mail', 'trim|required');
+		$this->form_validation->set_rules('job_id', 'Tipo', 'trim|required');
 		$this->form_validation->set_rules('password', 'Senha', 'trim|required');
 		$this->form_validation->set_rules('password-again', 'Senha novamente', 'trim|required');
 
@@ -37,9 +38,9 @@ class Sessions extends CI_Controller{
 			if ($password == $password_again){
 				$this->load->model('users/User');
 				if (!$this->User->getWhere('user_email', $email)){
-					if ($this->User->add($name, $job, $email, $password, date('Y-m-d H:i:s'))){
+					if ($this->User->add($name, $email, $job, '2', $password, date('Y-m-d H:i:s'))){
 						$user = $this->User->getWhere('user_email', $email);
-						$this->session->set_flashdata('success', $this->lang->line('welcome') . ' ' . $user->user_first_name);
+						$this->session->set_flashdata('success', $this->lang->line('welcome') . ' ' . $user->user_name);
 						$this->create_session($user->user_id);
 					} else {
 						$this->session->set_flashdata('error', $this->lang->line('save_error'));
