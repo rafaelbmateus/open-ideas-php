@@ -19,9 +19,12 @@
   <!-- For Windows Phone -->
 
 
-  <!-- CORE CSS-->
+  <!-- Core css -->
   <link href="<?php echo base_url(); ?>assets/plugins/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="<?php echo base_url(); ?>assets/plugins/materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+  <!-- Font awesome-->
+  <link href="<?php echo base_url(); ?>assets/plugins/font-awesome-4.5.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" media="screen,projection">
 
   <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
   <link href="<?php echo base_url(); ?>assets/plugins/materialize/css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
