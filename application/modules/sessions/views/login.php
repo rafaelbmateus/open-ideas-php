@@ -41,7 +41,7 @@
 
   <div id="login-page" class="row">
     <div class="col s12 z-depth-4 card-panel">
-      <form class="login-form" action="<?php echo base_url();?>users/add" method="POST">
+      <form class="login-form" action="<?php echo base_url();?>sessions/login" method="POST">
 
         <div class="row">
           <div class="input-field col s12 center">
@@ -76,7 +76,7 @@
         </div>
         <div class="row">
           <div class="input-field col s6 m6 l6">
-            <p class="margin medium-small"><a href="<?php echo base_url();?>sessions/register">Cadastrar-se agora!</a></p>
+            <p class="margin medium-small"><a href="<?php echo base_url();?>sessions/goto_register">Cadastrar-se agora!</a></p>
           </div>
           <div class="input-field col s6 m6 l6">
               <p class="margin right-align medium-small"><a href="#">Esqueceu sua senha?</a></p>

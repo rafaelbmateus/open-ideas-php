@@ -42,13 +42,20 @@
 
   <div id="login-page" class="row">
     <div class="col s12 z-depth-4 card-panel">
-      <form class="login-form" action="<?php echo base_url();?>users/add" method="POST">
+      <form class="login-form" action="<?php echo base_url();?>sessions/register" method="POST">
 
         <div class="row">
           <div class="input-field col s12 center">
             <h4>Register</h4>
             <p class="center">Junte-se a nossa comunidade agora!</p>
           </div>
+        </div>
+        <div>
+          <?php if ($this->session->flahdata('error')){ ?>
+            <div>
+              <?php echo $this->session->flahdata('error') ?>
+            </div>
+          <?php } ?>
         </div>
         <div class="row margin">
           <div class="input-field col s12">

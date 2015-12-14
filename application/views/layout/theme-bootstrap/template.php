@@ -1,5 +1,5 @@
 <!-- load header -->
-<?php $this->load->view($this->config->item ( 'app_layout' ).'header')?>
+<?php $this->load->view($this->config->item ( 'app_layout' ) . 'header')?>
 
 <!-- Main -->
 <div class="container-fluid">
@@ -7,4 +7,4 @@
 </div>
 
 <!-- load header -->
-<?php $this->load->view($this->config->item ( 'app_layout' ).'footer')?>
+<?php $this->load->view($this->config->item ( 'app_layout' ) . 'footer')?>
