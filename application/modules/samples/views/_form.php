@@ -3,8 +3,8 @@
 <?php print_r($item); ?>
 <div class="row">
 	<div class="col-md-4">
-		<label class="control-label">Nome</label>
-    <input name="sample_name" type="text" class="form-control" placeholder="Nome..." maxlength="255" required
+		<label class="control-label"><?php echo $this->lang->line('name');?></label>
+    <input name="sample_name" type="text" class="form-control" maxlength="255" required
 			value="<?php if (isset($item)) echo $item[0]->sample_name; ?>"/>
 	</div>
 </div>
@@ -12,10 +12,10 @@
 <br>
 
 <div class="row">
-	<div class="col-md-1">
-		<a class="btn btn-danger" href="<?php echo base_url() . $module; ?>">Cancel</a>
+	<div class="col-md-4">
+		<a class="btn btn-danger" href="<?php echo base_url() . $module; ?>"><?php echo $this->lang->line('cancel');?></a>
 	</div>
-	<div class="col-md-1">
-		<button type="submit" class="btn btn-primary">Save</button>
+	<div class="col-md-4">
+		<button type="submit" class="btn btn-primary"><?php echo $this->lang->line('save');?></button>
 	</div>
 </div>

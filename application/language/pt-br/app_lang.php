@@ -35,5 +35,7 @@ $lang['delete'] = "Excluir";
 $lang['name'] = "Nome";
 $lang['first_name'] = "Primeiro nome";
 $lang['last_name'] = "Ultimo nome";
-$lang['date'] = "data";
+$lang['date'] = "Data";
+$lang['save'] = "Salvar";
+$lang['cancel'] = "Cancelar";
 // Tools - end
