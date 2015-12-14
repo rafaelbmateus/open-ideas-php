@@ -14,16 +14,16 @@
                     </div>
                     <div class="col col s8 m8 l8">
                         <ul id="profile-dropdown" class="dropdown-content">
-                            <li><a href="#"><i class="mdi-action-face-unlock"></i><?php echo $this->lang->line('title');?></a>
+                            <li><a href="#"><i class="mdi-action-face-unlock"></i><?php echo $this->lang->line('profile');?></a>
                             </li>
-                            <li><a href="#"><i class="mdi-action-settings"></i> Config</a>
+                            <li><a href="#"><i class="mdi-action-settings"></i><?php echo $this->lang->line('config');?></a>
                             </li>
-                            <li><a href="#"><i class="mdi-communication-live-help"></i> Ajuda</a>
+                            <li><a href="#"><i class="mdi-communication-live-help"></i><?php echo $this->lang->line('help');?></a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="<?php echo base_url();?>sessions/lock"><i class="mdi-action-lock-outline"></i> Lock</a>
+                            <li><a href="<?php echo base_url();?>sessions/lock"><i class="mdi-action-lock-outline"></i><?php echo $this->lang->line('lock');?></a>
                             </li>
-                            <li><a href="<?php echo base_url();?>sessions/logout"><i class="mdi-hardware-keyboard-tab"></i> Sair</a>
+                            <li><a href="<?php echo base_url();?>sessions/logout"><i class="mdi-hardware-keyboard-tab"></i><?php echo $this->lang->line('logout');?></a>
                             </li>
                         </ul>
                         <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">John Doe<i class="mdi-navigation-arrow-drop-down right"></i></a>

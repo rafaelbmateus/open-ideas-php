@@ -4,6 +4,7 @@ class Samples extends CI_Controller {
 	private $module = 'samples';
 	public function __construct() {
 		parent::__construct ();
+		$this->lang->load("app","pt-br");
 		//date_default_timezone_set ( 'America/Sao_Paulo' );
 		//TODO, Alterar nome do Model
 		$this->load->model ( 'Sample' );
