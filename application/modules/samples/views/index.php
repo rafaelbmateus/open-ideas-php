@@ -1,4 +1,4 @@
-<a href="<?php echo base_url() . $module . '/create'; ?>" class="btn btn-primary"><i class="fa fa-plus"></i><?php echo $this->lang->line('new');?></a>
+<a href="<?php echo base_url() . $module . '/create'; ?>" class="btn cyan waves-effect waves-light"><i class="fa fa-plus"></i> <?php echo $this->lang->line('new');?></a>
 
 <table class="table table-striped table-bordered">
 	<thead>
@@ -6,7 +6,6 @@
 			<th width="5%">#</th>
 			<th width="70%">Nome</th>
 			<th width="2%">Editar</th>
-			<th width="2%">Excluir</th>
 		</tr>
 	</thead>
 	<?php
@@ -16,11 +15,7 @@
 			echo '<td>' . $item->sample_id . '</td>';
 			echo '<td>' . $item->sample_name . '</td>';
 			echo '<td>';
-			echo '<a href="' . base_url () . 'users/edit/' . $item->sample_id . '" class="btn btn-success tip-top" title="Editar"><i class="glyphicon glyphicon-pencil"></i></a>';
-			echo '</td>';
-			echo '<td>';
-			echo '<a href="#modal-delete" role="button" data-toggle="modal" register="' . $item->sample_id . '" class="btn btn-danger tip-top" title="Excluir registro"><i class="glyphicon glyphicon-remove glyphicon-white"></i></a>';
-			echo '</td>';
+			echo '<a href="' . base_url () . $module . '/edit/' . $item->sample_id . '" class="btn cyan waves-effect waves-light" title="Edit"><i class="fa fa-pencil"></i></a>';
 			echo '</td>';
 			echo '</tr>';
 		}
