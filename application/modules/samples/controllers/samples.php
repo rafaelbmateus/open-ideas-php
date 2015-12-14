@@ -43,9 +43,9 @@ class Samples extends CI_Controller {
 			//TODO, Alterar nome do Model
 			//TODO, Alterar assinatura do método
 			if ($this->Sample->add ( $name, date ( "Y-m-d H:i:s" ) ) ) {
-				$this->session->set_flashdata ( 'success', 'Successfully registered record!' );
+				$this->session->set_flashdata ( 'success', $this->lang->line('save_success') );
 			} else {
-				$this->session->set_flashdata ( 'error', 'Error registering the record.' );
+				$this->session->set_flashdata ( 'error', $this->lang->line('save_error') );
 			}
 		}
 		redirect ( base_url () . $this->module );
@@ -72,9 +72,9 @@ class Samples extends CI_Controller {
 
 			//TODO, Alterar nome do Model
 			if ($this->Sample->update ( $id, $name, date ( "Y-m-d H:i:s" ) )) {
-				$this->session->set_flashdata ( 'success', 'Successfully updated record!' );
+				$this->session->set_flashdata ( 'success', $this->lang->line('update_success') );
 			} else {
-				$this->session->set_flashdata ( 'error', 'Error updating the record' );
+				$this->session->set_flashdata ( 'error', $this->lang->line('update_error') );
 			}
 		}
 		redirect ( base_url () . $this->module );
@@ -84,9 +84,9 @@ class Samples extends CI_Controller {
 		if ($id) {
 			//TODO, Alterar nome do Model
 			if ($this->Sample->delete ( $id )) {
-				$this->session->set_flashdata ( 'success', 'Successfully deleted record!' );
+				$this->session->set_flashdata ( 'success', $this->lang->line('delete_success') );
 			} else {
-				$this->session->set_flashdata ( 'error', 'Error deleting the record.' );
+				$this->session->set_flashdata ( 'error', $this->lang->line('delete_error') );
 			}
 		}
 		redirect ( base_url () . $this->module );

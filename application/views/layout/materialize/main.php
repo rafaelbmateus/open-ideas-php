@@ -1,3 +1,5 @@
+<?php $this->load->view($this->config->item ( 'app_layout' ). 'toast'); ?>
+
 <!-- start main -->
 <div id="main">
   <!-- START WRAPPER -->

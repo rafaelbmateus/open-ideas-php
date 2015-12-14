@@ -33,39 +33,30 @@
 </head>
 
 <body>
-  <!-- Start Page Loading -->
+  <!-- Page Loading - start -->
   <div id="loader-wrapper">
       <div id="loader"></div>
       <div class="loader-section section-left"></div>
       <div class="loader-section section-right"></div>
   </div>
-  <!-- End Page Loading -->
+  <!-- Page Loading - end -->
 
-  <!-- START HEADER -->
   <header id="header" class="page-topbar">
-        <!-- start header nav-->
+        <!-- header nav - start -->
         <div class="navbar-fixed">
             <nav class="cyan">
                 <div class="nav-wrapper">
                     <h1 class="logo-wrapper"><a href="index.html" class="brand-logo darken-1"><img src="<?php echo base_url(); ?>assets/plugins/materialize/images/materialize-logo.png" alt="materialize logo"></a> <span class="logo-text">Materialize</span></h1>
                     <ul class="right hide-on-med-and-down">
-                        <li class="search-out">
-                            <input type="text" class="search-out-text">
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="waves-effect waves-block waves-light show-search"><i class="mdi-action-search"></i></a>
-                        </li>
-                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a>
-                        </li>
-                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light"><i class="mdi-social-notifications"></i></a>
-                        </li>
+                        <li class="search-out"><input type="text" class="search-out-text"></li>
+                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light show-search"><i class="mdi-action-search"></i></a></li>
+                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a></li>
+                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light"><i class="mdi-social-notifications"></i></a></li>
                         <!-- Dropdown Trigger -->
-                        <li><a href="#" data-activates="chat-out" class="waves-effect waves-block waves-light chat-collapse"><i class="mdi-communication-chat"></i></a>
-                        </li>
+                        <!--<li><a href="#" data-activates="chat-out" class="waves-effect waves-block waves-light chat-collapse"><i class="mdi-communication-chat"></i></a></li>-->
                     </ul>
                 </div>
             </nav>
         </div>
-        <!-- end header nav-->
+        <!-- header nav - end-->
   </header>
-  <!-- END HEADER -->

@@ -1,5 +1,7 @@
 <a href="<?php echo base_url() . $module . '/create'; ?>" class="btn cyan waves-effect waves-light"><i class="fa fa-plus"></i> <?php echo $this->lang->line('new');?></a>
 
+<a class="waves-effect waves-light btn cyan" onclick="Materialize.toast('I am a toast!', 3000, 'rounded')">Round Toast!</a>
+
 <table class="table table-striped table-bordered">
 	<thead>
 		<tr>
