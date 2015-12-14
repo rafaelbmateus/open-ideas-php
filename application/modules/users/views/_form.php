@@ -13,8 +13,8 @@
 			</div>
 			<div class="row">
 				<div class="input-field col s12">
-					<input name="job" type="text" required
-						value="<?php if (isset($item)) echo $item->user_job; ?>"/>
+					<input name="job_id" type="text" required
+						value="<?php if (isset($item)) echo $item->job_id; ?>"/>
 					<label><?php echo $this->lang->line('job');?></label>
 				</div>
 			</div>

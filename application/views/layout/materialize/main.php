@@ -30,23 +30,18 @@
                     </div>
                 </div>
             </li>
-            <li class="bold"><a href="#" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i><?php echo $this->lang->line('challanges');?></a></li>
-            <li class="bold"><a href="#" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i><?php echo $this->lang->line('ideas');?></a></li>
+            <li class="bold"><a href="#" class="waves-effect waves-cyan"><i class="fa fa-bullseye"></i><?php echo $this->lang->line('challanges');?></a></li>
+            <li class="bold"><a href="#" class="waves-effect waves-cyan"><i class="fa fa-diamond"></i><?php echo $this->lang->line('ideas');?></a></li>
             <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
-                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-invert-colors"></i>Menu</a>
+                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="fa fa-cog"></i><?php echo $this->lang->line('configuration');?></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="#">Menu 1</a>
-                                </li>
-                                <li><a href="#">Menu 2</a>
-                                </li>
-                                <li><a href="#">Menu 3</a>
-                                </li>
-                                <li><a href="#">Menu 4</a>
-                                </li>
-                                <li><a href="#">Menu 5</a>
-                                </li>
+                                <li><a href="<?php echo base_url() . 'users';?>"><?php echo $this->lang->line('users');?></a></li>
+                                <li><a href="<?php echo base_url() . 'jobs';?>"><?php echo $this->lang->line('jobs');?></a></li>
+                                <li><a href="<?php echo base_url() . 'user_types';?>"><?php echo $this->lang->line('user_types');?></a></li>
+                                <li><a href="#">Menu 4</a></li>
+                                <li><a href="#">Menu 5</a></li>
                             </ul>
                         </div>
                     </li>

@@ -27,6 +27,10 @@ $lang['email_error'] = "Usuário já cadastrado";
 // Menu - start
 $lang['challanges'] = "Desafios";
 $lang['ideas'] = "Ideias";
+$lang['configuration'] = "Configuração";
+$lang['users'] = "Usuários";
+$lang['user_types'] = "Tipos de usuários";
+$lang['jobs'] = "Serviços";
 // Menu - end
 
 // Menu config profile - start
