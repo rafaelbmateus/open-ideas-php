@@ -53,12 +53,12 @@ class User_types extends CI_Controller{
 	}
 	public function update(){
 		$this->load->library ('form_validation');
-		$this->form_validation->set_rules('User_type_name', 'User_type name', 'trim|required');
+		$this->form_validation->set_rules('type_name', 'type name', 'trim|required');
 		if ($this->form_validation->run() == false) {
 			$this->session->set_flashdata( 'error', (validation_errors() ? validation_errors() : false));
 		}else{
-			$id = $this->input->post('User_type_id', true);
-			$name = $this->input->post('User_type_name', true);
+			$id = $this->input->post('type_id', true);
+			$name = $this->input->post('type_name', true);
 
 			if ($this->User_type->update($id, $name, date('Y-m-d H:i:s'))){
 				$this->session->set_flashdata('success', $this->lang->line('update_success'));
