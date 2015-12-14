@@ -38,10 +38,8 @@
                         <div class="collapsible-body">
                             <ul>
                                 <li><a href="<?php echo base_url() . 'users';?>"><?php echo $this->lang->line('users');?></a></li>
-                                <li><a href="<?php echo base_url() . 'jobs';?>"><?php echo $this->lang->line('jobs');?></a></li>
                                 <li><a href="<?php echo base_url() . 'user_types';?>"><?php echo $this->lang->line('user_types');?></a></li>
-                                <li><a href="#">Menu 4</a></li>
-                                <li><a href="#">Menu 5</a></li>
+                                <li><a href="<?php echo base_url() . 'jobs';?>"><?php echo $this->lang->line('jobs');?></a></li>
                             </ul>
                         </div>
                     </li>
