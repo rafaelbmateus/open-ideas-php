@@ -41,8 +41,7 @@
 
   <div id="login-page" class="row">
     <div class="col s12 z-depth-4 card-panel">
-      <form class="login-form" action="<?php echo base_url() . $module . '/register';?>" method="post">
-
+      <form class="login-form" action="<?php echo base_url() . $module . '/add';?>" method="post">
         <div class="row">
           <div class="input-field col s12 center">
             <h4>Register</h4>
@@ -63,11 +62,12 @@
           <div class="input-field col s10">
             <select name="job_id" required>
               <option value="" disabled selected>Choose your option</option>
-              <option value="1">admin</option>
-              <option value="2">corporate</option>
-              <option value="3">Option 3</option>
+              <?php if (isset ($jobs)) { ?>
+            		<?php foreach ( $jobs as $job ) { ?>
+                  <option value="<?php echo $job->job_id; ?>"><?php echo $this->lang->line($job->job_name); ?></option>
+                <?php } ?>
+              <?php } ?>
             </select>
-
           </div>
         </div>
         <div class="row margin">

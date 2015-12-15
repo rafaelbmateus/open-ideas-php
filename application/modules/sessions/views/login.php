@@ -75,7 +75,7 @@
         </div>
         <div class="row">
           <div class="input-field col s6 m6 l6">
-            <p class="margin medium-small"><a href="<?php echo base_url();?>sessions/goto_register"><?php echo $this->lang->line('register_now');?></a></p>
+            <p class="margin medium-small"><a href="<?php echo base_url();?>sessions/register"><?php echo $this->lang->line('register_now');?></a></p>
           </div>
           <div class="input-field col s6 m6 l6">
               <p class="margin right-align medium-small"><a href="#"><?php echo $this->lang->line('forgot_password');?></a></p>

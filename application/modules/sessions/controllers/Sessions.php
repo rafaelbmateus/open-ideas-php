@@ -14,11 +14,12 @@ class Sessions extends CI_Controller{
 			$this->load->view('login', $this->data);
 		}
 	}
-	public function goto_register(){
-
+	public function register(){
+		$this->load->model ('jobs/Job');
+		$this->data['jobs'] = $this->Job->get();
 		$this->load->view('register', $this->data);
 	}
-	public function register(){
+	public function add(){
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('name', 'Nome', 'trim|required');
 		$this->form_validation->set_rules('email', 'E-mail', 'trim|required');
@@ -54,7 +55,7 @@ class Sessions extends CI_Controller{
 				$this->session->set_flashdata('error', $this->lang->line('password_error'));
 				//$this->load->view('register');
 			}
-			redirect(base_url() . $this->module);
+			redirect(base_url());
 		}
 	}
 	public function login(){
@@ -73,7 +74,7 @@ class Sessions extends CI_Controller{
 			}else{
 				$this->session->set_flashdata('success', $this->lang->line('login_incorrect') . ' ' . $user->user_name);
 			}
-			redirect(base_url() . $this->module);
+			redirect(base_url());
 		}
 	}
 	public function create_session($user_id){
@@ -89,10 +90,11 @@ class Sessions extends CI_Controller{
 		$id = $this->session->userdata('user_id');
 		$this->load->model('users/User');
 		$this->data['user'] = $this->User->get($id);
+		$this->session->sess_destroy();
 		$this->load->view('lock', $this->data);
 	}
 	public function logout(){
 		$this->session->sess_destroy();
-		redirect(base_url() . $this->module);
+		redirect(base_url());
 	}
 }

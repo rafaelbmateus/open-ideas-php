@@ -3,6 +3,7 @@ class Users extends CI_Controller{
 	private $module = 'users';
 	public function __construct(){
 		parent::__construct();
+		if(!$this->session->userdata('user_id')){redirect(base_url());}
 		//date_default_timezone_set ( 'America/Sao_Paulo' );
 		$this->load->model('User');
 		$this->data['module'] = $this->module;

@@ -4,6 +4,7 @@ class Samples extends CI_Controller{
 	private $module = 'samples';
 	public function __construct(){
 		parent::__construct();
+		if(!$this->session->userdata('user_id')){redirect(base_url());}
 		//date_default_timezone_set ( 'America/Sao_Paulo' );
 		$this->load->model('Sample');
 		$this->data['module'] = $this->module;

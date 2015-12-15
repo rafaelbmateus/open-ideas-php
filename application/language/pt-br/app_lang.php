@@ -50,13 +50,13 @@ $lang['delete_success'] = "Registro excluido.";
 $lang['delete_error'] = "Ops, houve um erro ao excluir o registro. Estamos de olho nisso!";
 // Controller - end
 
-// Profiles - start
+// Jobs - start
 $lang['admin'] = "Administrador";
 $lang['corporate'] = "Empresa";
 $lang['student'] = "Estudante";
 $lang['researcher'] = "Pesquisador";
 $lang['developer'] = "Desenvolvedor";
-// Profiles - end
+// Jobs - end
 
 // Tools - start
 $lang['new'] = "Novo";
