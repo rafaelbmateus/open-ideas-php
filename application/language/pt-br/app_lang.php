@@ -65,4 +65,6 @@ $lang['delete'] = "Excluir";
 $lang['date'] = "Data";
 $lang['save'] = "Salvar";
 $lang['cancel'] = "Cancelar";
+$lang['email_invalid'] = "inválido";
+$lang['email_valid'] = "ok";
 // Tools - end

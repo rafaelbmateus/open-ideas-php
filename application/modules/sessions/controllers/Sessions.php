@@ -15,7 +15,7 @@ class Sessions extends CI_Controller{
 		}
 	}
 	public function register(){
-		$this->load->model ('jobs/Job');
+		$this->load->model('jobs/Job');
 		$this->data['jobs'] = $this->Job->get();
 		$this->load->view('register', $this->data);
 	}

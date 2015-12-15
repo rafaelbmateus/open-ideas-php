@@ -51,26 +51,26 @@
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-social-person-outline prefix"></i>
-            <input id="email" name="email" type="text">
-            <label for="email" class="center-align"><?php echo $this->lang->line('email');?></label>
+            <input id="email" name="email" type="email" required="required" class="validate">
+            <label for="email" data-error="<?php echo $this->lang->line('email_invalid');?>" data-success="<?php echo $this->lang->line('email_valid');?>" class="center-align"><?php echo $this->lang->line('email');?></label>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
-            <input id="password" name="password" type="password">
+            <input id="password" name="password" type="password" required="required">
             <label for="password"><?php echo $this->lang->line('password');?></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12 m12 l12  login-text">
-              <input type="checkbox" id="remember-me" />
+              <input id="remember-me" name="remember" type="checkbox"/>
               <label for="remember-me"><?php echo $this->lang->line('remember');?></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <button type="submit" class="btn waves-effect waves-light col s12"><?php echo $this->lang->line('login');?></button>
+            <button type="submit" class="btn waves-effect waves-light cyan col s12"><?php echo $this->lang->line('login');?></button>
           </div>
         </div>
         <div class="row">
