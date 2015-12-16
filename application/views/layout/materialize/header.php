@@ -18,7 +18,6 @@
   <meta name="msapplication-TileImage" content="<?php echo base_url(); ?>assets/plugins/materialize/images/favicon/mstile-144x144.png">
   <!-- For Windows Phone -->
 
-
   <!-- Core css -->
   <link href="<?php echo base_url(); ?>assets/plugins/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="<?php echo base_url(); ?>assets/plugins/materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
@@ -50,7 +49,7 @@
         <div class="navbar-fixed">
             <nav class="cyan">
                 <div class="nav-wrapper">
-                    <h1 class="logo-wrapper"><a href="index.html" class="brand-logo darken-1"><img src="<?php echo base_url(); ?>assets/plugins/materialize/images/materialize-logo.png" alt="materialize logo"></a> <span class="logo-text">Materialize</span></h1>
+                    <h1 class="logo-wrapper"><a href="<?php echo base_url(); ?>" class="brand-logo darken-1"><img src="<?php echo base_url(); ?>assets/plugins/materialize/images/materialize-logo.png" alt="materialize logo"></a> <span class="logo-text">Materialize</span></h1>
                     <ul class="right hide-on-med-and-down">
                         <li class="search-out"><input type="text" class="search-out-text"></li>
                         <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light show-search"><i class="mdi-action-search"></i></a></li>

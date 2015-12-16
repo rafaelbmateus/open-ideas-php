@@ -44,15 +44,15 @@
       <form class="login-form" action="<?php echo base_url() . $module . '/add';?>" method="post">
         <div class="row">
           <div class="input-field col s12 center">
-            <h4>Register</h4>
-            <p class="center">Junte-se a nossa comunidade agora!</p>
+            <img src="<?php echo base_url(); ?>assets/plugins/materialize/images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
+            <p class="center"><?php echo $this->lang->line('join_us'); ?></p>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-social-person-outline prefix"></i>
             <input name="name" type="text">
-            <label for="name" class="center-align">Nome</label>
+            <label for="name" class="center-align"><?php echo $this->lang->line('name'); ?></label>
           </div>
         </div>
         <div class="row margin">
@@ -61,7 +61,7 @@
           </div>
           <div class="input-field col s10">
             <select name="job_id" required>
-              <option value="" disabled selected>Choose your option</option>
+              <option value="" disabled selected><?php echo $this->lang->line('choice_job'); ?></option>
               <?php if (isset ($jobs)) { ?>
             		<?php foreach ( $jobs as $job ) { ?>
                   <option value="<?php echo $job->job_id; ?>"><?php echo $this->lang->line($job->job_name); ?></option>
@@ -74,29 +74,29 @@
           <div class="input-field col s12">
             <i class="mdi-communication-email prefix"></i>
             <input name="email" type="email">
-            <label for="email" class="center-align">E-mail</label>
+            <label for="email" class="center-align"><?php echo $this->lang->line('email'); ?></label>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
             <input name="password" type="password">
-            <label for="password">Senha</label>
+            <label for="password"><?php echo $this->lang->line('password'); ?></label>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
             <input name="password-again" type="password">
-            <label for="password-again">Repita a senha</label>
+            <label for="password-again"><?php echo $this->lang->line('password_again'); ?></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <button type="submit" class="btn waves-effect waves-light col s12">Registrar</button>
+            <button type="submit" class="btn waves-effect waves-light cyan col s12"><?php echo $this->lang->line('register'); ?></button>
           </div>
           <div class="input-field col s12">
-            <p class="margin center medium-small sign-up">Já tem uma conta? <a href="<?php echo base_url() . $module;?>">Login</a></p>
+            <p class="margin center medium-small sign-up"><?php echo $this->lang->line('have_account'); ?> <a href="<?php echo base_url() . $module;?>"><?php echo $this->lang->line('login'); ?></a></p>
           </div>
         </div>
       </form>

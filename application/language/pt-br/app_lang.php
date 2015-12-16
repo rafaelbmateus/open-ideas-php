@@ -2,12 +2,13 @@
 $lang['title'] = "Titulo";
 
 // Sessions - start
-$lang['welcome_again'] = "Bem-vindo";
+$lang['welcome'] = "Bem-vindo";
 $lang['welcome_again'] = "Que bom revê-lo";
 // Session - end
 
 // Page login - start
 $lang['community'] = "Comunidade";
+$lang['join_us'] = "Junte-se a nossa comunidade agora!";
 $lang['name'] = "Nome";
 $lang['first_name'] = "Primeiro nome";
 $lang['last_name'] = "Ultimo nome";
@@ -17,11 +18,14 @@ $lang['password'] = "Senha";
 $lang['password_again'] = "Senha novamente";
 $lang['remember'] = "Lembrar-me";
 $lang['login'] = "Entrar";
-$lang['register_now'] = "Cadastrar-se!";
+$lang['register_now'] = "Abrir uma conta";
 $lang['forgot_password'] = "Lembrar senha";
 $lang['password_error'] = "Senhas diferentes";
 $lang['login_incorrect'] = "Usuário ou seja incorretos, tente novamente";
 $lang['email_error'] = "Usuário já cadastrado";
+$lang['choice_job'] = "Escolha seu perfil";
+$lang['register'] = "Cadastro";
+$lang['have_account'] = "Já tem uma conta?";
 // Page login - end
 
 // Menu - start
@@ -52,7 +56,7 @@ $lang['delete_error'] = "Ops, houve um erro ao excluir o registro. Estamos de ol
 
 // Jobs - start
 $lang['admin'] = "Administrador";
-$lang['corporate'] = "Empresa";
+$lang['corporate'] = "Empresário";
 $lang['student'] = "Estudante";
 $lang['researcher'] = "Pesquisador";
 $lang['developer'] = "Desenvolvedor";
