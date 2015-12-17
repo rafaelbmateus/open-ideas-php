@@ -7,7 +7,6 @@ class Session extends CI_Model {
 	public $is_deleted_field = 'is_deleted';
 
 	function login($email, $password) {
-		//TODO, login
 		$this->db->from($this->table);
 		$this->db->where('user_email', $email);
 		$this->db->where('user_password', $password);

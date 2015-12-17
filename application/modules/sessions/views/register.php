@@ -84,13 +84,6 @@
             <label for="password"><?php echo $this->lang->line('password'); ?></label>
           </div>
         </div>
-        <div class="row margin">
-          <div class="input-field col s12">
-            <i class="mdi-action-lock-outline prefix"></i>
-            <input name="password-again" type="password">
-            <label for="password-again"><?php echo $this->lang->line('password_again'); ?></label>
-          </div>
-        </div>
         <div class="row">
           <div class="input-field col s12">
             <button type="submit" class="btn waves-effect waves-light cyan col s12"><?php echo $this->lang->line('register'); ?></button>

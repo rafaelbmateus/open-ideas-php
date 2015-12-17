@@ -8,14 +8,7 @@ class Sessions extends CI_Controller{
 		$this->data['module'] = $this->module;
 	}
 	public function index(){
-		if($this->session->userdata('user_id')){
-			$this->data['module'] = 'challenges';
-			$this->data ['view'] = 'challenges/index';
-			$this->load->view ( $this->config->item ( 'app_layout' ) . 'template', $this->data );
-			//redirect(base_url() . 'challenges');
-		}else{
-			$this->load->view('login', $this->data);
-		}
+		$this->load->view('login', $this->data);
 	}
 	public function register(){
 		$this->load->model('jobs/Job');
@@ -28,7 +21,6 @@ class Sessions extends CI_Controller{
 		$this->form_validation->set_rules('email', 'E-mail', 'trim|required');
 		$this->form_validation->set_rules('job_id', 'Tipo', 'trim|required');
 		$this->form_validation->set_rules('password', 'Senha', 'trim|required');
-		$this->form_validation->set_rules('password-again', 'Senha novamente', 'trim|required');
 
 		if ($this->form_validation->run() == false){
 			$this->session->set_flashdata('error', (validation_errors() ? validation_errors() : false));
@@ -38,27 +30,20 @@ class Sessions extends CI_Controller{
 			$email = $this->input->post('email', true);
 			$job = $this->input->post('job_id', true);
 			$password = md5($this->input->post('password', true));
-			$password_again = md5($this->input->post('password-again', true));
-			if ($password == $password_again){
-				$this->load->model('users/User');
-				if (!$this->User->getWhere('user_email', $email)){
-					if ($this->User->add($name, $email, $job, '2', $password, date('Y-m-d H:i:s'))){
-						$user = $this->User->getWhere('user_email', $email);
-						$this->session->set_flashdata('success', $this->lang->line('welcome') . ' ' . $user->user_name);
-						$this->create_session($user->user_id);
-					} else {
-						$this->session->set_flashdata('error', $this->lang->line('save_error'));
-						//$this->load->view('register');
-					}
-				}else{
-					$this->session->set_flashdata('error', $this->lang->line('email_error'));
-					//$this->load->view('register');
+
+			$this->load->model('users/User');
+			if (!$this->User->getWhere('user_email', $email)){
+				if ($this->User->add($name, $email, $job, '2', $password, date('Y-m-d H:i:s'))){
+					$user = $this->User->getWhere('user_email', $email);
+					$this->session->set_flashdata('success', $this->lang->line('welcome') . ' ' . $user->user_name);
+					$this->create_session($user->user_id);
+				} else {
+					$this->session->set_flashdata('error', $this->lang->line('save_error'));
 				}
 			}else{
-				$this->session->set_flashdata('error', $this->lang->line('password_error'));
-				//$this->load->view('register');
+				$this->session->set_flashdata('error', $this->lang->line('email_error'));
 			}
-			redirect(base_url());
+			redirect(base_url() . 'app');
 		}
 	}
 	public function login(){
@@ -77,7 +62,7 @@ class Sessions extends CI_Controller{
 			}else{
 				$this->session->set_flashdata('success', $this->lang->line('login_incorrect') . ' ' . $user->user_name);
 			}
-			redirect(base_url());
+			redirect(base_url() . 'app');
 		}
 	}
 	public function create_session($user_id){
@@ -98,6 +83,6 @@ class Sessions extends CI_Controller{
 	}
 	public function logout(){
 		$this->session->sess_destroy();
-		redirect(base_url());
+		redirect(base_url() . 'app');
 	}
 }
