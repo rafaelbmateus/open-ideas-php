@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </li>
-            <li class="bold"><a href="#" class="waves-effect waves-cyan"><i class="fa fa-bullseye"></i><?php echo $this->lang->line('challanges');?></a></li>
+            <li class="bold"><a href="<?php echo base_url();?>" class="waves-effect waves-cyan"><i class="fa fa-bullseye"></i><?php echo $this->lang->line('challanges');?></a></li>
             <li class="bold"><a href="#" class="waves-effect waves-cyan"><i class="fa fa-diamond"></i><?php echo $this->lang->line('ideas');?></a></li>
             <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">

@@ -9,6 +9,7 @@ class Sessions extends CI_Controller{
 	}
 	public function index(){
 		if($this->session->userdata('user_id')){
+			$this->data['module'] = 'challenges';
 			$this->data ['view'] = 'challenges/index';
 			$this->load->view ( $this->config->item ( 'app_layout' ) . 'template', $this->data );
 			//redirect(base_url() . 'challenges');

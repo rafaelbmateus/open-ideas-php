@@ -11,7 +11,7 @@ $lang['community'] = "Comunidade";
 $lang['join_us'] = "Junte-se a nossa comunidade agora!";
 $lang['name'] = "Nome";
 $lang['first_name'] = "Primeiro nome";
-$lang['last_name'] = "Ultimo nome";
+$lang['last_name'] = "Sobre-nome";
 $lang['job'] = "Serviço";
 $lang['email'] = "E-mail";
 $lang['password'] = "Senha";
@@ -44,6 +44,10 @@ $lang['help'] = "Ajuda";
 $lang['lock'] = "Lock";
 $lang['logout'] = "Sair";
 // Menu config profile - end
+
+// Challenges - start
+$lang['description'] = "Descrição";
+// Challenges - end
 
 // Controller - start
 $lang['save_success'] = "Registro salvo com sucesso!";
