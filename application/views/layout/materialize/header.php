@@ -10,13 +10,13 @@
   <title><?php echo $this->config->item ( 'app_title' ); ?></title>
 
   <!-- Favicons-->
-  <link rel="icon" href="<?php echo base_url(); ?>assets/plugins/materialize/images/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" href="<?php echo base_url(); ?>assets/images/app/icons/oi/oi-xxxhdpi.png" sizes="32x32">
   <!-- Favicons-->
-  <link rel="apple-touch-icon-precomposed" href="<?php echo base_url(); ?>assets/plugins/materialize/images/favicon/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon-precomposed" href="<?php echo base_url(); ?>assets/images/app/icons/oi/oi-xxxhdpi.png">
   <!-- For iPhone -->
   <meta name="msapplication-TileColor" content="#00bcd4">
-  <meta name="msapplication-TileImage" content="<?php echo base_url(); ?>assets/plugins/materialize/images/favicon/mstile-144x144.png">
   <!-- For Windows Phone -->
+  <meta name="msapplication-TileImage" content="<?php echo base_url(); ?>assets/images/app/icons/oi/oi-xxxhdpi.png">
 
   <!-- Core css -->
   <link href="<?php echo base_url(); ?>assets/plugins/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
@@ -49,7 +49,8 @@
         <div class="navbar-fixed">
             <nav class="cyan">
                 <div class="nav-wrapper">
-                    <h1 class="logo-wrapper"><a href="<?php echo base_url(); ?>" class="brand-logo darken-1"><img src="<?php echo base_url(); ?>assets/plugins/materialize/images/materialize-logo.png" alt="materialize logo"></a> <span class="logo-text">Materialize</span></h1>
+                    <h1 class="logo-wrapper"><a href="<?php echo base_url(); ?>" class="brand-logo darken-1"><img width="30" height="35" src="<?php echo base_url(); ?>assets/images/app/icons/o/o-xxxhdpi.png" alt="materialize logo">pen <img width="12" height="33" src="<?php echo base_url(); ?>assets/images/app/icons/i/i-xxxhdpi.png" alt="materialize logo">dea</a></h1>
+                    <!-- <h1 class="logo-wrapper"><a href="<?php echo base_url(); ?>" class="brand-logo darken-1"><img src="<?php echo base_url(); ?>assets/plugins/materialize/images/materialize-logo.png" alt="materialize logo"></a> <span class="logo-text">Materialize</span></h1> -->
                     <ul class="right hide-on-med-and-down">
                         <li class="search-out"><input type="text" class="search-out-text"></li>
                         <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light show-search"><i class="mdi-action-search"></i></a></li>

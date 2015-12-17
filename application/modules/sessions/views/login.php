@@ -11,13 +11,13 @@
   <title><?php echo $this->config->item('app_title'); ?></title>
 
   <!-- Favicons-->
-  <link rel="icon" href="<?php echo base_url(); ?>assets/plugins/materialize/images/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" href="<?php echo base_url(); ?>assets/images/app/icons/oi/oi-xxxhdpi.png" sizes="32x32">
   <!-- Favicons-->
-  <link rel="apple-touch-icon-precomposed" href="<?php echo base_url(); ?>assets/plugins/materialize/images/favicon/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon-precomposed" href="<?php echo base_url(); ?>assets/images/app/icons/oi/oi-xxxhdpi.png">
   <!-- For iPhone -->
   <meta name="msapplication-TileColor" content="#00bcd4">
-  <meta name="msapplication-TileImage" content="<?php echo base_url(); ?>assets/plugins/materialize/images/favicon/mstile-144x144.png">
   <!-- For Windows Phone -->
+  <meta name="msapplication-TileImage" content="<?php echo base_url(); ?>assets/images/app/icons/oi/oi-xxxhdpi.png">
 
   <!-- CORE CSS-->
   <link href="<?php echo base_url(); ?>assets/plugins/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
@@ -44,7 +44,7 @@
       <form class="login-form" action="<?php echo base_url() . $module .'/login';?>" method="post">
         <div class="row">
           <div class="input-field col s12 center">
-            <img src="<?php echo base_url(); ?>assets/plugins/materialize/images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
+            <img src="<?php echo base_url(); ?>assets/images/app/icons/oi/oi-xxxhdpi.png" alt="Open Idea" class="circle responsive-img valign profile-image-login">
             <p class="center login-form-text"><?php echo $this->lang->line('community');?> Open Idea</p>
           </div>
         </div>
