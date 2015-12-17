@@ -1,6 +1,6 @@
 # Project Open Idea
 
-The idea is to build an open platform for innovation, bringing the academics to companies.<br><br>
+The idea is to build an open platform for innovation, bringing the academics to companies.<br>
 
 The plataform is a great idea, but the start will make the skeleton to work.
 
