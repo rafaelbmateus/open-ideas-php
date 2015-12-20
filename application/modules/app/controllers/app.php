@@ -6,12 +6,15 @@ class App extends CI_Controller{
 	}
   public function index(){
 		if($this->session->userdata('user_id')){
+			$this->load->model('challenges/Challenge');
+			$this->data['list'] = $this->Challenge->get();
 			$this->data['module'] = 'challenges';
 			$this->data ['view'] = 'challenges/index';
-			$this->load->view ( $this->config->item ( 'app_layout' ) . 'template', $this->data );
+			$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 			//redirect(base_url() . 'challenges');
 		}else{
-			$this->load->view('login', $this->data);
+			$this->data['module'] = 'sessions';
+			$this->load->view('sessions/login', $this->data);
 		}
 	}
 }

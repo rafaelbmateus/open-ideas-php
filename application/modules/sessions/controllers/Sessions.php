@@ -43,7 +43,7 @@ class Sessions extends CI_Controller{
 			}else{
 				$this->session->set_flashdata('error', $this->lang->line('email_error'));
 			}
-			redirect(base_url() . 'app');
+			redirect(base_url());
 		}
 	}
 	public function login(){
@@ -62,7 +62,7 @@ class Sessions extends CI_Controller{
 			}else{
 				$this->session->set_flashdata('success', $this->lang->line('login_incorrect') . ' ' . $user->user_name);
 			}
-			redirect(base_url() . 'app');
+			redirect(base_url());
 		}
 	}
 	public function create_session($user_id){
@@ -83,6 +83,6 @@ class Sessions extends CI_Controller{
 	}
 	public function logout(){
 		$this->session->sess_destroy();
-		redirect(base_url() . 'app');
+		redirect(base_url());
 	}
 }
