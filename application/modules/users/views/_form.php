@@ -11,11 +11,20 @@
 					<label><?php echo $this->lang->line('name');?></label>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row margin">
 				<div class="input-field col s12">
-					<input name="job_id" type="text" required
-						value="<?php if (isset($item)) echo $item->job_id; ?>"/>
-					<label><?php echo $this->lang->line('job');?></label>
+					<select name="job_id" required>
+						<option value="" disabled selected><?php echo $this->lang->line('choice_job'); ?></option>
+						<?php if (isset($jobs)){ ?>
+							<?php foreach ($jobs as $job ){ ?>
+									<?php if ($job->job_id == $item->job_id){ ?>
+										<option value="<?php echo $job->job_id; ?>" selected="selected"><?php echo $this->lang->line($job->job_name); ?></option>
+									<?php }else{ ?>
+										<option value="<?php echo $job->job_id; ?>"><?php echo $this->lang->line($job->job_name); ?></option>
+										<?php } ?>
+							<?php } ?>
+						<?php } ?>
+					</select>
 				</div>
 			</div>
 			<div class="row">
@@ -28,14 +37,8 @@
 			<div class="row">
 				<div class="input-field col s6">
 					<input name="password" type="password" required
-						value="<?php if (isset($item)) echo $item->user_password; ?>"/>
+						value="<?php //if (isset($item)) echo $item->user_password; ?>"/>
 					<label><?php echo $this->lang->line('password');?></label>
-				</div>
-
-				<div class="input-field col s6">
-					<input name="password-again" type="password" required
-						value="<?php if (isset($item)) echo $item->user_password; ?>"/>
-					<label><?php echo $this->lang->line('password_again');?></label>
 				</div>
 			</div>
 			<div class="row">

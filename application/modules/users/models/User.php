@@ -64,9 +64,12 @@ class User extends CI_Model{
 				'job_id' => $job_id,
 				'type_id' => $type_id,
 				'user_email' => $email,
-				'user_password' => $password,
 				$this->date_updated_field => $timestamp
 		);
+
+		if ($password){
+			$data['password'] = $password;
+		}
 		$this->db->where($this->primary_key, $id);
 		return $this->db->update($this->table, $data);
 	}
