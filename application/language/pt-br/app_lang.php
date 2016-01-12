@@ -28,6 +28,10 @@ $lang['register'] = "Cadastro";
 $lang['have_account'] = "Já tem uma conta?";
 // Page login - end
 
+// Application - start
+$lang['you_are_sure'] = "Você tem certeza?";
+// Application - end
+
 // Menu - start
 $lang['challanges'] = "Desafios";
 $lang['ideas'] = "Ideias";

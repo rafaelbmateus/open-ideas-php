@@ -1,7 +1,5 @@
 <?php
-//TODO, Atulizar nome da classe
 class Challenge extends CI_Model{
-	//TODO, Atulizar definições da tabela
 	public $table = 'tb_challenge';
 	public $primary_key = 'challenge_id';
 	public $date_created_field = 'created_at';
@@ -52,23 +50,22 @@ class Challenge extends CI_Model{
 			return $query->result();
 		}
 	}
-	//TODO, Atualizar parâmetros
-	public function add($name, $timestamp){
+	public function add($title, $description, $deadline, $user_id, $timestamp){
 		$data = array (
-				'user_id' => $user_id,
 				'challenge_title' => $title,
 				'challenge_description' => $description,
 				'challenge_deadline' => $deadline,
+				'user_id' => $user_id,
 				$this->date_created_field => $timestamp
 		);
 		return $this->db->insert($this->table, $data);
 	}
-	//TODO, Atualizar parâmetros
-	public function update($id, $name, $timestamp){
+	public function update($title, $description, $deadline, $user_id, $timestamp){
 		$data = array (
 				'challenge_title' => $title,
 				'challenge_description' => $description,
 				'challenge_deadline' => $deadline,
+				'user_id' => $user_id,
 				$this->date_updated_field => $timestamp
 		);
 		$this->db->where($this->primary_key, $id);

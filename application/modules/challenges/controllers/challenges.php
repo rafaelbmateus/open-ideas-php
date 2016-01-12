@@ -28,16 +28,17 @@ class Challenges extends CI_Controller{
 	}
 	public function add(){
 		$this->load->library('form_validation');
-		//TODO, validete field
-		$this->form_validation->set_rules('challenge_name', 'User name', 'trim|required');
+		$this->form_validation->set_rules('challenge_title', $this->lang->line('title'), 'trim|required');
+		$this->form_validation->set_rules('challenge_description', $this->lang->line('description'), 'trim|required');
 		if ($this->form_validation->run() == false) {
 			$this->session->set_flashdata('error', (validation_errors() ? validation_errors() : false));
 		} else {
-			//TODO, get field
-			$name = $this->input->post('challenge_name', TRUE );
+			$title = $this->input->post('challenge_title', TRUE );
+			$description = $this->input->post('challenge_description', TRUE );
+			$deadline = $this->input->post('challenge_deadline', TRUE );
+			$user_id = $this->session->userdata('user_id');
 
-			//TODO, replace method parameters
-			if ($this->Challenge->add($name, date('Y-m-d H:i:s'))){
+			if ($this->Challenge->add($title, $description, $deadline, $user_id, date('Y-m-d H:i:s'))){
 				$this->session->set_flashdata ('success', $this->lang->line('save_success'));
 			}else{
 				$this->session->set_flashdata ('error', $this->lang->line('save_error'));
