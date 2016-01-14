@@ -26,8 +26,7 @@
   <link href="<?php echo base_url(); ?>assets/plugins/font-awesome-4.5.0/css/font-awesome.min.css" type="text/css" rel="stylesheet" media="screen,projection">
 
   <!-- DataTables -->
-  <link href="../../../cdn.datatables.net/1.10.6/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" media="screen,projection">
-  <link href="<?php echo base_url(); ?>assets/plugins/datatables/datatables.min.css" rel="stylesheet"/>
+  <!-- <link href="<?php echo base_url(); ?>assets/plugins/datatables/datatables.min.css" rel="stylesheet"/> -->
 
   <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
   <link href="<?php echo base_url(); ?>assets/plugins/materialize/css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">

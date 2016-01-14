@@ -23,7 +23,8 @@
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins/chartist-js/chartist.min.js"></script>
 
   <!-- Data tables -->
-  <script src="<?php echo base_url();?>assets/plugins/datatables/datatables.min.js"></script>
+  <!-- <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script> -->
+  <!-- <script src="<?php echo base_url();?>assets/plugins/datatables/datatables.min.js"></script> -->
 
   <!-- plugins.js - Some Specific JS codes for Plugin Settings -->
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins.js"></script>

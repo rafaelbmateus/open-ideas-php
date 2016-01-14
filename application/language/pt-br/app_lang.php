@@ -30,6 +30,7 @@ $lang['have_account'] = "Já tem uma conta?";
 
 // Application - start
 $lang['you_are_sure'] = "Você tem certeza?";
+$lang['user'] = "Usuário";
 // Application - end
 
 // Menu - start

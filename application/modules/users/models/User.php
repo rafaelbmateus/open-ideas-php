@@ -35,7 +35,7 @@ class User extends CI_Model{
 		}
 		return $query;
 	}
-	function getWhere($field = "", $content = ""){
+	function get_where($field = "", $content = ""){
 		$this->db->from($this->table);
 		$this->db->where($field, $content);
 		$this->db->join('tb_job', 'tb_job.job_id = tb_user.job_id');

@@ -40,7 +40,7 @@ class Challenge extends CI_Model{
 		}
 		return $this->db->get()->result();
 	}
-	function getWhere($field = "", $content = ""){
+	function get_where($field = "", $content = ""){
 		$this->db->from($this->table);
 		$this->db->where($field, $content);
 		$query = $this->db->get();

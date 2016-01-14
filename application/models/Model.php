@@ -16,7 +16,7 @@ class Model extends CI_Model {
 		$this->db->where ( $this->is_deleted_field, NULL );
 		return $this->db->get ()->result ();
 	}
-	function getWhere($field = "", $value = "") {
+	function get_where($field = "", $value = "") {
 		$this->db->from ( $this->table );
 		$this->db->where ( $field, $value );
 		return $this->db->get ()->result ();
@@ -34,21 +34,21 @@ class Model extends CI_Model {
 	function add($name = "", $timestamp) {
 		$data = array (
 				'name' => $name,
-				$this->date_created_field => $timestamp 
+				$this->date_created_field => $timestamp
 		);
 		return $this->db->insert ( $this->table, $data );
 	}
 	function update($id, $name = "", $timestamp) {
 		$data = array (
 				'name' => $name,
-				$this->date_updated_field => $timestamp 
+				$this->date_updated_field => $timestamp
 		);
 		$this->db->where ( $this->primary_key, $id_bug );
 		return $this->db->update ( $this->table, $data );
 	}
 	function delete($id) {
 		$data = array (
-				$this->is_deleted_field => true 
+				$this->is_deleted_field => true
 		);
 		$this->db->where ( $this->primary_key, $id );
 		return $this->db->update ( $this->table, $data );

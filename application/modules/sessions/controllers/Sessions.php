@@ -32,9 +32,9 @@ class Sessions extends CI_Controller{
 			$password = md5($this->input->post('password', true));
 
 			$this->load->model('users/User');
-			if (!$this->User->getWhere('user_email', $email)){
+			if (!$this->User->get_where('user_email', $email)){
 				if ($this->User->add($name, $email, $job, '2', $password, date('Y-m-d H:i:s'))){
-					$user = $this->User->getWhere('user_email', $email);
+					$user = $this->User->get_where('user_email', $email);
 					$this->session->set_flashdata('success', $this->lang->line('welcome') . ' ' . $user->user_name);
 					$this->create_session($user->user_id);
 				} else {
@@ -67,7 +67,7 @@ class Sessions extends CI_Controller{
 	}
 	public function create_session($user_id){
 		$this->load->model('users/User');
-		$user = $this->User->getWhere('user_id', $user_id);
+		$user = $this->User->get_where('user_id', $user_id);
 		$this->session->set_userdata('user_id', $user->user_id);
 		$this->session->set_userdata('user_name', $user->user_name);
 		$this->session->set_userdata('user_email', $user->user_email);

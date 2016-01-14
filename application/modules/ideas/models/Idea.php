@@ -1,15 +1,13 @@
 <?php
-//TODO, Atulizar nome da classe
-class Job extends CI_Model{
-	//TODO, Atulizar definições da tabela
-	public $table = 'tb_job';
-	public $primary_key = 'job_id';
+class Idea extends CI_Model{
+	public $table = 'tb_idea';
+	public $primary_key = 'idea_id';
 	public $date_created_field = 'created_at';
 	public $date_updated_field = 'updated_at';
 	public $is_deleted_field = 'is_deleted';
 	public function __construct(){
 		parent::__construct();
-		$this->create_table();
+		//$this->create_table();
 	}
 	public function create_table(){
 		if (!$this->db->table_exists($this->table)){
@@ -52,18 +50,20 @@ class Job extends CI_Model{
 			return $query->result();
 		}
 	}
-	//TODO, Atualizar parâmetros
-	public function add($name, $timestamp){
+	public function add($title, $description, $user_id, $timestamp){
 		$data = array (
-				'job_name' => $name,
+				'idea_title' => $title,
+				'idea_description' => $description,
+				'user_id' => $user_id,
 				$this->date_created_field => $timestamp
 		);
 		return $this->db->insert($this->table, $data);
 	}
-	//TODO, Atualizar parâmetros
-	public function update($id, $name, $timestamp){
+	public function update($id, $title, $description, $user_id, $timestamp){
 		$data = array (
-				'job_name' => $name,
+				'idea_title' => $title,
+				'idea_description' => $description,
+				'user_id' => $user_id,
 				$this->date_updated_field => $timestamp
 		);
 		$this->db->where($this->primary_key, $id);

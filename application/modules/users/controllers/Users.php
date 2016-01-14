@@ -42,9 +42,9 @@ class Users extends CI_Controller{
 			$job = $this->input->post('job_id', true);
 			$password = md5($this->input->post('password', true));
 
-			if (!$this->User->getWhere('user_email', $email)){
+			if (!$this->User->get_where('user_email', $email)){
 				if ($this->User->add($name, $email, $job, '2', $password, date('Y-m-d H:i:s'))){
-					$user = $this->User->getWhere('user_email', $email);
+					$user = $this->User->get_where('user_email', $email);
 					$this->session->set_flashdata('success', $this->lang->line('welcome') . ' ' . $user->user_name);
 				} else {
 					$this->session->set_flashdata('error', $this->lang->line('save_error'));
