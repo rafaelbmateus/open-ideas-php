@@ -5,7 +5,7 @@
 		<div class="col s12 m7 l7">
 			<div class="card medium">
 				<div class="card-image">
-					<!-- <img src="images/sample-1.jpg" alt="sample">-->
+					<img src="<?php echo base_url(); ?>assets/images/areas/nanotecnologia.jpg">
 					<span class="card-title"><?php echo $item->challenge_title; ?></span>
 				</div>
 				<div class="card-content">
