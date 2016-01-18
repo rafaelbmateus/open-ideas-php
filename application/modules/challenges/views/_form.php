@@ -25,6 +25,7 @@
 					<input name="idea_attachment" type="file" />
 				</div>
 			</div>
+			<!-- TODO, data limite -->
 			<br><br>
 			<div class="row">
 				<div class="input-field col s5">

@@ -2189,10 +2189,9 @@ ul.staggered-list li {
     text-align: center; } }
 
 footer.page-footer {
-  position: absolute; /*Rafael Mateus*/
+  position: fixed; /*Rafael Mateus*/
 	bottom: 0; /*Rafael Mateus*/
   width:100%; /*Rafael Mateus*/
-  margin-top: 20px;
   padding-top: 20px;
   background-color: #00bcd4; }
   footer.page-footer .footer-copyright {
