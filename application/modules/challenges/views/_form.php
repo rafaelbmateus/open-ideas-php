@@ -17,6 +17,15 @@
 					<label><?php echo $this->lang->line('description');?></label>
 				</div>
 			</div>
+			<br>
+			<div class="file-field input-field col s12">
+				<input class="file-path" type="text" readonly />
+				<div class="btn">
+					<span><?php echo $this->lang->line('attachment');?></span>
+					<input name="idea_attachment" type="file" />
+				</div>
+			</div>
+			<br><br>
 			<div class="row">
 				<div class="input-field col s5">
 					<a class="btn cyan waves-effect waves-light" href="<?php echo base_url() . $module;?>"><?php echo $this->lang->line('cancel');?><i class="fa fa-times left"></i></a>

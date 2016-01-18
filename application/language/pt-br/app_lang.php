@@ -29,8 +29,12 @@ $lang['have_account'] = "Já tem uma conta?";
 // Page login - end
 
 // Application - start
+$lang['yes'] = "Sim";
+$lang['no'] = "Não";
 $lang['you_are_sure'] = "Você tem certeza?";
 $lang['user'] = "Usuário";
+$lang['public_idea'] = "Publicar";
+$lang['attachment'] = "Anexo";
 // Application - end
 
 // Menu - start
