@@ -30,7 +30,7 @@ class Samples extends CI_Controller{
 	public function add(){
 		$this->load->library('form_validation');
 		//TODO, validete field
-		$this->form_validation->set_rules('sample_name', 'User name', 'trim|required');
+		$this->form_validation->set_rules('sample_name', $this->lang->line('name'), 'trim|required');
 		if ($this->form_validation->run() == false) {
 			$this->session->set_flashdata('error', (validation_errors() ? validation_errors() : false));
 		} else {
@@ -59,7 +59,7 @@ class Samples extends CI_Controller{
 	}
 	public function update(){
 		$this->load->library ('form_validation');
-		$this->form_validation->set_rules('sample_name', 'Sample name', 'trim|required');
+		$this->form_validation->set_rules('sample_name', $this->lang->line('name'), 'trim|required');
 		if ($this->form_validation->run() == false) {
 			$this->session->set_flashdata( 'error', (validation_errors() ? validation_errors() : false));
 		}else{

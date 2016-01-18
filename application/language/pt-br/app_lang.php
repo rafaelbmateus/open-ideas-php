@@ -35,6 +35,8 @@ $lang['you_are_sure'] = "Você tem certeza?";
 $lang['user'] = "Usuário";
 $lang['public_idea'] = "Publicar";
 $lang['attachment'] = "Anexo";
+$lang['deadline'] = "Data Limite";
+$lang['choose'] = "Escolha";
 // Application - end
 
 // Menu - start
@@ -55,8 +57,13 @@ $lang['logout'] = "Sair";
 // Menu config profile - end
 
 // Challenges - start
+$lang['new_challenge'] = "Cadastrar novo desafio";
 $lang['description'] = "Descrição";
 // Challenges - end
+
+// Innovation Area - start
+$lang['innovation_area'] = "Área da inovação";
+// Innovation Area - end
 
 // Controller - start
 $lang['save_success'] = "Registro salvo com sucesso!";
