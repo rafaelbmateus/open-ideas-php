@@ -72,10 +72,11 @@
 <!-- area -->
 <div class="row">
 	<div class="input-field col s6">
-		<select>
+		<select name="area_id">
 			<option value="" disabled selected><?php //echo $this->lang->line('choose'); ?></option>
 			<?php if (isset($innovation_areas)){ ?>
 				<?php foreach ($innovation_areas as $area){ ?>
+					<!-- TODO, select area -->
 					<option value="<?php echo $area->innovation_area_id; ?>"><?php echo $area->area_name; ?></option>
 				<?php } ?>
 			<?php } ?>

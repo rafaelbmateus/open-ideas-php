@@ -7,6 +7,7 @@
 	</form>
 
 	<!-- button delete -->
+	<br>
 	<a class="btn-floating waves-effect waves-light modal-trigger red" href="#modal-delete"><i class="fa fa-trash"></i></a>
 </div>
 
@@ -27,3 +28,5 @@
 	</div>
 </div>
 <!-- modal delete - end -->
+
+<br><br><br>

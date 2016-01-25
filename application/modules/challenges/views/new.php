@@ -6,3 +6,5 @@
 		<?php $this->load->view('_form'); ?>
 	</form>
 </div>
+
+<br><br><br>

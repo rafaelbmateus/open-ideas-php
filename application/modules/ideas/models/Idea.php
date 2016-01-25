@@ -50,19 +50,29 @@ class Idea extends CI_Model{
 			return $query->result();
 		}
 	}
-	public function add($title, $description, $user_id, $timestamp){
+	public function add($title, $description, $solution, $differential, $necessary_skills, $target_group, $area_id, $user_id, $timestamp){
 		$data = array (
 				'idea_title' => $title,
 				'idea_description' => $description,
+				'idea_solution' => $solution,
+				'idea_differential' => $differential,
+				'idea_necessary_skills' => $necessary_skills,
+				'idea_target_group' => $target_group,
+				'area_id' => $area_id,
 				'user_id' => $user_id,
 				$this->date_created_field => $timestamp
 		);
 		return $this->db->insert($this->table, $data);
 	}
-	public function update($id, $title, $description, $user_id, $timestamp){
+	public function update($id, $title, $description, $solution, $differential, $necessary_skills, $target_group, $area_id, $user_id, $timestamp){
 		$data = array (
 				'idea_title' => $title,
 				'idea_description' => $description,
+				'idea_solution' => $solution,
+				'idea_differential' => $differential,
+				'idea_necessary_skills' => $necessary_skills,
+				'idea_target_group' => $target_group,
+				'area_id' => $area_id,
 				'user_id' => $user_id,
 				$this->date_updated_field => $timestamp
 		);
