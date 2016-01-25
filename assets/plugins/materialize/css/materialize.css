@@ -2194,6 +2194,7 @@ footer.page-footer {
 	bottom: 0; /*Rafael Mateus*/
   width:100%; /*Rafael Mateus*/
   padding-top: 20px;
+  z-index: 5; /*Rafael Mateus*/
   background-color: #00bcd4; }
   footer.page-footer .footer-copyright {
     overflow: hidden;
