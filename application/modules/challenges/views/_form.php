@@ -3,7 +3,7 @@
 
 <!-- area -->
 <div class="row">
-	<div class="input-field col s6">
+	<div class="input-field col s4">
 		<select>
 			<option value="" disabled selected><?php //echo $this->lang->line('choose'); ?></option>
 			<?php if (isset($innovation_areas)){ ?>
@@ -13,6 +13,12 @@
 			<?php } ?>
 		</select>
 		<label><?php echo $this->lang->line('innovation_area'); ?></label>
+	</div>
+
+	<!-- deadline -->
+	<div class="input-field col s3 offset-s4">
+		<input name="challenge_deadline" type="date" class="datepicker" required>
+		<label><?php echo $this->lang->line('deadline'); ?></label>
 	</div>
 </div>
 
@@ -30,13 +36,6 @@
 	<div class="input-field col s12">
 		<textarea name="challenge_description" class="materialize-textarea" length="255" maxlength="255" required><?php if (isset($item)) echo $item->challenge_description; ?></textarea>
 		<label><?php echo $this->lang->line('description'); ?></label>
-	</div>
-</div>
-
-<!-- deadline -->
-<div class="row">
-	<div class="col s4">
-		<input name="challenge_deadline" type="date" class="datepicker" placeholder="<?php echo $this->lang->line('deadline'); ?>" required>
 	</div>
 </div>
 

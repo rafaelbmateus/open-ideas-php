@@ -54,20 +54,24 @@ class Challenge extends CI_Model{
 		$data = array (
 				'challenge_title' => $title,
 				'challenge_description' => $description,
-				'challenge_deadline' => $deadline,
 				'user_id' => $user_id,
 				$this->date_created_field => $timestamp
 		);
+		if($deadline){
+			$data['challenge_deadline'] = $deadline;
+		}
 		return $this->db->insert($this->table, $data);
 	}
 	public function update($title, $description, $deadline, $user_id, $timestamp){
 		$data = array (
 				'challenge_title' => $title,
 				'challenge_description' => $description,
-				'challenge_deadline' => $deadline,
 				'user_id' => $user_id,
 				$this->date_updated_field => $timestamp
 		);
+		if($deadline){
+			$data['challenge_deadline'] = $deadline;
+		}
 		$this->db->where($this->primary_key, $id);
 		return $this->db->update($this->table, $data);
 	}

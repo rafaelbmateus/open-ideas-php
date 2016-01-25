@@ -3,10 +3,10 @@
 
 <!-- is public -->
 <div class="row">
-	<div class="input-field col s12">
+	<div class="col s6 offset-s9">
 		<div class="switch">
+			<?php echo $this->lang->line('public_idea');?>:
 			<label>
-				<?php echo $this->lang->line('public_idea');?>:
 				<?php echo $this->lang->line('no');?>
 				<input name="idea_is_public" type="checkbox" checked>
 				<span class="lever"></span> <?php echo $this->lang->line('yes');?>
@@ -19,7 +19,7 @@
 <!-- title -->
 <div class="row">
 	<div class="input-field col s12">
-		<input name="idea_title" type="text" length="60" maxlength="60" value="<?php if (isset($item)) echo $item->idea_title; ?>" required/>
+		<input name="idea_title" type="text" length="80" maxlength="80" value="<?php if (isset($item)) echo $item->idea_title; ?>" required/>
 		<label><?php echo $this->lang->line('title');?></label>
 	</div>
 </div>
@@ -27,7 +27,7 @@
 <!-- description -->
 <div class="row">
 	<div class="input-field col s12">
-		<textarea name="idea_description" class="materialize-textarea" length="255" maxlength="255" required><?php if (isset($item)) echo $item->idea_description; ?></textarea>
+		<textarea name="idea_description" class="materialize-textarea" length="1200" maxlength="1200" required><?php if (isset($item)) echo $item->idea_description; ?></textarea>
 		<label><?php echo $this->lang->line('description');?></label>
 	</div>
 </div>
@@ -36,7 +36,7 @@
 <!-- solution -->
 <div class="row">
 	<div class="input-field col s12">
-		<textarea name="idea_solution" class="materialize-textarea" length="255" maxlength="255" required><?php if (isset($item)) echo $item->idea_solution; ?></textarea>
+		<textarea name="idea_solution" class="materialize-textarea" length="1200" maxlength="1200" required><?php if (isset($item)) echo $item->idea_solution; ?></textarea>
 		<label><?php echo $this->lang->line('solution');?></label>
 	</div>
 </div>
@@ -45,7 +45,7 @@
 <!-- differential -->
 <div class="row">
 	<div class="input-field col s12">
-		<textarea name="idea_differential" class="materialize-textarea" length="255" maxlength="255" required><?php if (isset($item)) echo $item->idea_differential; ?></textarea>
+		<textarea name="idea_differential" class="materialize-textarea" length="1200" maxlength="1200" required><?php if (isset($item)) echo $item->idea_differential; ?></textarea>
 		<label><?php echo $this->lang->line('differential');?></label>
 	</div>
 </div>
@@ -54,7 +54,7 @@
 <!-- necessary_skills -->
 <div class="row">
 	<div class="input-field col s12">
-		<textarea name="idea_necessary_skills" class="materialize-textarea" length="255" maxlength="255" required><?php if (isset($item)) echo $item->idea_necessary_skills; ?></textarea>
+		<textarea name="idea_necessary_skills" class="materialize-textarea" length="500" maxlength="500" required><?php if (isset($item)) echo $item->idea_necessary_skills; ?></textarea>
 		<label><?php echo $this->lang->line('necessary_skills');?></label>
 	</div>
 </div>
@@ -63,7 +63,7 @@
 <!-- target_group -->
 <div class="row">
 	<div class="input-field col s12">
-		<input name="idea_target_group" type="text" length="60" maxlength="60" value="<?php if (isset($item)) echo $item->idea_target_group; ?>" required/>
+		<input name="idea_target_group" type="text" length="80" maxlength="80" value="<?php if (isset($item)) echo $item->idea_target_group; ?>" required/>
 		<label><?php echo $this->lang->line('target_group');?></label>
 	</div>
 </div>
@@ -73,11 +73,15 @@
 <div class="row">
 	<div class="input-field col s6">
 		<select name="area_id">
-			<option value="" disabled selected><?php //echo $this->lang->line('choose'); ?></option>
+			s
 			<?php if (isset($innovation_areas)){ ?>
 				<?php foreach ($innovation_areas as $area){ ?>
 					<!-- TODO, select area -->
-					<option value="<?php echo $area->innovation_area_id; ?>"><?php echo $area->area_name; ?></option>
+					<?php if($area->innovation_area_id == $item->area_id) { ?>
+						<option selected value="<?php echo $area->innovation_area_id; ?>"><?php echo $area->area_name; ?></option>
+					<?php }else{ ?>
+						<option value="<?php echo $area->innovation_area_id; ?>"><?php echo $area->area_name; ?></option>
+					<?php } ?>
 				<?php } ?>
 			<?php } ?>
 		</select>
