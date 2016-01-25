@@ -22,6 +22,9 @@ class Ideas extends CI_Controller{
 		}
 	}
 	public function create(){
+		$this->load->model('areas/Area');
+		$this->data['innovation_areas'] = $this->Area->get();
+		
 		$this->data['view'] = 'new';
 		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 	}

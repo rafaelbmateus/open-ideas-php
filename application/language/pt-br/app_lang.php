@@ -61,6 +61,14 @@ $lang['new_challenge'] = "Cadastrar novo desafio";
 $lang['description'] = "Descrição";
 // Challenges - end
 
+// Idea - start
+$lang['new_idea'] = "Cadastrar nova ideia";
+$lang['solution'] = "Solução";
+$lang['differential'] = "Diferencial";
+$lang['necessary_skills'] = "Competências necessárias";
+$lang['target_group'] = "Público alvo";
+// Idea - end
+
 // Innovation Area - start
 $lang['innovation_area'] = "Área da inovação";
 // Innovation Area - end
