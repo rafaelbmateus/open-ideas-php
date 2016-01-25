@@ -1,9 +1,14 @@
-<form action="<?php echo base_url() . $module . '/update';?>" method="post">
-	<?php $this->load->view('_form'); ?>
-</form>
+<div class="card-panel">
+	<h4 class="header2"><?php echo $this->lang->line('edit');?></h4>
 
-<!-- button delete -->
-<a class="btn-floating waves-effect waves-light modal-trigger red" href="#modal-delete"><i class="fa fa-trash"></i></a>
+	<!-- form -->
+	<form action="<?php echo base_url() . $module . '/update';?>" method="post">
+		<?php $this->load->view('_form'); ?>
+	</form>
+
+	<!-- button delete -->
+	<a class="btn-floating waves-effect waves-light modal-trigger red" href="#modal-delete"><i class="fa fa-trash"></i></a>
+</div>
 
 <!-- modal delete - start -->
 <div id="modal-delete" class="modal bottom-sheet">
