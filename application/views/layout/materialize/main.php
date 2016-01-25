@@ -4,8 +4,8 @@
     <i class="large mdi-content-add"></i>
   </a>
   <ul>
-    <li><a href="<?php echo base_url() . 'ideas/create'; ?>" class="btn-floating red"><i class="large mdi-communication-live-help"></i></a></li>
-    <li><a href="<?php echo base_url() . 'challenges/create'; ?>" class="btn-floating blue"><i class="large mdi-communication-email"></i></a></li>
+    <li><a href="<?php echo base_url() . 'challenges/create'; ?>" class="btn-floating red"><i class="large fa fa-bullseye"></i></a></li>
+    <li><a href="<?php echo base_url() . 'ideas/create'; ?>" class="btn-floating blue"><i class="large fa fa-diamond"></i></a></li>
   </ul>
 </div>
 <!-- floating action button - end -->

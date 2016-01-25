@@ -1,5 +1,5 @@
 <?php
-$lang['title'] = "Titulo";
+$lang['title'] = "Título";
 
 // Sessions - start
 $lang['welcome'] = "Bem-vindo";
@@ -11,7 +11,7 @@ $lang['community'] = "Comunidade";
 $lang['join_us'] = "Junte-se a nossa comunidade agora!";
 $lang['name'] = "Nome";
 $lang['first_name'] = "Primeiro nome";
-$lang['last_name'] = "Sobre-nome";
+$lang['last_name'] = "Sobre nome";
 $lang['job'] = "Serviço";
 $lang['email'] = "E-mail";
 $lang['password'] = "Senha";

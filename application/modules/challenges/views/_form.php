@@ -8,8 +8,8 @@
 				<div class="input-field col s6">
 					<select>
 						<option value="" disabled selected><?php //echo $this->lang->line('choose'); ?></option>
-						<?php if (isset($innovation_areas)) { ?>
-							<?php foreach($innovation_areas as $area) { ?>
+						<?php if (isset($innovation_areas)){ ?>
+							<?php foreach ($innovation_areas as $area){ ?>
 								<option value="<?php echo $area->innovation_area_id; ?>"><?php echo $area->area_name; ?></option>
 							<?php } ?>
 						<?php } ?>

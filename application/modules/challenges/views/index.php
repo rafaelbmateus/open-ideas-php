@@ -1,4 +1,4 @@
-<a href="<?php echo base_url() . $module . '/create'; ?>" class="btn cyan waves-effect waves-light"><i class="fa fa-plus"></i> <?php echo $this->lang->line('new');?></a>
+<!-- <a href="<?php echo base_url() . $module . '/create'; ?>" class="btn cyan waves-effect waves-light"><i class="fa fa-plus"></i> <?php echo $this->lang->line('new');?></a> -->
 
 <?php if (isset($list)) { ?>
 	<?php foreach($list as $item) { ?>
@@ -20,4 +20,4 @@
 	<?php } ?>
 <?php } ?>
 
-<br><br>
+<br><br><br>
