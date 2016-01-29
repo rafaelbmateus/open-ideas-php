@@ -35,6 +35,7 @@ class Ideas extends CI_Controller{
 		if ($this->form_validation->run() == false){
 			$this->session->set_flashdata('error', (validation_errors() ? validation_errors() : false));
 		}else{
+			$is_public = $this->input->post('idea_is_public', TRUE);
 			$title = $this->input->post('idea_title', TRUE);
 			$description = $this->input->post('idea_description', TRUE);
 			$solution = $this->input->post('idea_solution', TRUE);
@@ -45,7 +46,7 @@ class Ideas extends CI_Controller{
 			$idea_attachment = $this->input->post('idea_attachment', TRUE);	//TODO, upload
 			$user_id = $this->session->userdata('user_id');
 
-			if ($this->Idea->add($title, $description, $solution, $differential, $necessary_skills, $target_group, $area_id, $user_id, date('Y-m-d H:i:s'))){
+			if ($this->Idea->add($is_public, $title, $description, $solution, $differential, $necessary_skills, $target_group, $area_id, $user_id, date('Y-m-d H:i:s'))){
 				$this->session->set_flashdata ('success', $this->lang->line('save_success'));
 			}else{
 				$this->session->set_flashdata ('error', $this->lang->line('save_error'));
@@ -58,7 +59,7 @@ class Ideas extends CI_Controller{
 		if ($id){
 			$this->load->model('areas/Area');
 			$this->data['innovation_areas'] = $this->Area->get();
-			
+
 			$this->data['item'] = $this->Idea->get($id);
 			$this->data['view'] = 'edit';
 			$this->load->view ($this->config->item('app_layout') . 'template', $this->data);
@@ -75,6 +76,7 @@ class Ideas extends CI_Controller{
 			$this->session->set_flashdata( 'error', (validation_errors() ? validation_errors() : false));
 		}else{
 			$id = $this->input->post('idea_id', true);
+			$is_public = $this->input->post('idea_is_public', TRUE);
 			$title = $this->input->post('idea_title', TRUE );
 			$description = $this->input->post('idea_description', TRUE);
 			$solution = $this->input->post('idea_solution', TRUE);
@@ -85,7 +87,7 @@ class Ideas extends CI_Controller{
 			$idea_attachment = $this->input->post('idea_attachment', TRUE);	//TODO, upload
 			$user_id = $this->session->userdata('user_id');
 
-			if ($this->Idea->update($id, $title, $description, $solution, $differential, $necessary_skills, $target_group, $area_id, $user_id, date('Y-m-d H:i:s'))){
+			if ($this->Idea->update($id, $is_public, $title, $description, $solution, $differential, $necessary_skills, $target_group, $area_id, $user_id, date('Y-m-d H:i:s'))){
 				$this->session->set_flashdata('success', $this->lang->line('update_success'));
 			}else{
 				$this->session->set_flashdata('error', $this->lang->line('update_error'));

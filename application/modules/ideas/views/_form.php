@@ -3,12 +3,12 @@
 
 <!-- is public -->
 <div class="row">
-	<div class="col s6 offset-s9">
+	<div class="col s3 offset-s9">
 		<div class="switch">
 			<?php echo $this->lang->line('public_idea');?>:
 			<label>
-				<?php echo $this->lang->line('no');?>
-				<input name="idea_is_public" type="checkbox" checked>
+				<?php //echo $this->lang->line('no');?>
+				<input name="idea_is_public" type="checkbox" <?php if (!isset($item)){echo 'checked';}else{if ($item->idea_is_public) echo 'checked';} ?>>
 				<span class="lever"></span> <?php echo $this->lang->line('yes');?>
 			</label>
 		</div>

@@ -1,5 +1,26 @@
 <div class="card-panel">
-	<h4 class="header2"><?php echo $this->lang->line('new');?></h4>
+	<!-- navbar - start -->
+  <div id="right-aligned-links" class="section">
+    <div class="row">
+      <nav class="cyan">
+        <div class="nav-wrapper">
+          <div class="col s12">
+            <a class="brand-logo"><?php echo $this->lang->line('new');?></a>
+            <!--
+            <ul class="right hide-on-med-and-down">
+              <li><a href="#">Sass</a></li>
+              <li><a href="#">Components</a></li>
+              <li><a href="#">JavaScript</a></li>
+            </ul>
+            -->
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- navbar - end -->
+
+	<br>
 
 	<!-- form -->
 	<form action="<?php echo base_url() . $module . '/add';?>" method="post">
