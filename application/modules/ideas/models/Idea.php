@@ -42,6 +42,7 @@ class Idea extends CI_Model{
 	}
 	function get_where($field = "", $content = ""){
 		$this->db->from($this->table);
+		$this->db->where($this->is_deleted_field, null);
 		$this->db->where($field, $content);
 		$query = $this->db->get();
 		if ($query->num_rows() == 1){
@@ -63,13 +64,11 @@ class Idea extends CI_Model{
 				'user_id' => $user_id,
 				$this->date_created_field => $timestamp
 		);
-		if($is_public){
-				$data['idea_is_public'] = $is_public;
-		}
 		return $this->db->insert($this->table, $data);
 	}
 	public function update($id, $is_public, $title, $description, $solution, $differential, $necessary_skills, $target_group, $area_id, $user_id, $timestamp){
 		$data = array (
+				'idea_is_public' => $is_public,
 				'idea_title' => $title,
 				'idea_description' => $description,
 				'idea_solution' => $solution,
@@ -80,11 +79,6 @@ class Idea extends CI_Model{
 				'user_id' => $user_id,
 				$this->date_updated_field => $timestamp
 		);
-		if($is_public){
-				$data['idea_is_public'] = $is_public;
-		}else{
-				$data['idea_is_public'] = false;
-		}
 		$this->db->where($this->primary_key, $id);
 		return $this->db->update($this->table, $data);
 	}

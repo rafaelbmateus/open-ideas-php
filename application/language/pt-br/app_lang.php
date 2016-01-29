@@ -42,6 +42,7 @@ $lang['choose'] = "Escolha";
 // Menu - start
 $lang['challanges'] = "Desafios";
 $lang['ideas'] = "Ideias";
+$lang['my_ideas'] = "Minhas ideias";
 $lang['incubators'] = "Incubadoras";
 $lang['configuration'] = "Configuração";
 $lang['users'] = "Usuários";

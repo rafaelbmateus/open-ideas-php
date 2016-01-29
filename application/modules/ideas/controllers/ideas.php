@@ -12,6 +12,21 @@ class Ideas extends CI_Controller{
 		$this->data['view'] = 'index';
 		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 	}
+	public function my_ideas(){
+		$this->data['list'] = $this->Idea->get_where('user_id', $this->session->userdata('user_id'));
+		$this->data['view'] = 'index';
+		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
+	}
+	public function private_ideas(){
+		$this->data['list'] = $this->Idea->get_where('idea_is_public !=', true);
+		$this->data['view'] = 'index';
+		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
+	}
+	public function public_ideas(){
+		$this->data['list'] = $this->Idea->get_where('idea_is_public', true);
+		$this->data['view'] = 'index';
+		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
+	}
 	public function show(){
 		$id = $this->uri->segment(3);
 		if ($id){
