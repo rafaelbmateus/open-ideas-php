@@ -95,6 +95,8 @@ $lang['developer'] = "Desenvolvedor";
 // Tools - start
 $lang['new'] = "Novo";
 $lang['edit'] = "Editar";
+$lang['created_at'] = "Cadastrado em";
+$lang['updated_at'] = "Atualizado em";
 $lang['delete'] = "Excluir";
 $lang['date'] = "Data";
 $lang['save'] = "Salvar";

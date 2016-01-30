@@ -51,7 +51,7 @@
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-social-person-outline prefix"></i>
-            <input name="email" type="email" required="required" class="validate">
+            <input id="email" name="email" type="email" required="required" class="validate">
             <!-- <label for="email" data-error="<?php echo $this->lang->line('email_invalid');?>" data-success="<?php echo $this->lang->line('email_valid');?>" class="center-align"><?php echo $this->lang->line('email');?></label> -->
             <label for="email" data-error="<?php echo $this->lang->line('email_invalid');?>" class="center-align"><?php echo $this->lang->line('email');?></label>
           </div>
@@ -101,6 +101,9 @@
 
   <script type="text/javascript">
     window.onload = function(){
+      // focus in email
+      document.getElementById('email').focus();
+
       // toast success
       <?php
       if ($this->session->flashdata('success')){

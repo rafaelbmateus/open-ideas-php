@@ -51,7 +51,7 @@
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-social-person-outline prefix"></i>
-            <input name="name" type="text">
+            <input id="name" name="name" type="text">
             <label for="name" class="center-align"><?php echo $this->lang->line('name'); ?></label>
           </div>
         </div>
@@ -111,6 +111,9 @@
 
   <script type="text/javascript">
     window.onload = function(){
+      // focus in name
+      document.getElementById('name').focus();
+
       // toast success
       <?php
       if ($this->session->flashdata('success')){
