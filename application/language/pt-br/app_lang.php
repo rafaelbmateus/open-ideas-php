@@ -13,6 +13,7 @@ $lang['name'] = "Nome";
 $lang['first_name'] = "Primeiro nome";
 $lang['last_name'] = "Sobre nome";
 $lang['job'] = "Serviço";
+$lang['cnpj'] = "CNPJ";
 $lang['email'] = "E-mail";
 $lang['password'] = "Senha";
 $lang['password_again'] = "Senha novamente";

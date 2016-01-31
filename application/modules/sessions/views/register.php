@@ -44,23 +44,23 @@
       <form class="login-form" action="<?php echo base_url() . $module . '/add';?>" method="post">
         <div class="row">
           <div class="input-field col s12 center">
-            <img src="<?php echo base_url(); ?>assets/plugins/materialize/images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
+            <img src="<?php echo base_url(); ?>assets/images/app/icons/oi/oi-xxxhdpi.png" alt="Open Idea" class="circle responsive-img valign profile-image-login">
             <p class="center"><?php echo $this->lang->line('join_us'); ?></p>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
-            <i class="mdi-social-person-outline prefix"></i>
+            <i class="mdi-social-person prefix"></i>
             <input id="name" name="name" type="text">
             <label for="name" class="center-align"><?php echo $this->lang->line('name'); ?></label>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s2">
-            <i class="mdi-social-person-outline prefix"></i>
+            <i class="mdi-action-perm-contact-cal prefix"></i>
           </div>
           <div class="input-field col s10">
-            <select name="job_id" required>
+            <select id="job_id" name="job_id" onchange="job()" required>
               <option value="" disabled selected><?php echo $this->lang->line('choice_job'); ?></option>
               <?php if (isset ($jobs)) { ?>
             		<?php foreach ( $jobs as $job ) { ?>
@@ -72,6 +72,13 @@
         </div>
         <div class="row margin">
           <div class="input-field col s12">
+            <i id="cnpj_icon" class="mdi-action-assignment-ind prefix" hidden></i>
+            <input id="cnpj_input" name="cnpj" type="text" hidden>
+            <label id="cnpj_label" for="cnpj" class="center-align" hidden><?php echo $this->lang->line('cnpj'); ?></label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
             <i class="mdi-communication-email prefix"></i>
             <input name="email" type="email">
             <label for="email" class="center-align"><?php echo $this->lang->line('email'); ?></label>
@@ -79,7 +86,7 @@
         </div>
         <div class="row margin">
           <div class="input-field col s12">
-            <i class="mdi-action-lock-outline prefix"></i>
+            <i class="mdi-action-https prefix"></i>
             <input name="password" type="password">
             <label for="password"><?php echo $this->lang->line('password'); ?></label>
           </div>
@@ -110,9 +117,30 @@
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins.js"></script>
 
   <script type="text/javascript">
+    function job(){
+      if(document.getElementById("job_id").value==2){ // TODO, change to id = 1
+        document.getElementById('cnpj_input').style.display = 'block';
+        document.getElementById('cnpj_label').style.display = 'block';
+        document.getElementById('cnpj_icon').style.display = 'block';
+        // TODO, required field cnpj
+
+      }else{
+        document.getElementById('cnpj_input').style.display = 'none';
+        document.getElementById('cnpj_label').style.display = 'none';
+        document.getElementById('cnpj_icon').style.display = 'none';
+        // TODO, no required field cnpj
+      }
+    }
+
+  </script>
+
+  <script type="text/javascript">
     window.onload = function(){
       // focus in name
       document.getElementById('name').focus();
+
+      // hidden icon cnpj
+      document.getElementById('cnpj_icon').style.display = 'none';
 
       // toast success
       <?php

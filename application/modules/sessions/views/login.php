@@ -50,7 +50,7 @@
         </div>
         <div class="row margin">
           <div class="input-field col s12">
-            <i class="mdi-social-person-outline prefix"></i>
+            <i class="mdi-social-person prefix"></i>
             <input id="email" name="email" type="email" required="required" class="validate">
             <!-- <label for="email" data-error="<?php echo $this->lang->line('email_invalid');?>" data-success="<?php echo $this->lang->line('email_valid');?>" class="center-align"><?php echo $this->lang->line('email');?></label> -->
             <label for="email" data-error="<?php echo $this->lang->line('email_invalid');?>" class="center-align"><?php echo $this->lang->line('email');?></label>
@@ -58,7 +58,7 @@
         </div>
         <div class="row margin">
           <div class="input-field col s12">
-            <i class="mdi-action-lock-outline prefix"></i>
+            <i class="mdi-action-https prefix"></i>
             <input id="password" name="password" type="password" required="required">
             <label for="password"><?php echo $this->lang->line('password');?></label>
           </div>
