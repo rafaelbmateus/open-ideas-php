@@ -118,7 +118,7 @@
 
   <script type="text/javascript">
     function job(){
-      if(document.getElementById("job_id").value==2){ // TODO, change to id = 1
+      if(document.getElementById("job_id").value==1){
         document.getElementById('cnpj_input').style.display = 'block';
         document.getElementById('cnpj_label').style.display = 'block';
         document.getElementById('cnpj_icon').style.display = 'block';
@@ -139,8 +139,8 @@
       // focus in name
       document.getElementById('name').focus();
 
-      // hidden icon cnpj
-      document.getElementById('cnpj_icon').style.display = 'none';
+      // hidden field cnpj
+      job(0);
 
       // toast success
       <?php

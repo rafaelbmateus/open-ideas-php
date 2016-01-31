@@ -44,12 +44,7 @@ class Idea extends CI_Model{
 		$this->db->from($this->table);
 		$this->db->where($this->is_deleted_field, null);
 		$this->db->where($field, $content);
-		$query = $this->db->get();
-		if ($query->num_rows() == 1){
-			return $query->row();
-		}else{
-			return $query->result();
-		}
+		return $this->db->get()->result();
 	}
 	public function add($is_public, $title, $description, $solution, $differential, $necessary_skills, $target_group, $area_id, $user_id, $timestamp){
 		$data = array (

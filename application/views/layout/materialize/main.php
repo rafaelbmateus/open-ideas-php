@@ -40,20 +40,22 @@
             <li class="bold"><a href="<?php echo base_url(); ?>" class="waves-effect waves-cyan"><i class="fa fa-bullseye"></i><?php echo $this->lang->line('challanges');?></a></li>
             <li class="bold"><a href="<?php echo base_url() . 'ideas'; ?>" class="waves-effect waves-cyan"><i class="fa fa-lightbulb-o"></i><?php echo $this->lang->line('ideas');?></a></li>
             <li class="bold"><a href="<?php echo base_url() . 'ideas/my_ideas'; ?>" class="waves-effect waves-cyan"><i class="fa fa-lock"></i><?php echo $this->lang->line('my_ideas');?></a></li>
-            <li class="bold"><a href="<?php echo base_url() . 'incubators'; ?>" class="waves-effect waves-cyan"><i class="fa fa-university"></i><?php echo $this->lang->line('incubators');?></a></li>
-            <li class="no-padding">
-                <ul class="collapsible collapsible-accordion">
-                    <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="fa fa-cog"></i><?php echo $this->lang->line('configuration');?></a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="<?php echo base_url() . 'users'; ?>"><?php echo $this->lang->line('users'); ?></a></li>
-                                <li><a href="<?php echo base_url() . 'user_types'; ?>"><?php echo $this->lang->line('user_types'); ?></a></li>
-                                <li><a href="<?php echo base_url() . 'jobs'; ?>"><?php echo $this->lang->line('jobs'); ?></a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </li>
+            <li class="bold"><a href="<?php echo base_url() . 'incubators'; ?>" class="waves-effect waves-cyan"><i class="fa fa-building"></i><?php echo $this->lang->line('incubators');?></a></li>
+            <?php if($this->session->userdata('user_type')=='admin'){ ?>
+              <li class="no-padding">
+                  <ul class="collapsible collapsible-accordion">
+                      <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="fa fa-cog"></i><?php echo $this->lang->line('configuration');?></a>
+                          <div class="collapsible-body">
+                              <ul>
+                                  <li><a href="<?php echo base_url() . 'users'; ?>"><?php echo $this->lang->line('users'); ?></a></li>
+                                  <li><a href="<?php echo base_url() . 'user_types'; ?>"><?php echo $this->lang->line('user_types'); ?></a></li>
+                                  <li><a href="<?php echo base_url() . 'jobs'; ?>"><?php echo $this->lang->line('jobs'); ?></a></li>
+                              </ul>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+            <?php } ?>
             <!--
             <li class="li-hover"><div class="divider"></div></li>
             <li class="li-hover">

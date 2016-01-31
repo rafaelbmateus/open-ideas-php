@@ -1,6 +1,6 @@
 <!-- <a href="<?php echo base_url() . $module . '/create'; ?>" class="btn cyan waves-effect waves-light"><i class="fa fa-plus"></i> <?php echo $this->lang->line('new');?></a> -->
 
-<?php if (isset($list)) { ?>
+<?php if (!empty($list)) { ?>
 	<?php foreach($list as $item) { ?>
 		<div class="col s12 m7 l7">
 			<a href="<?php echo base_url() . $module . '/show/' . $item->challenge_id; ?>">
@@ -20,6 +20,8 @@
 			</a>
 		</div>
 	<?php } ?>
+<?php }else{ ?>
+	<?php echo $this->lang->line('dont_have_challenge'); ?>
 <?php } ?>
 
 <br><br><br>
