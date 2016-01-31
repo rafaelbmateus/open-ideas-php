@@ -1,9 +1,35 @@
-<form action="<?php echo base_url() . $module . '/update';?>" method="post">
-	<?php $this->load->view('_form'); ?>
-</form>
+<div class="card-panel">
+	<!-- navbar - start -->
+  <div id="right-aligned-links" class="section">
+    <div class="row">
+      <nav class="cyan">
+        <div class="nav-wrapper">
+          <div class="col s12">
+            <a class="brand-logo"><?php echo $this->lang->line('edit');?></a>
+            <!--
+            <ul class="right hide-on-med-and-down">
+              <li><a href="#">Sass</a></li>
+              <li><a href="#">Components</a></li>
+              <li><a href="#">JavaScript</a></li>
+            </ul>
+            -->
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- navbar - end -->
 
-<!-- button delete -->
-<a class="btn-floating waves-effect waves-light modal-trigger red" href="#modal-delete"><i class="fa fa-trash"></i></a>
+	<br>
+
+	<form action="<?php echo base_url() . $module . '/update';?>" method="post">
+		<?php $this->load->view('_form'); ?>
+	</form>
+
+	<!-- button delete -->
+	<br>
+	<a class="btn-floating waves-effect waves-light modal-trigger red" href="#modal-delete"><i class="fa fa-trash"></i></a>
+</div>
 
 <!-- modal delete - start -->
 <div id="modal-delete" class="modal bottom-sheet">

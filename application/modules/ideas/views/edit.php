@@ -36,7 +36,6 @@
 <div id="modal-delete" class="modal bottom-sheet">
 	<div class="modal-content">
 		<form action="<?php echo base_url() . $module . '/delete'; ?>" method="post">
-			<!-- TODO, replace field name -->
 			<input type="hidden" name="id" value="<?php if (isset($item->idea_id)) echo $item->idea_id; ?>"/>
 			<div class="row">
 				<div class="input-field col s4"></div>

@@ -55,9 +55,10 @@ class Sessions extends CI_Controller{
 		} else {
 			$email = $this->input->post('email', true);
 			$password = md5($this->input->post('password', true));
+			$remember = $this->input->post('remember', true);
 			$user = $this->Session->login($email, $password);
 			if ($user){
-				$this->create_session($user->user_id);
+				$this->create_session($user->user_id, $remember);
 				$this->session->set_flashdata('success', $this->lang->line('welcome_again') . ' ' . $user->user_name);
 			}else{
 				$this->session->set_flashdata('success', $this->lang->line('login_incorrect') . ' ' . $user->user_name);
@@ -65,7 +66,7 @@ class Sessions extends CI_Controller{
 			redirect(base_url());
 		}
 	}
-	public function create_session($user_id){
+	public function create_session($user_id, $remember){
 		$this->load->model('users/User');
 		$user = $this->User->get_where('user_id', $user_id);
 		$this->session->set_userdata('user_id', $user->user_id);
@@ -73,6 +74,9 @@ class Sessions extends CI_Controller{
 		$this->session->set_userdata('user_email', $user->user_email);
 		$this->session->set_userdata('user_type', $user->type_name);
 		$this->session->set_userdata('user_job', $user->job_name);
+		if($remember){
+			$this->session->sess_expiration = 60*60*24*365;	// set session expire to a year
+		}
 	}
 	public function lock(){
 		$id = $this->session->userdata('user_id');

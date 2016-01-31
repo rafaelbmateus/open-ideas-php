@@ -5,7 +5,7 @@
   </a>
   <ul>
     <li><a href="<?php echo base_url() . 'challenges/create'; ?>" class="btn-floating red"><i class="large fa fa-bullseye"></i></a></li>
-    <li><a href="<?php echo base_url() . 'ideas/create'; ?>" class="btn-floating blue"><i class="large fa fa-diamond"></i></a></li>
+    <li><a href="<?php echo base_url() . 'ideas/create'; ?>" class="btn-floating blue"><i class="large fa fa-lightbulb-o"></i></a></li>
   </ul>
 </div>
 <!-- floating action button - end -->
@@ -25,12 +25,9 @@
                     </div>
                     <div class="col col s8 m8 l8">
                         <ul id="profile-dropdown" class="dropdown-content">
-                            <li><a href="#"><i class="mdi-action-face-unlock"></i><?php echo $this->lang->line('profile');?></a>
-                            </li>
-                            <li><a href="#"><i class="mdi-action-settings"></i><?php echo $this->lang->line('config');?></a>
-                            </li>
-                            <li><a href="#"><i class="mdi-communication-live-help"></i><?php echo $this->lang->line('help');?></a>
-                            </li>
+                            <li><a href="#"><i class="mdi-action-face-unlock"></i><?php echo $this->lang->line('profile');?></a></li>
+                            <!-- <li><a href="#"><i class="mdi-action-settings"></i><?php echo $this->lang->line('config');?></a></li> -->
+                            <li><a href="#"><i class="mdi-communication-live-help"></i><?php echo $this->lang->line('help');?></a></li>
                             <li class="divider"></li>
                             <li><a href="<?php echo base_url();?>sessions/lock"><i class="mdi-action-lock-outline"></i><?php echo $this->lang->line('lock');?></a></li>
                             <li><a href="<?php echo base_url();?>sessions/logout"><i class="mdi-hardware-keyboard-tab"></i><?php echo $this->lang->line('logout');?></a></li>
@@ -42,7 +39,7 @@
                 </div>
             </li>
             <li class="bold"><a href="<?php echo base_url();?>" class="waves-effect waves-cyan"><i class="fa fa-bullseye"></i><?php echo $this->lang->line('challanges');?></a></li>
-            <li class="bold"><a href="<?php echo base_url() . 'ideas';?>" class="waves-effect waves-cyan"><i class="fa fa-diamond"></i><?php echo $this->lang->line('ideas');?></a></li>
+            <li class="bold"><a href="<?php echo base_url() . 'ideas';?>" class="waves-effect waves-cyan"><i class="fa fa-lightbulb-o"></i><?php echo $this->lang->line('ideas');?></a></li>
             <li class="bold"><a href="<?php echo base_url() . 'ideas/my_ideas';?>" class="waves-effect waves-cyan"><i class="fa fa-lock"></i><?php echo $this->lang->line('my_ideas');?></a></li>
             <li class="bold"><a href="<?php echo base_url() . '';?>" class="waves-effect waves-cyan"><i class="fa fa-university"></i><?php echo $this->lang->line('incubators');?></a></li>
             <li class="no-padding">
