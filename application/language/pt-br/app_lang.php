@@ -104,4 +104,9 @@ $lang['save'] = "Salvar";
 $lang['cancel'] = "Cancelar";
 $lang['email_invalid'] = "inválido";
 $lang['email_valid'] = "ok";
+$lang['site'] = "Site";
+$lang['url'] = "Url";
+$lang['phone'] = "Telefone";
+$lang['state'] = "Estado";
+$lang['city'] = "Cidade";
 // Tools - end

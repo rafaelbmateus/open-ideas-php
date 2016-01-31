@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes" ?>
 <DBMODEL Version="4.0">
 <SETTINGS>
-<GLOBALSETTINGS ModelName="DB Model - Innovation" IDModel="0" IDVersion="0" VersionStr="1.0.0.0" Comments="" UseVersionHistroy="1" AutoIncVersion="1" DatabaseType="MySQL" ZoomFac="100.00" XPos="0" YPos="14" DefaultDataType="5" DefaultTablePrefix="0" DefSaveDBConn="" DefSyncDBConn="" DefQueryDBConn="" Printer="" HPageCount="4.0" PageAspectRatio="1.440892512336408" PageOrientation="1" PageFormat="A4 (210x297 mm, 8.26x11.7 inches)" SelectedPages="" UsePositionGrid="0" PositionGridX="20" PositionGridY="20" TableNameInRefs="1" DefaultTableType="0" ActivateRefDefForNewRelations="1" FKPrefix="" FKPostfix="" CreateFKRefDefIndex="1" DBQuoteCharacter="`" CreateSQLforLinkedObjects="0" DefModelFont="Tahoma" CanvasWidth="4096" CanvasHeight="2842" />
+<GLOBALSETTINGS ModelName="DB Model - Innovation" IDModel="0" IDVersion="0" VersionStr="1.0.0.0" Comments="" UseVersionHistroy="1" AutoIncVersion="1" DatabaseType="MySQL" ZoomFac="100.00" XPos="0" YPos="0" DefaultDataType="5" DefaultTablePrefix="0" DefSaveDBConn="" DefSyncDBConn="" DefQueryDBConn="" Printer="" HPageCount="4.0" PageAspectRatio="1.440892512336408" PageOrientation="1" PageFormat="A4 (210x297 mm, 8.26x11.7 inches)" SelectedPages="" UsePositionGrid="0" PositionGridX="20" PositionGridY="20" TableNameInRefs="1" DefaultTableType="0" ActivateRefDefForNewRelations="1" FKPrefix="" FKPostfix="" CreateFKRefDefIndex="1" DBQuoteCharacter="`" CreateSQLforLinkedObjects="0" DefModelFont="Tahoma" CanvasWidth="4096" CanvasHeight="2842" />
 <DATATYPEGROUPS>
 <DATATYPEGROUP Name="Numeric Types" Icon="1" />
 <DATATYPEGROUP Name="Date and Time Types" Icon="2" />
@@ -835,7 +835,7 @@
 </INDEX>
 </INDICES>
 </TABLE>
-<TABLE ID="1423" Tablename="tb_incubator" PrevTableName="Table_16" XPos="369" YPos="53" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="25" >
+<TABLE ID="1423" Tablename="tb_incubator" PrevTableName="Table_16" XPos="372" YPos="52" TableType="0" TablePrefix="0" nmTable="0" Temporary="0" UseStandardInserts="0" StandardInserts="INSERT INTO tb_incubator (incubator_name, incubator_description, incubator_url, incubator_phone, incubator_state, incubator_city, created_at)\nVALUES (\aCELTA\a, \aO Centro Empresarial para Labora\231\227o de Tecnologias Avan\231adas (CELTA) \233 a incubadora da Funda\231\227o CERTI situada em Florian\243polis (SC). Foi criado em 1986, como resposta aos anseios de desenvolvimento da capital catarinense e com o objetivo de viabilizar um promissor setor econ\244mico, aproveitando os talentos e o conhecimento gerados pela UFSC. \a, \ahttp://www.celta.org.br/\a, \a048 3239-2222\a, \aSC\a, \aFlorian\243polis\a, now());\n\nINSERT INTO tb_incubator (incubator_name, incubator_description, incubator_url, incubator_phone, incubator_state, incubator_city, created_at)\nVALUES (\aMIDI Tecnol\243gico\a, \aA incubadora MIDI Tecnol\243gico, criada no dia 14 de agosto de 1998, tem o Servi\231o de Apoio \224s Micro e Pequenas Empresas de Santa Catarina (SEBRAE/SC) como entidade mantenedora e a Associa\231\227o Catarinense de Empresas de Tecnologia (ACATE) como entidade gestora. Localizada em Florian\243polis, abriga empresas incubadas cujos produtos, processos ou servi\231os s\227o gerados a partir de resultados de pesquisas cient\237ficas aplicadas, nos quais a tecnologia e a inova\231\227o representam alto valor agregado. O MIDI Tecnol\243gico tem como objetivo prestar servi\231os de Incuba\231\227o, para o desenvolvimento de empreendimentos nascentes de base tecnol\243gica, visando a cria\231\227o de empresas inovadoras e sustent\225veis.\a, \ahttp://miditecnologico.com.br/\a, \a048 2107-2737\a, \aSC\a, \aFlorian\243polis\a, now());\n\nINSERT INTO tb_incubator (incubator_name, incubator_description, incubator_url, incubator_phone, incubator_state, incubator_city, created_at)\nVALUES (\aCRIE\a, \aA incubadora do Centro Regional de Inova\231\227o e Empreendedorismo (Crie) atua desde 2005 para viabilizar projetos de micro e pequenas empresas. \201 uma organiza\231\227o civil sem fins lucrativos, com personalidade jur\237dica de direito privado, com autonomia administrativa e financeira. A partir de suporte t\233cnico, gerencial e infraestrutura, a incubadora Crie contribui para o desenvolvimento regional sustent\225vel oferecendo \224s empresas nascentes, por baixo custo, espa\231o e servi\231os b\225sicos, al\233m de um conjunto de orienta\231\245es t\233cnicas e gerenciais. O espa\231o promove ainda a sinergia entre empresas incubadas com institui\231\245es de ensino e pesquisa, empresas, \243rg\227os governamentais, associa\231\245es de classe, agentes e mercado consumidor.\a, \ahttp://www.unisul.br/wps/portal/home/pesquisa-e-inovacao/agetec/incubadora-crie\a, \a048 3621-3406\a, \aSC\a, \aFlorian\243polis\a, now());\n\nINSERT INTO tb_incubator (incubator_name, incubator_description, incubator_url, incubator_phone, incubator_state, incubator_city, created_at)\nVALUES (\aLNCC\a, \a\a, \ahttp://www.incubadora.lncc.br/\a, \a024 2233-6232\a, \aRJ\a, \a\a, now());\n\nINSERT INTO tb_incubator (incubator_name, incubator_description, incubator_url, incubator_phone, incubator_state, incubator_city, created_at)\nVALUES (\aSantos Dumont\a, \aA Incubadora Santos Dumont \233 um espa\231o que oferece suporte gerencial, facilitando a intera\231\227o com o meio empresarial, cient\237fico, tecnol\243gico e financeiro, visando a sua inser\231\227o, crescimento e consolida\231\227o no mercado.\a, \ahttp://www.pti.org.br/incubadorasantosdumont\a, \a045 3576-7073\a, \aPR\a, \aFoz do Igua\231u\a, now());\n" TableOptions="DelayKeyTblUpdates=0\nPackKeys=0\nRowChecksum=0\nRowFormat=0\nUseRaid=0\nRaidType=0\n" Comments="" Collapsed="0" IsLinkedObject="0" IDLinkedModel="-1" Obj_id_Linked="-1" OrderPos="25" >
 <COLUMNS>
 <COLUMN ID="1425" ColName="incubator_id" PrevColName="" Pos="0" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="1" NotNull="1" AutoInc="1" IsForeignKey="0" DefaultValue="" Comments="">
 <OPTIONSELECTED>
@@ -858,9 +858,18 @@
 <OPTIONSELECT Value="0" />
 </OPTIONSELECTED>
 </COLUMN>
-<COLUMN ID="1429" ColName="incubator_phone" PrevColName="" Pos="3" idDatatype="5" DatatypeParams="" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+<COLUMN ID="1429" ColName="incubator_phone" PrevColName="" Pos="3" idDatatype="20" DatatypeParams="(255)" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
 <OPTIONSELECTED>
-<OPTIONSELECT Value="1" />
+<OPTIONSELECT Value="0" />
+</OPTIONSELECTED>
+</COLUMN>
+<COLUMN ID="1440" ColName="incubator_state" PrevColName="" Pos="8" idDatatype="20" DatatypeParams="(2)" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+<OPTIONSELECTED>
+<OPTIONSELECT Value="0" />
+</OPTIONSELECTED>
+</COLUMN>
+<COLUMN ID="1442" ColName="incubator_city" PrevColName="" Pos="9" idDatatype="20" DatatypeParams="(255)" Width="-1" Prec="-1" PrimaryKey="0" NotNull="0" AutoInc="0" IsForeignKey="0" DefaultValue="" Comments="">
+<OPTIONSELECTED>
 <OPTIONSELECT Value="0" />
 </OPTIONSELECTED>
 </COLUMN>

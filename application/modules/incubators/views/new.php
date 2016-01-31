@@ -9,6 +9,8 @@
             <!--
             <ul class="right hide-on-med-and-down">
               <li><a href="#">Sass</a></li>
+              <li><a href="#">Components</a></li>
+              <li><a href="#">JavaScript</a></li>
             </ul>
             -->
           </div>

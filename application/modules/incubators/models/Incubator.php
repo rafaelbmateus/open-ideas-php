@@ -1,15 +1,13 @@
 <?php
-//TODO, Atulizar nome da classe
-class Sample extends CI_Model{
-	//TODO, Atulizar definições da tabela
-	public $table = 'tb_sample';
-	public $primary_key = 'sample_id';
+class Incubator extends CI_Model{
+	public $table = 'tb_incubator';
+	public $primary_key = 'incubator_id';
 	public $date_created_field = 'created_at';
 	public $date_updated_field = 'updated_at';
 	public $is_deleted_field = 'is_deleted';
 	public function __construct(){
 		parent::__construct();
-		$this->create_table();
+		//$this->create_table();
 	}
 	public function create_table(){
 		if (!$this->db->table_exists($this->table)){
@@ -53,18 +51,26 @@ class Sample extends CI_Model{
 			return $query->result();
 		}
 	}
-	//TODO, Atualizar parâmetros
-	public function add($name, $timestamp){
+	public function add($name, $description, $url, $phone, $state, $city, $timestamp){
 		$data = array (
-				'sample_name' => $name,
+				'incubator_name' => $name,
+				'incubator_description' => $description,
+				'incubator_url' => $url,
+				'incubator_phone' => $phone,
+				'incubator_state' => $state,
+				'incubator_city' => $city,
 				$this->date_created_field => $timestamp
 		);
 		return $this->db->insert($this->table, $data);
 	}
-	//TODO, Atualizar parâmetros
-	public function update($id, $name, $timestamp){
+	public function update($id, $name, $description, $url, $phone, $state, $city, $timestamp){
 		$data = array (
-				'sample_name' => $name,
+				'incubator_name' => $name,
+				'incubator_description' => $description,
+				'incubator_url' => $url,
+				'incubator_phone' => $phone,
+				'incubator_state' => $state,
+				'incubator_city' => $city,
 				$this->date_updated_field => $timestamp
 		);
 		$this->db->where($this->primary_key, $id);

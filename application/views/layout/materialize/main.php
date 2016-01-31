@@ -33,23 +33,22 @@
                             <li><a href="<?php echo base_url();?>sessions/logout"><i class="mdi-hardware-keyboard-tab"></i><?php echo $this->lang->line('logout');?></a></li>
                         </ul>
                         <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown"><?php echo $this->session->userdata('user_name'); ?><i class="mdi-navigation-arrow-drop-down right"></i></a>
-                        <!-- TODO, pegar o perfil do usuário -->
                         <p class="user-roal"><?php echo $this->lang->line($this->session->userdata('user_job')); ?></p>
                     </div>
                 </div>
             </li>
-            <li class="bold"><a href="<?php echo base_url();?>" class="waves-effect waves-cyan"><i class="fa fa-bullseye"></i><?php echo $this->lang->line('challanges');?></a></li>
-            <li class="bold"><a href="<?php echo base_url() . 'ideas';?>" class="waves-effect waves-cyan"><i class="fa fa-lightbulb-o"></i><?php echo $this->lang->line('ideas');?></a></li>
-            <li class="bold"><a href="<?php echo base_url() . 'ideas/my_ideas';?>" class="waves-effect waves-cyan"><i class="fa fa-lock"></i><?php echo $this->lang->line('my_ideas');?></a></li>
-            <li class="bold"><a href="<?php echo base_url() . '';?>" class="waves-effect waves-cyan"><i class="fa fa-university"></i><?php echo $this->lang->line('incubators');?></a></li>
+            <li class="bold"><a href="<?php echo base_url(); ?>" class="waves-effect waves-cyan"><i class="fa fa-bullseye"></i><?php echo $this->lang->line('challanges');?></a></li>
+            <li class="bold"><a href="<?php echo base_url() . 'ideas'; ?>" class="waves-effect waves-cyan"><i class="fa fa-lightbulb-o"></i><?php echo $this->lang->line('ideas');?></a></li>
+            <li class="bold"><a href="<?php echo base_url() . 'ideas/my_ideas'; ?>" class="waves-effect waves-cyan"><i class="fa fa-lock"></i><?php echo $this->lang->line('my_ideas');?></a></li>
+            <li class="bold"><a href="<?php echo base_url() . 'incubators'; ?>" class="waves-effect waves-cyan"><i class="fa fa-university"></i><?php echo $this->lang->line('incubators');?></a></li>
             <li class="no-padding">
                 <ul class="collapsible collapsible-accordion">
                     <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="fa fa-cog"></i><?php echo $this->lang->line('configuration');?></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="<?php echo base_url() . 'users';?>"><?php echo $this->lang->line('users');?></a></li>
-                                <li><a href="<?php echo base_url() . 'user_types';?>"><?php echo $this->lang->line('user_types');?></a></li>
-                                <li><a href="<?php echo base_url() . 'jobs';?>"><?php echo $this->lang->line('jobs');?></a></li>
+                                <li><a href="<?php echo base_url() . 'users'; ?>"><?php echo $this->lang->line('users'); ?></a></li>
+                                <li><a href="<?php echo base_url() . 'user_types'; ?>"><?php echo $this->lang->line('user_types'); ?></a></li>
+                                <li><a href="<?php echo base_url() . 'jobs'; ?>"><?php echo $this->lang->line('jobs'); ?></a></li>
                             </ul>
                         </div>
                     </li>
