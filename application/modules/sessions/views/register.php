@@ -27,7 +27,6 @@
   <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
   <link href="<?php echo base_url(); ?>assets/plugins/materialize/css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
-
 </head>
 
 <body class="cyan">
@@ -73,8 +72,8 @@
         <div class="row margin">
           <div class="input-field col s12">
             <i id="cnpj_icon" class="mdi-action-assignment-ind prefix" hidden></i>
-            <input id="cnpj_input" name="cnpj" type="text" hidden>
-            <label id="cnpj_label" for="cnpj" class="center-align" hidden><?php echo $this->lang->line('cnpj'); ?></label>
+            <input id="cnpj_input" name="cnpj" type="text" data-inputmask="'mask': 'y/m/d'" hidden>
+            <label id="cnpj_label" for="cnpj" class="center-align active" hidden><?php echo $this->lang->line('cnpj'); ?></label>
           </div>
         </div>
         <div class="row margin">
@@ -103,19 +102,7 @@
     </div>
   </div>
 
-  <!-- ================================================ Scripts ================================================ -->
-
-  <!-- jQuery Library -->
-  <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/jquery-1.11.2.min.js"></script>
-  <!--materialize js-->
-  <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/materialize.js"></script>
-  <!--prism-->
-  <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/prism.js"></script>
-  <!--scrollbar-->
-  <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-  <!--plugins.js - Some Specific JS codes for Plugin Settings-->
-  <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins.js"></script>
-
+  <!-- ---------------------------------------- functions - start ---------------------------------------- -->
   <script type="text/javascript">
     function job(){
       if(document.getElementById("job_id").value==1){
@@ -131,7 +118,6 @@
         // TODO, no required field cnpj
       }
     }
-
   </script>
 
   <script type="text/javascript">
@@ -139,6 +125,10 @@
       // focus in name
       document.getElementById('name').focus();
 
+      $('#cnpj_input').formatter({
+        'pattern': '{{99}}.{{999}}.{{999}}/{{9999}}-{{99}}',
+        'persistent': true
+      });
       // hidden field cnpj
       job(0);
 
@@ -160,5 +150,27 @@
       ?>
     }
   </script>
+
+  <!-- ---------------------------------------- functions - end ---------------------------------------- -->
+
+  <!-- ---------------------------------------- scripts - start ---------------------------------------- -->
+
+  <!-- jQuery Library -->
+  <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/jquery-1.11.2.min.js"></script>
+  <!--materialize js-->
+  <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/materialize.js"></script>
+  <!--prism-->
+  <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/prism.js"></script>
+  <!--scrollbar-->
+  <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+  <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+  <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins.js"></script>
+
+  <!-- maskeinput -->
+  <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/maskedinput/jquery.formatter.min.js"></script>
+  <!-- <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/maskedinput/jquery-1.2.6.pack.js"></script> -->
+
+  <!-- ---------------------------------------- scripts - end ---------------------------------------- -->
+
   </body>
 </html>

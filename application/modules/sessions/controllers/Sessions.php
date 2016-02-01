@@ -29,6 +29,8 @@ class Sessions extends CI_Controller{
 			$name = $this->input->post('name', true);
 			$email = $this->input->post('email', true);
 			$job = $this->input->post('job_id', true);
+			$cnpj = $this->input->post('cnpj', true);
+			// TODO, validar cnpj
 			$password = md5($this->input->post('password', true));
 
 			$this->load->model('users/User');
@@ -88,5 +90,29 @@ class Sessions extends CI_Controller{
 	public function logout(){
 		$this->session->sess_destroy();
 		redirect(base_url());
+	}
+
+	function validar_cnpj($cnpj){
+		$cnpj = preg_replace('/[^0-9]/', '', (string) $cnpj);
+		// Valida tamanho
+		if (strlen($cnpj) != 14)
+			return false;
+		// Valida primeiro dígito verificador
+		for ($i = 0, $j = 5, $soma = 0; $i < 12; $i++)
+		{
+			$soma += $cnpj{$i} * $j;
+			$j = ($j == 2) ? 9 : $j - 1;
+		}
+		$resto = $soma % 11;
+		if ($cnpj{12} != ($resto < 2 ? 0 : 11 - $resto))
+			return false;
+		// Valida segundo dígito verificador
+		for ($i = 0, $j = 6, $soma = 0; $i < 13; $i++)
+		{
+			$soma += $cnpj{$i} * $j;
+			$j = ($j == 2) ? 9 : $j - 1;
+		}
+		$resto = $soma % 11;
+		return $cnpj{13} == ($resto < 2 ? 0 : 11 - $resto);
 	}
 }
