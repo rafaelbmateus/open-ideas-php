@@ -35,12 +35,12 @@ class Challenges extends CI_Controller{
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('challenge_title', $this->lang->line('title'), 'trim|required');
 		$this->form_validation->set_rules('challenge_description', $this->lang->line('description'), 'trim|required');
-		if ($this->form_validation->run() == false) {
+		if ($this->form_validation->run() == false){
 			$this->session->set_flashdata('error', (validation_errors() ? validation_errors() : false));
-		} else {
-			$title = $this->input->post('challenge_title', TRUE );
-			$description = $this->input->post('challenge_description', TRUE );
-			$deadline = $this->input->post('challenge_deadline', TRUE );
+		}else{
+			$title = $this->input->post('challenge_title', true);
+			$description = $this->input->post('challenge_description', true);
+			$deadline = $this->input->post('challenge_deadline', true);
 			$user_id = $this->session->userdata('user_id');
 
 			if ($this->Challenge->add($title, $description, $deadline, $user_id, date('Y-m-d H:i:s'))){
@@ -65,7 +65,7 @@ class Challenges extends CI_Controller{
 	public function update(){
 		$this->load->library ('form_validation');
 		$this->form_validation->set_rules('Challenge_name', 'Challenge name', 'trim|required');
-		if ($this->form_validation->run() == false) {
+		if ($this->form_validation->run() == false){
 			$this->session->set_flashdata( 'error', (validation_errors() ? validation_errors() : false));
 		}else{
 			$id = $this->input->post('challenge_id', true);
