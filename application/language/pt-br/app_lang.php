@@ -24,6 +24,7 @@ $lang['forgot_password'] = "Lembrar senha";
 $lang['password_error'] = "Senhas diferentes";
 $lang['login_incorrect'] = "Usuário ou seja incorretos, tente novamente";
 $lang['email_error'] = "Usuário já cadastrado";
+$lang['cnpj_error'] = "CNPJ inválido";
 $lang['choice_job'] = "Escolha seu perfil";
 $lang['register'] = "Cadastro";
 $lang['have_account'] = "Já tem uma conta?";

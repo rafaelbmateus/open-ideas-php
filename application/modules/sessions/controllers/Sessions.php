@@ -29,10 +29,14 @@ class Sessions extends CI_Controller{
 			$name = $this->input->post('name', true);
 			$email = $this->input->post('email', true);
 			$job = $this->input->post('job_id', true);
-			$cnpj = $this->input->post('cnpj', true);
-			// TODO, validar cnpj
+			$cnpj = str_replace('/','-', '', $this->input->post('cnpj', true));
 			$password = md5($this->input->post('password', true));
-
+			if($cnpj){
+				if(!$this->validate_cnpj($cnpj)){
+					$this->session->set_flashdata('error', $this->lang->line('cnpj_error') . ' ' . $cnpj);
+					redirect(base_url());
+				}
+			}
 			$this->load->model('users/User');
 			if (!$this->User->get_where('user_email', $email)){
 				if ($this->User->add($name, $email, $job, '2', $password, date('Y-m-d H:i:s'))){
@@ -40,6 +44,7 @@ class Sessions extends CI_Controller{
 					$this->session->set_flashdata('success', $this->lang->line('welcome') . ' ' . $user->user_name);
 					$this->create_session($user->user_id);
 				} else {
+					$this->session->sess_destroy();
 					$this->session->set_flashdata('error', $this->lang->line('save_error'));
 				}
 			}else{
@@ -92,23 +97,27 @@ class Sessions extends CI_Controller{
 		redirect(base_url());
 	}
 
-	function validar_cnpj($cnpj){
+	public function validate_cnpj($cnpj){
 		$cnpj = preg_replace('/[^0-9]/', '', (string) $cnpj);
+
+		if ($cnpj=='11111111111111'){	// TODO, to test! REMOVE AFTER!
+			return true;
+		}
 		// Valida tamanho
-		if (strlen($cnpj) != 14)
+		if (strlen($cnpj) != 14){
 			return false;
+		}
 		// Valida primeiro dígito verificador
-		for ($i = 0, $j = 5, $soma = 0; $i < 12; $i++)
-		{
+		for ($i = 0, $j = 5, $soma = 0; $i < 12; $i++){
 			$soma += $cnpj{$i} * $j;
 			$j = ($j == 2) ? 9 : $j - 1;
 		}
 		$resto = $soma % 11;
-		if ($cnpj{12} != ($resto < 2 ? 0 : 11 - $resto))
+		if ($cnpj{12} != ($resto < 2 ? 0 : 11 - $resto)){
 			return false;
+		}
 		// Valida segundo dígito verificador
-		for ($i = 0, $j = 6, $soma = 0; $i < 13; $i++)
-		{
+		for ($i = 0, $j = 6, $soma = 0; $i < 13; $i++){
 			$soma += $cnpj{$i} * $j;
 			$j = ($j == 2) ? 9 : $j - 1;
 		}

@@ -72,7 +72,7 @@
         <div class="row margin">
           <div class="input-field col s12">
             <i id="cnpj_icon" class="mdi-action-assignment-ind prefix" hidden></i>
-            <input id="cnpj_input" name="cnpj" type="text" data-inputmask="'mask': 'y/m/d'" hidden>
+            <input id="cnpj_input" name="cnpj" type="text" hidden required>
             <label id="cnpj_label" for="cnpj" class="center-align active" hidden><?php echo $this->lang->line('cnpj'); ?></label>
           </div>
         </div>
@@ -109,13 +109,15 @@
         document.getElementById('cnpj_input').style.display = 'block';
         document.getElementById('cnpj_label').style.display = 'block';
         document.getElementById('cnpj_icon').style.display = 'block';
+        document.getElementById("cnpj_input").required = true;
         // TODO, required field cnpj
 
       }else{
         document.getElementById('cnpj_input').style.display = 'none';
         document.getElementById('cnpj_label').style.display = 'none';
         document.getElementById('cnpj_icon').style.display = 'none';
-        // TODO, no required field cnpj
+        document.getElementById("cnpj_input").required = false;
+        // TODO, not required field cnpj
       }
     }
   </script>
@@ -125,10 +127,12 @@
       // focus in name
       document.getElementById('name').focus();
 
+      // formatter cnpj
       $('#cnpj_input').formatter({
         'pattern': '{{99}}.{{999}}.{{999}}/{{9999}}-{{99}}',
         'persistent': true
       });
+
       // hidden field cnpj
       job(0);
 
