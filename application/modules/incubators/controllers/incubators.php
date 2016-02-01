@@ -4,6 +4,7 @@ class Incubators extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
 		if(!$this->session->userdata('user_id')){redirect(base_url());}
+		$this->data['menu_incubators'] = true;
 		$this->load->model('Incubator');
 		$this->data['module'] = $this->module;
 	}

@@ -8,11 +8,13 @@ class Ideas extends CI_Controller{
 		$this->data['module'] = $this->module;
 	}
 	public function index(){
+		$this->data['menu_ideas'] = true;
 		$this->data['list'] = $this->Idea->get();
 		$this->data['view'] = 'index';
 		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 	}
 	public function my_ideas(){
+		$this->data['menu_my_ideas'] = true;
 		$this->data['list'] = $this->Idea->get_where('user_id', $this->session->userdata('user_id'));
 		$this->data['view'] = 'index';
 		$this->load->view($this->config->item('app_layout') . 'template', $this->data);

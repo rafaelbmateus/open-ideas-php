@@ -6,6 +6,7 @@ class App extends CI_Controller{
 	}
   public function index(){
 		if($this->session->userdata('user_id')){
+			$this->data['menu_challenges'] = true;
 			$this->load->model('challenges/Challenge');
 			$this->data['list'] = $this->Challenge->get();
 			$this->data['module'] = 'challenges';
