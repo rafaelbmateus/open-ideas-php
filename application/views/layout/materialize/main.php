@@ -21,7 +21,7 @@
             <li class="user-details cyan darken-2">
                 <div class="row">
                     <div class="col s4 m4 l4">
-                        <img src="<?php echo base_url() . 'assets/images/users/' . $this->session->userdata('user_id') . '.jpg'; ?>" alt="" class="circle responsive-img valign profile-image">
+                        <img src="<?php echo "http://www.gravatar.com/avatar/" . md5(strtolower(trim($this->session->userdata('user_email')))); ?>" alt="" class="circle responsive-img valign profile-image">
                     </div>
                     <div class="col col s8 m8 l8">
                         <ul id="profile-dropdown" class="dropdown-content">
