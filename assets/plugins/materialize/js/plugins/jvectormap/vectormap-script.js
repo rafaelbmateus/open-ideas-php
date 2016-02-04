@@ -43,19 +43,19 @@
 
         regionStyle: {
             initial: {
-                fill: '#b2ebf2',
+                fill: '#ffffff',
                 'fill-opacity': 1,
                 stroke: 'false',
                 'stroke-width': 0,
                 'stroke-opacity': 1
             },
             hover: {
-                fill: '#e0f7fa',
+                fill: '#FBFBFB',
                 'fill-opacity': 1,
                 cursor: 'pointer'
             },
             selected: {
-                fill: '#80deea'
+                fill: '#eceff1'
             },
             selectedHover: {}
         },
@@ -76,7 +76,7 @@
                 "stroke-width": 0,
             },
         },
-        backgroundColor: '#00bcd4',
+        backgroundColor: 'transperent',
         markers: [{
             latLng: [-38.41, -63.61],
             name: 'Argentina',            

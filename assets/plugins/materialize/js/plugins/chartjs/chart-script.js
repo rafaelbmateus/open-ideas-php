@@ -2,8 +2,9 @@
 * Trending line chart
 */
 //var randomScalingFactor = function(){ return Math.round(Math.random()*10)};
+var trendingLineChart;
 var data = {
-	labels : ["JAN","FEB","MAR","APR","MAY","JUNE","JULY"],
+	labels : ["Apple","Samsung","SONY","Motorola","Nokia","Microsoft","Xiaomi"],
 	datasets : [
 		{
 			label: "First dataset",
@@ -13,7 +14,7 @@ var data = {
 			pointStrokeColor : "#ffffff",
 			pointHighlightFill : "#ffffff",
 			pointHighlightStroke : "#ffffff",
-			data: [1, 5, 2, 4, 8, 5, 8]
+			data: [100, 50, 20, 40, 80, 50, 80]
 		},
 		{
 			label: "Second dataset",
@@ -23,29 +24,27 @@ var data = {
 			pointStrokeColor : "#80deea",
 			pointHighlightFill : "#80deea",
 			pointHighlightStroke : "#80deea",
-			data: [6, 2, 9, 2, 5, 10, 4]
+			data: [60, 20, 90, 80, 50, 85, 40]
 		}
 	]
 };
 
-var nReloads = 0;
-var min = 1;
-var max = 10;
-var l =0;
-var trendingLineChart;
-function update() {
-	nReloads++;
-
-	var x = Math.floor(Math.random() * (max - min + 1)) + min;
-	var y = Math.floor(Math.random() * (max - min + 1)) + min;
-	trendingLineChart.addData([x, y], data.labels[l]);
-	trendingLineChart.removeData();
-	l++;
-	if( l == data.labels.length)
-		{ l = 0;}
-}
-setInterval(update, 3000);
-
+setInterval(function(){
+  // Get a random index point
+  var indexToUpdate = Math.round(Math.random() * (data.labels.length-1));
+  if (typeof trendingLineChart != "undefined"){
+	  // Update one of the points in the second dataset
+	  if(trendingLineChart.datasets[0].points[indexToUpdate].value){
+	  		trendingLineChart.datasets[0].points[indexToUpdate].value = Math.round(Math.random() * 100);
+	  }
+	  if(trendingLineChart.datasets[1].points[indexToUpdate].value){
+	  		trendingLineChart.datasets[1].points[indexToUpdate].value = Math.round(Math.random() * 100);	
+	  }
+	  trendingLineChart.update();
+  }
+  	
+  
+}, 2000);
 
 
 /*
@@ -79,7 +78,7 @@ Trending Bar Chart
 */
 
 var dataBarChart = {
-    labels : ["JAN","FEB","MAR","APR","MAY"],
+    labels : ["JAN","FEB","MAR","APR","MAY","JUNE"],
     datasets: [
         {
             label: "Bar dataset",
@@ -87,11 +86,10 @@ var dataBarChart = {
             strokeColor: "#46BFBD",
             highlightFill: "rgba(70, 191, 189, 0.4)",
             highlightStroke: "rgba(70, 191, 189, 0.9)",
-            data: [6, 9, 8, 4, 6]
+            data: [6, 9, 8, 4, 6, 7]
         }
     ]
 };
-
 
 var nReloads1 = 0;
 var min1 = 1;
@@ -99,14 +97,16 @@ var max1 = 10;
 var l1 =0;
 var trendingBarChart;
 function updateBarChart() {	
-  	nReloads1++; 	
-	var x = Math.floor(Math.random() * (max1 - min1 + 1)) + min1;
-	trendingBarChart.addData([x], dataBarChart.labels[l1]);
-	trendingBarChart.removeData();
-	l1++;
-	if( l1 == dataBarChart.labels.length){ l1 = 0;} 
+	if (typeof trendingBarChart != "undefined") {
+	  	nReloads1++; 	
+		var x = Math.floor(Math.random() * (max1 - min1 + 1)) + min1;
+		trendingBarChart.addData([x], dataBarChart.labels[l1]);
+		trendingBarChart.removeData();
+		l1++;
+		if( l1 == dataBarChart.labels.length){ l1 = 0;} 
+	}
 }
-setInterval(updateBarChart, 3000);
+setInterval(updateBarChart, 5000);
 
 /*
 Trending Bar Chart
@@ -127,25 +127,23 @@ var radarChartData = {
 	],
 };
 	
-	
+
 var nReloads2 = 0;
 var min2 = 1;
 var max2 = 10;
 var l2 =0;
 var trendingRadarChart;
 function trendingRadarChartupdate() {	
-  	nReloads2++; 	
-
-	var x = Math.floor(Math.random() * (max2 - min2 + 1)) + min2;	
-	
-	trendingRadarChart.addData([x], radarChartData.labels[l2]);
-	var y = trendingRadarChart.removeData();
-	l2++;
-	if( l2 == radarChartData.labels.length){ l2 = 0;}
- 
+	if (typeof trendingRadarChart != "undefined") {
+		nReloads2++;
+		var x = Math.floor(Math.random() * (max2 - min2 + 1)) + min2;	
+		trendingRadarChart.addData([x], radarChartData.labels[l2]);
+		var y = trendingRadarChart.removeData();
+		l2++;
+		if( l2 == radarChartData.labels.length){ l2 = 0;}
+	}
 }
-
-setInterval(trendingRadarChartupdate, 3000);	
+setInterval(trendingRadarChartupdate, 5000);
 		
 /*
 Pie chart 

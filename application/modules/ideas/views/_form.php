@@ -90,11 +90,13 @@
 </div>
 
 <!-- attachment -->
-<div class="file-field input-field col s12">
-	<input class="file-path" type="text" readonly />
-	<div class="btn">
-		<span><?php echo $this->lang->line('attachment');?></span>
-		<input name="idea_attachment" type="file" />
+<div class="row">
+	<div class="file-field input-field col s6">
+		<input class="file-path" type="text" readonly />
+		<div class="btn">
+			<span><?php echo $this->lang->line('attachment');?></span>
+			<input name="idea_attachment" type="file" />
+		</div>
 	</div>
 </div>
 <br><br>

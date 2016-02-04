@@ -10,6 +10,27 @@
 </div>
 <!-- floating action button - end -->
 
+<!-- header nav - start -->
+<header id="header" class="page-topbar">
+  <div class="navbar-fixed">
+    <nav class="cyan">
+      <div class="nav-wrapper">
+        <!-- <h1 class="logo-wrapper"><a href="<?php echo base_url(); ?>" class="brand-logo darken-1"><img width="1" height="1" src="<?php echo base_url(); ?>assets/images/app/icons/o/o-xxxhdpi.png" alt="materialize logo">pen <img width="12" height="33" src="<?php echo base_url(); ?>assets/images/app/icons/i/i-xxxhdpi.png" alt="materialize logo">dea</a></h1> -->
+        <h1 class="logo-wrapper"><a href="<?php echo base_url(); ?>" class="brand-logo darken-1">Open Idea</a></h1>
+        <ul class="right hide-on-med-and-down">
+          <li class="search-out"><input type="text" class="search-out-text"></li>
+          <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light show-search"><i class="mdi-action-search"></i></a></li>
+          <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a></li>
+          <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light"><i class="mdi-social-notifications"></i></a></li>
+          <!-- Dropdown Trigger -->
+          <!--<li><a href="#" data-activates="chat-out" class="waves-effect waves-block waves-light chat-collapse"><i class="mdi-communication-chat"></i></a></li>-->
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- header nav - end-->
+
 <!-- start main -->
 <div id="main">
   <!-- START WRAPPER -->
@@ -88,3 +109,14 @@
 
 </div>
 <!-- END MAIN -->
+
+<!-- START FOOTER -->
+<footer class="page-footer">
+  <div class="footer-copyright">
+    <div class="container">
+      <span><?php echo $this->config->item('app_footer'); ?></span>
+      <span class="right"><?php echo $this->config->item('app_footer_right'); ?></span>
+      </div>
+  </div>
+</footer>
+<!-- END FOOTER -->
