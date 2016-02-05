@@ -16,7 +16,8 @@ class Users extends CI_Controller{
 		$id = $this->uri->segment(3);
 		if ($id){
 			$this->data['item'] = $this->User->get($id);
-			$this->load->view('show', $this->data);
+			$this->data['view'] = 'show';
+			$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 		}else{
 			redirect(base_url() . $this->module);
 		}
