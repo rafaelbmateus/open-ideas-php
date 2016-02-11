@@ -42,7 +42,7 @@ $lang['choose'] = "Escolha";
 // Application - end
 
 // Menu - start
-$lang['challanges'] = "Desafios";
+$lang['challenges'] = "Desafios";
 $lang['ideas'] = "Ideias";
 $lang['my_ideas'] = "Minhas ideias";
 $lang['incubators'] = "Incubadoras";

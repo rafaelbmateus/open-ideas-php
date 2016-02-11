@@ -16,6 +16,10 @@ class Users extends CI_Controller{
 		$id = $this->uri->segment(3);
 		if ($id){
 			$this->data['item'] = $this->User->get($id);
+			$this->load->model('jobs/Job');
+			$this->data['list_jobs'] = $this->Job->get();
+			$this->load->model('ideas/Idea');
+			$this->data['num_ideas'] = $this->Idea->get_sum($id);
 			$this->data['view'] = 'show';
 			$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 		}else{
