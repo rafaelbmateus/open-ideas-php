@@ -4,7 +4,7 @@
 
 <div class="card">
   <div class="card-image waves-effect waves-block waves-light">
-    <a href="#"><img src="images/img3.jpg" alt="blog-img"></a>
+    <a href="#"><img src="<?php echo base_url(); ?>assets/plugins/materialize/images/img3.jpg" alt="blog-img"></a>
   </div>
   <ul class="card-action-buttons">
     <li><a class="btn-floating waves-effect waves-light green accent-4"><i class="mdi-social-share"></i></a></li>

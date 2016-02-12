@@ -9,14 +9,14 @@
           <div class="input-field col s12 center">
             <input name="email" type="text" hidden
               value="<?php if(isset($user->user_email)) echo $user->user_email; ?>"/>
-            <img src="<?php if(isset($user->user_id)) echo base_url() . 'assets/images/users/' . $user->user_id . '.jpg'; ?>" alt="" class="circle responsive-img valign profile-image-login">
+            <img src="<?php echo "http://www.gravatar.com/avatar/" . md5(strtolower(trim(get_cookie('email_oi')))); ?>" alt="" class="circle responsive-img valign profile-image-login">
             <h4 class="header"><?php if(isset($user->user_name)) echo $user->user_name;?></h4>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
-            <input id="password" name="password" type="password">
+            <input id="password" name="password" type="password" required>
             <label for="password"><?php echo $this->lang->line('password');?></label>
           </div>
         </div>

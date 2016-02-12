@@ -86,9 +86,12 @@ class Sessions extends CI_Controller{
 		}
 	}
 	public function lock(){
+		$this->load->helper('cookie');
 		$id = $this->session->userdata('user_id');
 		$this->load->model('users/User');
-		$this->data['user'] = $this->User->get($id);
+		$user = $this->User->get($id);
+		$cookie = array('email_oi' => $user->user_email);
+		// setcookie('email_oi', $user->user_email);
 		$this->session->sess_destroy();
 		$this->load->view('lock', $this->data);
 	}
