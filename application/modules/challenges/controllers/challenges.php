@@ -5,12 +5,15 @@ class Challenges extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
 		if(!$this->session->userdata('user_id')){redirect(base_url());}
+		date_default_timezone_set('America/Sao_Paulo');
 		$this->data['menu_challenges'] = true;
 		$this->load->model('Challenge');
 		$this->data['module'] = $this->module;
 	}
 	public function index(){
 		$this->data['list'] = $this->Challenge->get();
+		$this->load->model('users/User');
+		$this->data['list_users'] = $this->User->get();
 		$this->data['view'] = 'index';
 		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 	}

@@ -5,7 +5,7 @@ class Jobs extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
 		if(!$this->session->userdata('user_id')){redirect(base_url());}
-		//date_default_timezone_set ( 'America/Sao_Paulo' );
+		date_default_timezone_set('America/Sao_Paulo');
 		$this->load->model('Job');
 		$this->data['module'] = $this->module;
 	}
