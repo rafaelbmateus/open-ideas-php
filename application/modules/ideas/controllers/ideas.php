@@ -13,12 +13,18 @@ class Ideas extends CI_Controller{
 		$this->data['list'] = $this->Idea->get();
 		$this->load->model('users/User');
 		$this->data['list_users'] = $this->User->get();
+		$this->load->model('areas/Area');
+		$this->data['list_areas'] = $this->Area->get();
 		$this->data['view'] = 'index';
 		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 	}
 	public function my_ideas(){
 		$this->data['menu_my_ideas'] = true;
 		$this->data['list'] = $this->Idea->get_where('user_id', $this->session->userdata('user_id'));
+		$this->load->model('users/User');
+		$this->data['list_users'] = $this->User->get();
+		$this->load->model('areas/Area');
+		$this->data['list_areas'] = $this->Area->get();
 		$this->data['view'] = 'index';
 		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 	}

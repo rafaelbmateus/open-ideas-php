@@ -3,38 +3,29 @@
 <?php //print_r($list); ?>
 
 <?php if (!empty($list)){ ?>
-	<?php foreach($list as $item){ ?>
+  <div id="blog-post-full">
+  	<?php foreach($list as $item){ ?>
+      <div class="card large">
+        <div class="card-image">
+          <img src="<?php echo base_url(); ?>assets/plugins/materialize/images/gallary/1.jpg" alt="sample">
+          <span class="card-title"><?php echo $item->idea_title; ?></span>
+          <span class="card-title blog-post-full-cat right cyan"><a href="#"><?php echo $list_areas[$item->area_id-1]->area_name; ?></a></span>
+        </div>
+        <div class="card-content">
+          <a href="<?php echo base_url() . 'users' . '/show/' . $item->user_id; ?>"><?php echo $list_users[$item->user_id-1]->user_name; ?></a>
+          <p><?php echo $item->idea_description; ?></p>
+        </div>
 
-    <div class="card">
-      <div class="card-image waves-effect waves-block waves-light">
-        <a><img class="activator" src="<?php echo base_url(); ?>assets/plugins/materialize/images/img3.jpg" alt="blog-img"></a>
+        <div class="card-action">
+          <p class="ultra-small"><?php echo date('d/m/Y H:i:s', strtotime($item->created_at)); ?></p>
+          <!-- <a href="#" class="right">Read more ></a> -->
+          <a class="btn-floating waves-effect waves-light light-blue right" href="<?php echo base_url () . $module . '/edit/' . $item->idea_id; ?>"><i class="fa fa-pencil"></i></a>
+          <?php  echo "&nbsp"; ?>
+          <a class="btn-floating waves-effect waves-light light-blue right" href="<?php echo base_url () . $module . '/edit/' . $item->idea_id; ?>"><i class="fa fa-pencil"></i></a>
+        </div>
       </div>
-      <ul class="card-action-buttons">
-        <li><a class="btn-floating waves-effect waves-light green accent-4"><i class="mdi-social-share"></i></a></li>
-        <li><a class="btn-floating waves-effect waves-light light-blue"><i class="mdi-action-info activator"></i></a></li>
-        <li><a class="btn-floating waves-effect waves-light light-blue" href="<?php echo base_url () . $module . '/edit/' . $item->idea_id; ?>"><i class="fa fa-pencil"></i></a></li>
-      </ul>
-      <div class="card-content">
-    	  <p class="row">
-    	    <span class="left"><a href="">Web Design</a></span>
-    	    <span class="right">18th June, 2015</span>
-    	  </p>
-    	  <h4 class="card-title grey-text text-darken-4"><a class="grey-text text-darken-4"><?php echo $item->idea_title; ?></a></h4>
-    	  <p class="blog-post-content"><?php echo $item->idea_description; ?></p>
-    	  <div class="row">
-    	    <div class="col s2">
-    	    	<img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image">
-    	    </div>
-    	    <div class="col s9"> By <a href="#">John Doe</a></div>
-    	  </div>
-      </div>
-      <div class="card-reveal">
-    	  <span class="card-title grey-text text-darken-4"><i class="mdi-navigation-close right"></i> <?php echo $item->idea_title; ?></span>
-    	  <p><?php echo $item->idea_description; ?></p>
-      </div>
-    </div>
-
-  <?php } ?>
+    <?php } ?>
+  </div>
   <!-- for - end-->
 
 <?php }else{ ?>
