@@ -11,7 +11,7 @@
 					<label><?php echo $this->lang->line('name');?></label>
 				</div>
 			</div>
-			<div class="row margin">
+			<div class="row">
 				<div class="input-field col s12">
 					<select name="job_id" required>
 						<option value="" disabled selected><?php echo $this->lang->line('choice_job'); ?></option>
@@ -34,13 +34,15 @@
 					<label><?php echo $this->lang->line('email');?></label>
 				</div>
 			</div>
-			<div class="row">
-				<div class="input-field col s6">
-					<input name="password" type="password" required
-						value="<?php //if (isset($item)) echo $item->user_password; ?>"/>
-					<label><?php echo $this->lang->line('password');?></label>
+			<?php if($view=='new'){ ?>
+				<div class="row">
+					<div class="input-field col s6">
+						<input name="password" type="password" required
+							value="<?php //if (isset($item)) echo $item->user_password; ?>"/>
+						<label><?php echo $this->lang->line('password');?></label>
+					</div>
 				</div>
-			</div>
+			<?php } ?>
 			<div class="row">
 				<div class="input-field col s5">
 					<a class="btn cyan waves-effect waves-light" href="<?php echo base_url() . $module;?>"><?php echo $this->lang->line('cancel');?><i class="fa fa-times left"></i></a>

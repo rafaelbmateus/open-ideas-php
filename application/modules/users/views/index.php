@@ -23,6 +23,8 @@
 	</tbody>
 </table>
 
+<br><br><br>
+
 <!-- scripts DataTables - start -->
 <script type="text/javascript">
 $(document).ready(function(){
