@@ -7,6 +7,7 @@ class Users extends CI_Controller{
 		date_default_timezone_set('America/Sao_Paulo');
 		$this->load->model('User');
 		$this->data['module'] = $this->module;
+		$this->lang->load('app_lang', 'english');
 	}
 	public function index(){
 		$this->data['list'] = $this->User->get();

@@ -17,14 +17,54 @@
       <div class="nav-wrapper">
         <!-- <h1 class="logo-wrapper"><a href="<?php echo base_url(); ?>" class="brand-logo darken-1"><img width="1" height="1" src="<?php echo base_url(); ?>assets/images/app/icons/o/o-xxxhdpi.png" alt="materialize logo">pen <img width="12" height="33" src="<?php echo base_url(); ?>assets/images/app/icons/i/i-xxxhdpi.png" alt="materialize logo">dea</a></h1> -->
         <h1 class="logo-wrapper"><a href="<?php echo base_url(); ?>" class="brand-logo darken-1">Open Idea</a></h1>
+        <div class="header-search-wrapper hide-on-med-and-down">
+            <i class="mdi-action-search"></i>
+            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="<?php echo $this->lang->line('search_bar'); ?>"/>
+        </div>
         <ul class="right hide-on-med-and-down">
-          <li class="search-out"><input type="text" class="search-out-text"></li>
-          <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light show-search"><i class="mdi-action-search"></i></a></li>
+          <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light translation-button"  data-activates="translation-dropdown"><img src="<?php echo base_url(); ?>assets/images/app/flags/Brazil.png" alt="USA" /></a></li>
+          <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light notification-button" data-activates="notifications-dropdown"><i class="mdi-social-notifications"><small class="notification-badge">5</small></i></a></li>
           <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a></li>
-          <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light"><i class="mdi-social-notifications"></i></a></li>
           <!-- Dropdown Trigger -->
           <!--<li><a href="#" data-activates="chat-out" class="waves-effect waves-block waves-light chat-collapse"><i class="mdi-communication-chat"></i></a></li>-->
         </ul>
+
+        <!-- translation-dropdown - start -->
+        <ul id="translation-dropdown" class="dropdown-content">
+          <li><a href="#!"><img src="<?php echo base_url(); ?>assets/images/app/flags/Brazil.png" alt="Português"/><span class="language-select"> Português</span></a></li>
+          <li><a href="#!"><img src="<?php echo base_url(); ?>assets/images/app/flags/United-States.png" alt="English"/><span class="language-select"> English</span></a></li>
+        </ul>
+        <!-- translation-dropdown - end -->
+
+        <!-- notifications-dropdown - start -->
+        <ul id="notifications-dropdown" class="dropdown-content">
+          <li>
+            <h5>NOTIFICATIONS <span class="new badge">5</span></h5>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#!"><i class="mdi-action-add-shopping-cart"></i> A new order has been placed!</a>
+            <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">2 hours ago</time>
+          </li>
+          <li>
+            <a href="#!"><i class="mdi-action-stars"></i> Completed the task</a>
+            <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">3 days ago</time>
+          </li>
+          <li>
+            <a href="#!"><i class="mdi-action-settings"></i> Settings updated</a>
+            <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">4 days ago</time>
+          </li>
+          <li>
+            <a href="#!"><i class="mdi-editor-insert-invitation"></i> Director meeting started</a>
+            <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">6 days ago</time>
+          </li>
+          <li>
+            <a href="#!"><i class="mdi-action-trending-up"></i> Generate monthly report</a>
+            <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">1 week ago</time>
+          </li>
+        </ul>
+        <!-- notifications-dropdown - end -->
+
       </div>
     </nav>
   </div>
@@ -46,9 +86,9 @@
                     </div>
                     <div class="col col s8 m8 l8">
                         <ul id="profile-dropdown" class="dropdown-content">
-                            <li><a href="#"><i class="mdi-action-face-unlock"></i><?php echo $this->lang->line('profile');?></a></li>
-                            <!-- <li><a href="#"><i class="mdi-action-settings"></i><?php echo $this->lang->line('config');?></a></li> -->
-                            <li><a href="#"><i class="mdi-communication-live-help"></i><?php echo $this->lang->line('help');?></a></li>
+                            <li><a href="#"><i class="mdi-action-face-unlock"></i><?php echo $this->lang->line('profile'); ?></a></li>
+                            <!-- <li><a href="#"><i class="mdi-action-settings"></i><?php echo $this->lang->line('config'); ?></a></li> -->
+                            <li><a href="#"><i class="mdi-communication-live-help"></i><?php echo $this->lang->line('help'); ?></a></li>
                             <li class="divider"></li>
                             <li><a href="<?php echo base_url();?>sessions/lock"><i class="mdi-action-lock-outline"></i><?php echo $this->lang->line('lock');?></a></li>
                             <li><a href="<?php echo base_url();?>sessions/logout"><i class="mdi-hardware-keyboard-tab"></i><?php echo $this->lang->line('logout');?></a></li>

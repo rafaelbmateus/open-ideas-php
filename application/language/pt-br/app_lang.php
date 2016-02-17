@@ -39,6 +39,7 @@ $lang['public_idea'] = "Publicar";
 $lang['attachment'] = "Anexo";
 $lang['deadline'] = "Data Limite";
 $lang['choose'] = "Escolha";
+$lang['search_bar'] = "Pesquisar Open Innovation";
 // Application - end
 
 // Menu - start
