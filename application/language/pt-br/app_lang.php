@@ -84,7 +84,7 @@ $lang['save_success'] = "Registro salvo com sucesso!";
 $lang['save_error'] = "Ops, houve um erro ao salvar o registro. Estamos de olho nisso!";
 $lang['update_success'] = "Registro atualizado com sucesso!";
 $lang['update_error'] = "Ops, houve um erro ao atualizar o registro. Estamos de olho nisso!";
-$lang['delete_success'] = "Registro excluido.";
+$lang['delete_success'] = "Registro excluído.";
 $lang['delete_error'] = "Ops, houve um erro ao excluir o registro. Estamos de olho nisso!";
 // Controller - end
 

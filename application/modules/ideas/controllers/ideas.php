@@ -11,6 +11,8 @@ class Ideas extends CI_Controller{
 	public function index(){
 		$this->data['menu_ideas'] = true;
 		$this->data['list'] = $this->Idea->get();
+		$this->load->model('users/User');
+		$this->data['list_users'] = $this->User->get();
 		$this->data['view'] = 'index';
 		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 	}
