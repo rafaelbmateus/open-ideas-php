@@ -31,7 +31,7 @@ $config['app_footer_right'] = 'Developed by <a class="grey-text text-lighten-4" 
 |
 */
 //$config['base_url'] = '';
-$config['base_url'] = 'http://localhost:8080/open-idea-php/';
+$config['base_url'] = 'http://localhost/open-idea-php/';
 
 /*
 |--------------------------------------------------------------------------
