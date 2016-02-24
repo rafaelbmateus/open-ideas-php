@@ -22,6 +22,8 @@ class Users extends CI_Controller{
 			$this->data['list_jobs'] = $this->Job->get();
 			$this->load->model('ideas/Idea');
 			$this->data['num_ideas'] = $this->Idea->get_sum($id);
+			$this->load->model('challenges/Challenge');
+			$this->data['num_challenges'] = $this->Challenge->get_sum($id);
 			$this->data['view'] = 'show';
 			$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 		}else{

@@ -50,6 +50,12 @@ class Challenge extends CI_Model{
 			return $query->result();
 		}
 	}
+	function get_sum($id_user){
+		$query = $this->db->get($this->table);
+		$this->db->where($this->is_deleted_field, null);
+		$this->db->where('user_id', $id_user);
+		return $query->num_rows();
+	}
 	public function add($title, $description, $deadline, $user_id, $timestamp){
 		$data = array (
 				'challenge_title' => $title,

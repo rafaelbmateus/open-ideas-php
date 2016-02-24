@@ -1,8 +1,8 @@
 <div id="profile-page" class="section">
   <!-- profile-page-header -->
   <div id="profile-page-header" class="card">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="<?php echo base_url(); ?>assets/plugins/materialize/images/user-profile-bg.jpg" alt="user background">
+    <div class="card-image waves-effect">
+      <img src="<?php echo base_url(); ?>assets/plugins/materialize/images/user-profile-bg.jpg" alt="user background">
     </div>
     <figure class="card-profile-image">
       <img src="<?php echo "http://www.gravatar.com/avatar/" . md5(strtolower(trim($item->user_email))); ?>" alt="profile image" class="circle z-depth-2 responsive-img activator">
@@ -18,10 +18,10 @@
           <p class="medium-small grey-text"><?php echo $this->lang->line('ideas'); ?></p>
         </div>
         <div class="col s2 center-align">
-          <h4 class="card-title grey-text text-darken-4">6</h4>
+          <h4 class="card-title grey-text text-darken-4"><?php echo $num_challenges; ?></h4>
           <p class="medium-small grey-text"><?php echo $this->lang->line('challenges'); ?></p>
         </div>
-        <div class="col s2 center-align">
+        <!-- <div class="col s2 center-align">
           <h4 class="card-title grey-text text-darken-4">$ 1,253,000</h4>
           <p class="medium-small grey-text">Busness Profit</p>
         </div>
@@ -29,21 +29,18 @@
           <a class="btn-floating activator waves-effect waves-light darken-2 right">
             <i class="mdi-action-perm-identity"></i>
           </a>
-        </div>
+        </div> -->
       </div>
     </div>
-    <div class="card-reveal">
+    <!-- <div class="card-reveal">
       <p>
         <span class="card-title grey-text text-darken-4"><?php echo $item->user_name; ?><i class="mdi-navigation-close right"></i></span>
         <span><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> <?php echo $this->lang->line($list_jobs[$item->job_id-1]->job_name); ?></span>
       </p>
-
-      <!-- <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p> -->
-
       <p><i class="mdi-communication-email cyan-text text-darken-2"></i> <?php echo $item->user_email; ?></p>
       <p><i class="mdi-social-cake cyan-text text-darken-2"></i> 18th June 1990</p>
       <p><i class="mdi-device-airplanemode-on cyan-text text-darken-2"></i> BAR - AUS</p>
-    </div>
+    </div> -->
   </div>
   <!--/ profile-page-header -->
 
