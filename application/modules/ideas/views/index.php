@@ -7,9 +7,11 @@
   	<?php foreach($list as $item){ ?>
       <div class="card large">
         <div class="card-image">
-          <img src="<?php echo base_url(); ?>assets/plugins/materialize/images/gallary/1.jpg" alt="sample">
-          <span class="card-title"><?php echo $item->idea_title; ?></span>
-          <span class="card-title blog-post-full-cat right cyan"><a href="#"><?php echo $list_areas[$item->area_id-1]->area_name; ?></a></span>
+          <img src="<?php echo base_url() . 'assets/images/areas/' . $item->area_id . '.jpg'; ?>" alt="sample" height="150">
+          <a href="<?php echo base_url() . $module . '/show/' . $item->idea_id; ?>">
+            <span class="card-title"><?php echo $item->idea_title; ?></span>
+          </a>
+          <span class="card-title blog-post-full-cat right cyan z-depth-1"><a href="#"><?php echo $list_areas[$item->area_id-1]->area_name; ?></a></span>
         </div>
         <div class="card-content">
           <a href="<?php echo base_url() . 'users' . '/show/' . $item->user_id; ?>"><?php echo $list_users[$item->user_id-1]->user_name; ?></a>
