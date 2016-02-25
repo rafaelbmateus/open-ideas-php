@@ -76,14 +76,21 @@ class Users extends CI_Controller{
 			redirect (base_url() . $this->module);
 		}
 	}
+	public function edit_profile(){
+		$this->load->model('jobs/Job');
+		$this->data['jobs'] = $this->Job->get();
+		$this->data['item'] = $this->User->get($this->session->userdata('user_id'));
+		$this->data['view'] = 'edit';
+		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
+	}
 	public function update(){
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('name', $this->lang->line('name'), 'trim|required');
 		$this->form_validation->set_rules('email', $this->lang->line('email'), 'trim|required');
-		$this->form_validation->set_rules('job_id', $this->lang->line('job'), 'trim|required');
 
 		if ($this->form_validation->run() == false){
-			$this->session->set_flashdata('error', (validation_errors() ? validation_errors() : false));
+			print_r(validation_errors()); return;
+			$this->session->set_flashdata('error', 'Error');
 		}else{
 			$id = $this->input->post('user_id', true);
 			$name = $this->input->post('name', true);
@@ -99,7 +106,16 @@ class Users extends CI_Controller{
 				$this->session->set_flashdata('error', $this->lang->line('update_error'));
 			}
 		}
-		redirect(base_url() . $this->module);
+
+		// To edit profile
+		if($this->session->userdata('user_type')=='admin'){
+			redirect(base_url() . $this->module);
+		}else{
+			$this->load->model('sessions/Session');
+			$this->Session->create_session($this->session->userdata('user_id'));
+			redirect(base_url());
+		}
+
 	}
 	public function delete(){
 		$id = $this->input->post('id', true);

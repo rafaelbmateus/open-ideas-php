@@ -74,16 +74,7 @@ class Sessions extends CI_Controller{
 		}
 	}
 	public function create_session($user_id, $remember){
-		$this->load->model('users/User');
-		$user = $this->User->get_where('user_id', $user_id);
-		$this->session->set_userdata('user_id', $user->user_id);
-		$this->session->set_userdata('user_name', $user->user_name);
-		$this->session->set_userdata('user_email', $user->user_email);
-		$this->session->set_userdata('user_type', $user->type_name);
-		$this->session->set_userdata('user_job', $user->job_name);
-		if($remember){
-			$this->session->sess_expiration = 60*60*24*365;	// set session expire to a year
-		}
+		$this->Session->create_session($user_id, $remember);
 	}
 	public function lock(){
 		$this->load->helper('cookie');

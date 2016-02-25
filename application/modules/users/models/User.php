@@ -61,11 +61,14 @@ class User extends CI_Model{
 	function update($id, $name, $email, $job_id, $type_id, $password, $timestamp){
 		$data = array (
 				'user_name' => $name,
-				'job_id' => $job_id,
 				'type_id' => $type_id,
 				'user_email' => $email,
 				$this->date_updated_field => $timestamp
 		);
+
+		if ($job_id){
+			$data['job_id'] = $job_id;
+		}
 
 		if ($password){
 			$data['password'] = $password;
