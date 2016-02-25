@@ -50,7 +50,7 @@ Alguns valores da Inovação Aberta são:
 - [ ] Search bar - Google API
 - [ ] Allow create challenge only corporate profile - validate in controller
 - [ ] Buscar idea por area
-- [ ] Traduzir calendário
+- [x] Traduzir calendário
 - [x] Aumentar tamanho do campo no input description do Desafio para 1200
 - [x] Aumentar tamanho do campo no input title do Desafio para 80
 - [ ] Página de ajuda
