@@ -4,8 +4,48 @@ The idea is to build an open platform for innovation, bringing the academics to 
 
 The plataform is a great idea, but the start will make the skeleton to work.
 
-## TODO:
-Companies publishing challenges;<br>
+## TODOs:
+
+### Cors
+
+#### Ideias
+- [ ] Listar idea
+- [ ] Mostrar idea
+- [x] Cadastrar idea
+- [x] Alterar idea
+- [x] Excluir idea
+
+#### Desafios
+- [ ] Listar desafios
+- [ ] Mostar desafio
+- [x] Cadastrar desafios
+- [x] Alterar desafio
+- [x] Exluir desafio
+
+#### Usuário
+- [ ] Cadastrar
+- [ ] Atualizar
+- [ ] Mostrar
+
+#### Incubadoras
+- [x] Listar
+- [ ] Cadastrar
+- [ ] Atualizar
+
+### Específicos
+- [ ] Validar CNPJ - controller
+- [ ] Máscara CNPJ
+- [ ] Layout botão excluir
+- [ ] Anexar imagem Ideia
+- [ ] Anexar imagem Desafio
+- [ ] Search bar - Google API
+- [ ] Card - Não tenho ideia...
+- [ ] Card - Não tenho desafios...
+- [ ] Allow create challenge only corporate profile
+- [ ] Buscar idea por area
+
+
+
 External sources help you complete the challenge;<br>
 Apply a gamification to users to help complete the challenge;<br>
 Allow users to register with public and private ideas in plataform, documenting their ideas;<br>

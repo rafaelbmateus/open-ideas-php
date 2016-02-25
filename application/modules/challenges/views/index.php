@@ -35,7 +35,7 @@
 		</div>
 	<?php } ?>
 <?php }else{ ?>
-	<?php echo $this->lang->line('dont_have_challenge'); ?>
+	<?php // echo $this->lang->line('dont_have_challenge'); ?>
 <?php } ?>
 
 <br><br><br>

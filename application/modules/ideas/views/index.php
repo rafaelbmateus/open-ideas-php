@@ -31,7 +31,7 @@
   <!-- for - end-->
 
 <?php }else{ ?>
-	<?php	echo $this->lang->line('dont_have_idea'); ?>
+	<?php	// echo $this->lang->line('dont_have_idea'); ?>
 <?php } ?>
 
 <br><br><br>

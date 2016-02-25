@@ -20,4 +20,8 @@ class App extends CI_Controller{
 			$this->load->view('sessions/login', $this->data);
 		}
 	}
+
+	public function translate(){
+		$this->lang->load("app_lang","english");
+	}
 }
