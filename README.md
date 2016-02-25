@@ -51,6 +51,11 @@ The plataform is a great idea, but the start will make the skeleton to work.
 - [ ] Remover icone CNPJ no abrir uma conta
 - [ ] Alinhar desafios (index)
 - [ ] Listar Ideas e desafios na página do usuário
+- [ ] Criar rotas
+- [ ] Translate app_langue to English
+- [x] Trocar ação floating button
+- [ ] Ação javascript no compartilhar, colocar no ctrl+c.
+- [ ] Fazer uma página para acessar do sistema o compartilhamento da ideia/desafio
 
 
 External sources help you complete the challenge;<br>

@@ -7,7 +7,8 @@
   	<?php foreach($list as $item){ ?>
       <div class="card large">
         <div class="card-image">
-          <img src="<?php echo base_url() . 'assets/images/areas/' . $item->area_id . '.jpg'; ?>" alt="sample" height="150">
+          <!-- <img src="<?php echo base_url() . 'assets/images/areas/' . $item->area_id . '.jpg'; ?>" alt="sample" height="150"> -->
+          <img src="<?php echo base_url() . 'assets/images/areas/' . 'test' . '.jpg'; ?>" alt="sample" height="90">
           <a href="<?php echo base_url() . $module . '/show/' . $item->idea_id; ?>">
             <span class="card-title"><?php echo $item->idea_title; ?></span>
           </a>
@@ -21,9 +22,10 @@
         <div class="card-action">
           <p class="ultra-small"><?php echo date('d/m/Y H:i:s', strtotime($item->created_at)); ?></p>
           <!-- <a href="#" class="right">Read more ></a> -->
-          <a class="btn-floating waves-effect waves-light light-blue right" href="<?php echo base_url () . $module . '/edit/' . $item->idea_id; ?>"><i class="fa fa-pencil"></i></a>
-          <?php  echo "&nbsp"; ?>
-          <a class="btn-floating waves-effect waves-light light-blue right" href="<?php echo base_url () . $module . '/edit/' . $item->idea_id; ?>"><i class="fa fa-pencil"></i></a>
+          <a class="btn-floating waves-effect waves-light yellow accent-4 right" onclick="like();"><i class="fa fa-thumbs-up"></i></a>
+          <?php if($item->user_id==$this->session->userdata('user_id')){ ?>
+            <a class="btn-floating waves-effect waves-light light-blue" href="<?php echo base_url () . $module . '/edit/' . $item->idea_id; ?>"><i class="fa fa-pencil"></i></a>
+          <?php } ?>
         </div>
       </div>
     <?php } ?>
