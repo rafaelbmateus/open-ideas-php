@@ -1,8 +1,17 @@
-# Project Open Idea
+# Open Idea
 
-The idea is to build an open platform for innovation, bringing the academics to companies.<br>
+##Plataforma de Inovação aberta
 
-The plataform is a great idea, but the start will make the skeleton to work.
+O Open Idea é uma plataforma de inovação aberta onde aproxima os desafios das ideias.<br>
+
+A pricipal "idea" é permitir que empresários publiquem desafios onde pesquisadores, acadêmicos e outras fontes externas colaborem para essa solução.<br>
+
+Alguns valores da Inovação Aberta são:
+* Colaboração em rede
+* Experiências
+* Disseminação de conhecimento
+* Novas parcerias
+* ...
 
 ## TODOs:
 
@@ -55,9 +64,18 @@ The plataform is a great idea, but the start will make the skeleton to work.
 - [ ] Ação javascript no compartilhar, colocar no ctrl+c.
 - [ ] Fazer uma página para acessar do sistema o compartilhamento da ideia/desafio
 - [x] Atualizar perfil
+- [ ] Icone iLab
+- [ ] Icone Unisul
+- [ ] Comentar em uma ideia
+- [ ] Comentar em um desafio
+- [ ] Curtir uma ideia
+- [ ] Curtir um desafio
+
+### Outros para quando tiver tempo...
+- [ ] Seguir usuários
+- [ ] Pontuar o usuário por cada ação. (Gamification)
 
 
-### Others
 External sources help you complete the challenge;<br>
 Apply a gamification to users to help complete the challenge;<br>
 Allow users to register with public and private ideas in plataform, documenting their ideas;<br>
