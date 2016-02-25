@@ -43,7 +43,14 @@ The plataform is a great idea, but the start will make the skeleton to work.
 - [ ] Card - Não tenho desafios...
 - [ ] Allow create challenge only corporate profile
 - [ ] Buscar idea por area
-
+- [ ] Traduzir calendário
+- [x] Aumentar tamanho do campo no input description do Desafio para 1200
+- [x] Aumentar tamanho do campo no input title do Desafio para 80
+- [ ] Página de ajuda
+- [ ] Salvar email no cookie quando der lock
+- [ ] Remover icone CNPJ no abrir uma conta
+- [ ] Alinhar desafios (index)
+- [ ] Listar Ideas e desafios na página do usuário
 
 
 External sources help you complete the challenge;<br>

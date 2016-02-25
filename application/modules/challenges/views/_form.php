@@ -25,7 +25,7 @@
 <!-- title -->
 <div class="row">
 	<div class="input-field col s8">
-		<input name="challenge_title" type="text" length="60" maxlength="60" required
+		<input name="challenge_title" type="text" length="80" maxlength="80" required
 			value="<?php if (isset($item)) echo $item->challenge_title; ?>"/>
 		<label><?php echo $this->lang->line('title'); ?></label>
 	</div>
@@ -34,7 +34,7 @@
 <!-- description -->
 <div class="row">
 	<div class="input-field col s12">
-		<textarea name="challenge_description" class="materialize-textarea" length="255" maxlength="255" required><?php if (isset($item)) echo $item->challenge_description; ?></textarea>
+		<textarea name="challenge_description" class="materialize-textarea" length="1200" maxlength="1200" required><?php if (isset($item)) echo $item->challenge_description; ?></textarea>
 		<label><?php echo $this->lang->line('description'); ?></label>
 	</div>
 </div>
