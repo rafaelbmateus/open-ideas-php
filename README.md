@@ -39,9 +39,7 @@ The plataform is a great idea, but the start will make the skeleton to work.
 - [ ] Anexar imagem Ideia
 - [ ] Anexar imagem Desafio
 - [ ] Search bar - Google API
-- [ ] Card - Não tenho ideia...
-- [ ] Card - Não tenho desafios...
-- [ ] Allow create challenge only corporate profile
+- [ ] Allow create challenge only corporate profile - validate in controller
 - [ ] Buscar idea por area
 - [ ] Traduzir calendário
 - [x] Aumentar tamanho do campo no input description do Desafio para 1200
@@ -56,8 +54,10 @@ The plataform is a great idea, but the start will make the skeleton to work.
 - [x] Trocar ação floating button
 - [ ] Ação javascript no compartilhar, colocar no ctrl+c.
 - [ ] Fazer uma página para acessar do sistema o compartilhamento da ideia/desafio
+- [x] Atualizar perfil
 
 
+### Others
 External sources help you complete the challenge;<br>
 Apply a gamification to users to help complete the challenge;<br>
 Allow users to register with public and private ideas in plataform, documenting their ideas;<br>
