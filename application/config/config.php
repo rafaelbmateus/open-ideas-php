@@ -11,7 +11,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $config['app_layout'] = 'layout/materialize/';
 $config['app_title'] = 'Open Idea';
 $config['app_footer'] = 'Comunidade de inovação aberta, de código aberto, disponível no <a href="https://github.com/rafaelbmateus/open-idea-php" style="color: white">github</a>';
-$config['app_footer_right'] = 'Developed by <a class="grey-text text-lighten-4" href="http://rafaelbmateus.github.io/aboutme/">Rafael Mateus</a>';
+$config['app_footer'] = '<img width="200" height="45" src="http://localhost/open-idea-php/assets/images/app/iLab.jpg">';
+$config['app_footer_right'] = ' Developed by <a class="grey-text text-lighten-4" href="http://rafaelbmateus.github.io/aboutme/">Rafael Mateus</a>';
 
 
 /*
