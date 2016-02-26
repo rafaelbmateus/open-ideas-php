@@ -10,7 +10,8 @@ class Ideas extends CI_Controller{
 	}
 	public function index(){
 		$this->data['menu_ideas'] = true;
-		$this->data['list'] = $this->Idea->get();
+		// $this->data['list'] = $this->Idea->get();
+		$this->data['list'] = $this->Idea->get_where('idea_is_public', true);
 		$this->load->model('users/User');
 		$this->data['list_users'] = $this->User->get();
 		$this->load->model('areas/Area');
@@ -25,16 +26,6 @@ class Ideas extends CI_Controller{
 		$this->data['list_users'] = $this->User->get();
 		$this->load->model('areas/Area');
 		$this->data['list_areas'] = $this->Area->get();
-		$this->data['view'] = 'index';
-		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
-	}
-	public function private_ideas(){
-		$this->data['list'] = $this->Idea->get_where('idea_is_public !=', true);
-		$this->data['view'] = 'index';
-		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
-	}
-	public function public_ideas(){
-		$this->data['list'] = $this->Idea->get_where('idea_is_public', true);
 		$this->data['view'] = 'index';
 		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 	}
