@@ -146,7 +146,7 @@
     <div class="container">
       <span><?php echo $this->config->item('app_footer'); ?></span>
       <span class="right"><?php echo $this->config->item('app_footer_right'); ?></span>
-      </div>
+    </div>
   </div>
 </footer>
 <!-- END FOOTER -->
