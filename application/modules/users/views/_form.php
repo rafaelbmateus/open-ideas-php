@@ -5,6 +5,20 @@
 		<div class="card-panel">
 			<h4 class="header2"><?php echo $this->lang->line('new');?></h4>
 			<div class="row">
+				<div class="input-field col s2">
+					<img src="<?php echo "http://www.gravatar.com/avatar/" . md5(strtolower(trim($this->session->userdata('user_email')))); ?>" class="circle responsive-img valign profile-image">
+					<a href="https://br.gravatar.com/" target="_blank">Alterar</a>
+				</div>
+				<div class="input-field col s1">
+					<!--  space -->
+				</div>
+				<div class="input-field col s7">
+					<input name="name" type="text" required value="<?php if (isset($item)) echo $item->user_name; ?>"/>
+					<label><?php echo $this->lang->line('name');?></label>
+				</div>
+			</div>
+			<br>
+			<div class="row">
 				<div class="input-field col s7">
 					<?php if($this->session->userdata('user_type')=='admin'){ ?>
 						<input name="email" type="text" required value="<?php if (isset($item)) echo $item->user_email; ?>"/>
@@ -32,13 +46,6 @@
 				</div>
 			</div>
 			<div class="divider"></div>
-			<br>
-			<div class="row">
-				<div class="input-field col s7">
-					<input name="name" type="text" required value="<?php if (isset($item)) echo $item->user_name; ?>"/>
-					<label><?php echo $this->lang->line('name');?></label>
-				</div>
-			</div>
 			<div class="row">
 				<div class="input-field col s12">
 					<textarea name="description" class="materialize-textarea" length="1200" maxlength="1200"><?php if (isset($item)) echo 'description'; ?></textarea>
@@ -63,3 +70,5 @@
 		</div>
 	</div>
 </div>
+
+<br><br><br>
