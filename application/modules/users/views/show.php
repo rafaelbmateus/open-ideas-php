@@ -51,8 +51,8 @@
       <!-- Profile About  -->
       <div class="card light-blue">
         <div class="card-content white-text">
-          <span class="card-title">About Me!</span>
-          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+          <span class="card-title"><?php echo $this->lang->line('about_me'); ?></span>
+          <p><?php if(isset($item->user_resume)){echo $item->user_resume;}else{echo $this->lang->line('no_resume');} ?></p>
         </div>
       </div>
       <!-- Profile About  -->

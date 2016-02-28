@@ -40,6 +40,8 @@ $lang['attachment'] = "Anexo";
 $lang['deadline'] = "Data Limite";
 $lang['choose'] = "Escolha";
 $lang['search_bar'] = "Pesquisar Open Innovation";
+$lang['no_resume'] = "Não tenho descrição cadastrada";
+$lang['about_me'] = "Sobre mim";
 // Application - end
 
 // Menu - start

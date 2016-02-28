@@ -1,5 +1,4 @@
 <?php defined ('BASEPATH') or exit ('No direct script access allowed');
-//TODO, Replace Challenges to ClassName
 class Challenges extends CI_Controller{
 	private $module = 'challenges';
 	public function __construct(){
