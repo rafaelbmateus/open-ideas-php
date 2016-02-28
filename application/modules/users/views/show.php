@@ -61,6 +61,7 @@
 
     <!-- list challenges - start -->
     <?php if (!empty($list_challenges)) { ?>
+      <h4 class="header center"><?php echo $this->lang->line('challenges'); ?></h4>
     	<?php foreach($list_challenges as $challenge) { ?>
         <div id="profile-page-wall" class="col s12 m8">
           <div id="profile-page-wall-posts"class="row">
@@ -93,6 +94,44 @@
       <?php } ?>
     <?php } ?>
     <!-- list challenges - end -->
+
+    <!-- <div class="divider"></div> -->
+
+    <!-- list ideas - start -->
+    <?php if (!empty($list_ideas)) { ?>
+      <h4 class="header center"><?php echo $this->lang->line('ideas'); ?></h4>
+    	<?php foreach($list_ideas as $idea) { ?>
+        <div id="profile-page-wall" class="col m8 right">
+          <div id="profile-page-wall-posts"class="row">
+            <div class="col s12">
+                <div id="profile-page-wall-post" class="card">
+                  <div class="card-profile-title">
+                    <div class="row">
+                      <div class="col s1">
+                        <img src="<?php echo "http://www.gravatar.com/avatar/" . md5(strtolower(trim($item->user_email))); ?>" alt="profile image" class="circle z-depth-1 responsive-img activator">
+                      </div>
+                      <div class="col s10">
+                        <p class="grey-text text-darken-4 margin"><?php echo $item->user_name; ?></p>
+                        <span class="grey-text text-darken-1 ultra-small"><?php echo $this->lang->line('published_in'); ?> -  <?php echo date('d/m/Y H:i:s', strtotime($challenge->created_at)); ?></span>
+                      </div>
+                      <div class="col s1 right-align">
+                        <i class="mdi-navigation-expand-more"></i>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col s12">
+                        <p><b><?php echo $idea->idea_title; ?></b></p>
+                        <p><?php echo $idea->idea_description; ?></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      <?php } ?>
+    <?php } ?>
+    <!-- list ideas - end -->
 
   </div>
   <!-- profile content - end -->
