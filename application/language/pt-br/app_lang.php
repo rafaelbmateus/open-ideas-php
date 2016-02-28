@@ -42,6 +42,7 @@ $lang['choose'] = "Escolha";
 $lang['search_bar'] = "Pesquisar Open Innovation";
 $lang['no_resume'] = "Não tenho descrição cadastrada";
 $lang['about_me'] = "Sobre mim";
+$lang['published_in'] = "Publicado em";
 // Application - end
 
 // Menu - start
