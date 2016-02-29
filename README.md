@@ -57,7 +57,7 @@ Alguns valores da Inovação Aberta são:
 - [ ] Salvar email no cookie quando der lock
 - [ ] Remover icone CNPJ no abrir uma conta
 - [ ] Alinhar desafios (index)
-- [ ] Listar Ideas e desafios na página do usuário
+- [x] Listar Ideas e desafios na página do usuário
 - [ ] Criar rotas
 - [ ] Translate app_langue to English
 - [x] Trocar ação floating button
