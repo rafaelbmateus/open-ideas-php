@@ -64,7 +64,8 @@ Alguns valores da Inovação Aberta são:
 - [ ] Ação javascript no compartilhar, colocar no ctrl+c.
 - [ ] Fazer uma página para acessar do sistema o compartilhamento da ideia/desafio
 - [x] Atualizar perfil
-- [ ] Icone iLab
+- [x] Icone iLab
+- [ ] Icone AGETEC
 - [ ] Icone Unisul
 - [ ] Comentar em uma ideia
 - [ ] Comentar em um desafio
