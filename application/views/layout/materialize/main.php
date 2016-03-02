@@ -145,6 +145,7 @@
   <div class="footer-copyright">
     <div class="container">
       <span><?php echo $this->config->item('app_footer'); ?></span>
+      <span><?php echo $this->config->item('app_footer_stakeholders'); ?></span>
       <span class="right"><?php echo $this->config->item('app_footer_right'); ?></span>
     </div>
   </div>

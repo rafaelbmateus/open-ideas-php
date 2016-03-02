@@ -10,9 +10,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //$config['app_layout'] = 'layout/theme-bootstrap/';
 $config['app_layout'] = 'layout/materialize/';
 $config['app_title'] = 'Open Idea';
-$config['app_footer'] = 'Comunidade de inovação aberta, de código aberto, disponível no <a href="https://github.com/rafaelbmateus/open-idea-php" style="color: white">github</a>';
-// $config['app_footer'] = '';
-$config['app_footer_right'] = '<img width="100" height="30" src="http://localhost/open-idea-php/assets/images/app/iLab.jpg"> Developed by <a class="grey-text text-lighten-4" href="http://rafaelbmateus.github.io/aboutme/">Rafael Mateus</a>';
+$config['app_footer'] = 'Comunidade de inovação aberta, de código aberto, disponível no <a href="https://github.com/rafaelbmateus/open-idea-php" target="_blank" style="color: white">github</a>';
+$config['app_footer_stakeholders'] = '<img width="100" height="50" src="http://localhost/open-idea-php/assets/images/app/stakeholders/unisul.jpg"><img width="100" height="30" src="http://localhost/open-idea-php/assets/images/app/stakeholders/ilab.jpg"><img width="100" height="30" src="http://localhost/open-idea-php/assets/images/app/stakeholders/agetec.jpg">';
+$config['app_footer_right'] = 'Developed by <a class="grey-text text-lighten-4" href="http://rafaelbmateus.github.io/aboutme/" target="_blank">Rafael Mateus</a>';
 
 
 /*

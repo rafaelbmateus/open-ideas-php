@@ -46,10 +46,15 @@ class Idea extends CI_Model{
 		$this->db->where($field, $content);
 		return $this->db->get()->result();
 	}
-	function get_sum($id_user){
-		$query = $this->db->get($this->table);
+	function get_public_ideas_user($user_id){
+		$this->db->from($this->table);
 		$this->db->where($this->is_deleted_field, null);
-		$this->db->where('user_id', $id_user);
+		$this->db->where('idea_is_public', true);
+		$this->db->where('user_id', $user_id);
+		return $this->db->get()->result();
+	}
+	function get_sum($user_id){
+		$query = $this->db->query('SELECT idea_id FROM tb_idea WHERE idea_is_public=true AND is_deleted IS NULL AND user_id=' . $user_id);
 		return $query->num_rows();
 	}
 	public function add($is_public, $title, $description, $solution, $differential, $necessary_skills, $target_group, $area_id, $user_id, $timestamp){

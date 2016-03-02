@@ -50,10 +50,14 @@ class Challenge extends CI_Model{
 			return $query->result();
 		}
 	}
-	function get_sum($id_user){
-		$query = $this->db->get($this->table);
+	function get_public_challenges_user($user_id = null){
+		$this->db->from($this->table);
 		$this->db->where($this->is_deleted_field, null);
-		$this->db->where('user_id', $id_user);
+		$this->db->where('user_id', $user_id);
+		return $this->db->get()->result();
+	}
+	function get_sum($user_id){
+		$query = $this->db->query('SELECT challenge_id FROM tb_challenge WHERE is_deleted IS NULL AND user_id=' . $user_id);
 		return $query->num_rows();
 	}
 	public function add($title, $description, $deadline, $user_id, $timestamp){
