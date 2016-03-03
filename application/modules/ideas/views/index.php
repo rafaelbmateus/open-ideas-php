@@ -29,11 +29,9 @@
             <div class="col s10">
               <p class="ultra-small"><?php echo date('d/m/Y H:i:s', strtotime($item->created_at)); ?></p>
             </div>
-            <div class="col m1">
-              <a class="btn-floating waves-effect waves-light yellow accent-4 right" onclick="like();"><i class="fa fa-thumbs-up"></i></a>
-            </div>
-            <div class="col m1">
-              <a class="btn-floating waves-effect waves-light yellow accent-4 right" onclick="like();"><i class="fa fa-thumbs-up"></i></a>
+            <div class="col m2">
+              <a class="btn-floating waves-effect waves-light green accent-4" onclick="share();"><i class="mdi-social-share"></i></a>
+              <a class="btn-floating waves-effect waves-light yellow accent-4" onclick="like();"><i class="fa fa-thumbs-up"></i></a>
             </div>
           </div>
         </div>
