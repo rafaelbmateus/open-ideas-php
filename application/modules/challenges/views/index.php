@@ -1,16 +1,18 @@
 <!-- <a href="<?php echo base_url() . $module . '/create'; ?>" class="btn cyan waves-effect waves-light"><i class="fa fa-plus"></i> <?php echo $this->lang->line('new');?></a> -->
 
 <?php if (!empty($list)) { ?>
+	<div class="row">
 	<?php foreach($list as $item) { ?>
-		<div class="blog">
+		<div class="blog col s5">
+			<br>
 			<div class="card">
 				<div class="card-image waves-effect waves-block waves-light">
 					<!-- <a href="<?php echo base_url() . $module . '/show/' . $item->challenge_id; ?>"><img src="<?php echo base_url(); ?>assets/plugins/materialize/images/img4.jpg" alt="blog-img"></a> -->
 					<img class="activator" src="<?php echo base_url(); ?>assets/plugins/materialize/images/img4.jpg" alt="blog-img">
 				</div>
 				<ul class="card-action-buttons">
-					<li><a class="btn-floating waves-effect waves-light yellow accent-4" onclick="like();"><i class="fa fa-thumbs-up"></i></a></li>
-					<li><a class="btn-floating waves-effect waves-light green accent-4" onclick="share();"><i class="mdi-social-share"></i></a></li>
+					<li><a class="btn-floating waves-effect waves-light light-blue" onclick="like();"><i class="fa fa-thumbs-up"></i></a></li>
+					<li><a class="btn-floating waves-effect waves-light light-blue" onclick="share();"><i class="mdi-social-share"></i></a></li>
 					<li><a class="btn-floating waves-effect waves-light light-blue"><i class="mdi-action-info activator"></i></a></li>
 				</ul>
 				<div class="card-content">
@@ -34,6 +36,7 @@
 			</div>
 		</div>
 	<?php } ?>
+	</div>
 <?php }else{ ?>
 	<?php // echo $this->lang->line('dont_have_challenge'); ?>
 <?php } ?>
