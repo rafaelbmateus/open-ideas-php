@@ -17,7 +17,7 @@
 				</ul>
 				<div class="card-content">
 					<p class="row">
-						<span class="left"><a href=""><?php echo $item->area_id; ?></a></span>
+						<span class="left"><a href=""><?php echo $item->area_id; ?></a></span> <!-- TODO: Fix this, area_id is null -->
 						<span class="right"><?php echo date('d/m/Y H:i:s', strtotime($item->created_at)); ?></span>
 					</p>
 					<h4 class="card-title grey-text text-darken-4"><a href="#" class="grey-text text-darken-4"><?php echo $item->challenge_title; ?></a></h4>
