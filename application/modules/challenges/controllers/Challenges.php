@@ -14,8 +14,8 @@ class Challenges extends CI_Controller{
 		$this->load->model('users/User');
 		$this->data['list_users'] = $this->User->get();
 		$this->load->model('areas/Area');
-		$this->data['view'] = 'index';
 		$this->data['list_areas'] = $this->Area->get();
+		$this->data['view'] = 'index';
 		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 	}
 	public function show(){

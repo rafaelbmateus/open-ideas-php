@@ -11,6 +11,8 @@ class App extends CI_Controller{
 			$this->data['list'] = $this->Challenge->get();
 			$this->load->model('users/User');
 			$this->data['list_users'] = $this->User->get();
+			$this->load->model('areas/Area');
+			$this->data['list_areas'] = $this->Area->get();
 			$this->data['module'] = 'challenges';
 			$this->data ['view'] = 'challenges/index';
 			$this->load->view($this->config->item('app_layout') . 'template', $this->data);
