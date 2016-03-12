@@ -51,9 +51,10 @@ class Users extends CI_Controller{
 			$email = $this->input->post('email', true);
 			$job = $this->input->post('job_id', true);
 			$password = md5($this->input->post('password', true));
+			$resume = $this->input->post('resume', true);
 
 			if (!$this->User->get_where('user_email', $email)){
-				if ($this->User->add($name, $email, $job, '2', $password, date('Y-m-d H:i:s'))){
+				if ($this->User->add($name, $email, $job, '2', $resume, $password, date('Y-m-d H:i:s'))){
 					$user = $this->User->get_where('user_email', $email);
 					$this->session->set_flashdata('success', $this->lang->line('welcome') . ' ' . $user->user_name);
 				} else {
@@ -97,11 +98,13 @@ class Users extends CI_Controller{
 			$name = $this->input->post('name', true);
 			$job_id = $this->input->post('job_id', true);
 			$email = $this->input->post('email', true);
+			$resume = $this->input->post('resume', true);
+
 			$password = null;
 			if ($this->input->post('password', true)){
 				$password = md5($this->input->post('password', true));
 			}
-			if ($this->User->update($id, $name, $email, $job_id, '2', $password, date('Y-m-d H:i:s'))){
+			if ($this->User->update($id, $name, $email, $job_id, '2', $resume, $password, date('Y-m-d H:i:s'))){
 				$this->session->set_flashdata('success', $this->lang->line('update_success'));
 			}else{
 				$this->session->set_flashdata('error', $this->lang->line('update_error'));

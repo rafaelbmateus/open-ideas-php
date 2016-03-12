@@ -48,7 +48,7 @@
 			<div class="divider"></div>
 			<div class="row">
 				<div class="input-field col s12">
-					<textarea name="description" class="materialize-textarea" length="1200" maxlength="1200"><?php if (isset($item)) echo 'description'; ?></textarea>
+					<textarea name="resume" class="materialize-textarea" length="1200" maxlength="1200"><?php if (isset($item->user_resume)) echo $item->user_resume; ?></textarea>
 					<label><?php echo $this->lang->line('description');?></label>
 				</div>
 			</div>
