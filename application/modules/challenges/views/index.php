@@ -8,7 +8,8 @@
 			<div class="card">
 				<div class="card-image waves-effect waves-block waves-light">
 					<!-- <a href="<?php echo base_url() . $module . '/show/' . $item->challenge_id; ?>"><img src="<?php echo base_url(); ?>assets/plugins/materialize/images/img4.jpg" alt="blog-img"></a> -->
-					<img class="activator" src="<?php echo base_url(); ?>assets/plugins/materialize/images/img4.jpg" alt="blog-img">
+					<img class="activator" src="<?php echo base_url() . 'assets/images/areas/' . $item->area_id . '.jpg'; ?>" alt="blog-img">
+					<!-- <img class="activator" src="<?php echo base_url(); ?>assets/plugins/materialize/images/img4.jpg" alt="blog-img"> -->
 				</div>
 				<ul class="card-action-buttons">
 					<li><a class="btn-floating waves-effect waves-light light-blue" onclick="like();"><i class="fa fa-thumbs-up"></i></a></li>
@@ -17,7 +18,8 @@
 				</ul>
 				<div class="card-content">
 					<p class="row">
-						<span class="left"><a href=""><?php echo $item->area_id; ?></a></span> <!-- TODO: Fix this, area_id is null -->
+						<!-- <?php print_r($list_areas); ?> -->
+						<span class="left"><a href=""><?php echo $list_areas[$item->area_id-1]->area_name; ?></a></span> <!-- TODO: Fix this, $area->name -->
 						<span class="right"><?php echo date('d/m/Y H:i:s', strtotime($item->created_at)); ?></span>
 					</p>
 					<h4 class="card-title grey-text text-darken-4"><a href="#" class="grey-text text-darken-4"><?php echo $item->challenge_title; ?></a></h4>

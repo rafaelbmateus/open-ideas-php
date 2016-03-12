@@ -60,11 +60,12 @@ class Challenge extends CI_Model{
 		$query = $this->db->query('SELECT challenge_id FROM tb_challenge WHERE is_deleted IS NULL AND user_id=' . $user_id);
 		return $query->num_rows();
 	}
-	public function add($title, $description, $deadline, $user_id, $timestamp){
+	public function add($title, $description, $deadline, $area_id, $user_id, $timestamp){
 		$data = array (
 				'challenge_title' => $title,
 				'challenge_description' => $description,
 				'user_id' => $user_id,
+				'area_id' => $area_id,
 				$this->date_created_field => $timestamp
 		);
 		if($deadline){
@@ -72,11 +73,12 @@ class Challenge extends CI_Model{
 		}
 		return $this->db->insert($this->table, $data);
 	}
-	public function update($title, $description, $deadline, $user_id, $timestamp){
+	public function update($id, $title, $description, $deadline, $area_id, $user_id, $timestamp){
 		$data = array (
 				'challenge_title' => $title,
 				'challenge_description' => $description,
 				'user_id' => $user_id,
+				'area_id' => $area_id,
 				$this->date_updated_field => $timestamp
 		);
 		if($deadline){

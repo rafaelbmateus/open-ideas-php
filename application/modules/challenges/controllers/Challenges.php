@@ -13,7 +13,9 @@ class Challenges extends CI_Controller{
 		$this->data['list'] = $this->Challenge->get();
 		$this->load->model('users/User');
 		$this->data['list_users'] = $this->User->get();
+		$this->load->model('areas/Area');
 		$this->data['view'] = 'index';
+		$this->data['list_areas'] = $this->Area->get();
 		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 	}
 	public function show(){
@@ -44,8 +46,9 @@ class Challenges extends CI_Controller{
 			$description = $this->input->post('challenge_description', true);
 			$deadline = $this->input->post('challenge_deadline', true);
 			$user_id = $this->session->userdata('user_id');
+			$area_id = $this->input->post('area_id', true);
 
-			if ($this->Challenge->add($title, $description, $deadline, $user_id, date('Y-m-d H:i:s'))){
+			if ($this->Challenge->add($title, $description, $deadline, $area_id, $user_id, date('Y-m-d H:i:s'))){
 				$this->session->set_flashdata ('success', $this->lang->line('save_success'));
 			}else{
 				$this->session->set_flashdata ('error', $this->lang->line('save_error'));
@@ -71,9 +74,13 @@ class Challenges extends CI_Controller{
 			$this->session->set_flashdata( 'error', (validation_errors() ? validation_errors() : false));
 		}else{
 			$id = $this->input->post('challenge_id', true);
-			$name = $this->input->post('Challenge_name', true);
+			$title = $this->input->post('challenge_title', true);
+			$description = $this->input->post('challenge_description', true);
+			$deadline = $this->input->post('challenge_deadline', true);
+			$user_id = $this->session->userdata('user_id');
+			$area_id = $this->input->post('area_id', true);
 
-			if ($this->Challenge->update($id, $name, date('Y-m-d H:i:s'))){
+			if ($this->Challenge->update($id, $title, $description, $deadline, $area_id, $user_id, date('Y-m-d H:i:s'))){
 				$this->session->set_flashdata('success', $this->lang->line('update_success'));
 			}else{
 				$this->session->set_flashdata('error', $this->lang->line('update_error'));

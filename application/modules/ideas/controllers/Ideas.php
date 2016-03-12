@@ -52,15 +52,15 @@ class Ideas extends CI_Controller{
 		if ($this->form_validation->run() == false){
 			$this->session->set_flashdata('error', (validation_errors() ? validation_errors() : false));
 		}else{
-			$is_public = $this->input->post('idea_is_public', TRUE);
-			$title = $this->input->post('idea_title', TRUE);
-			$description = $this->input->post('idea_description', TRUE);
-			$solution = $this->input->post('idea_solution', TRUE);
-			$differential = $this->input->post('idea_differential', TRUE);
-			$necessary_skills = $this->input->post('idea_necessary_skills', TRUE);
-			$target_group = $this->input->post('idea_target_group', TRUE);
-			$area_id = $this->input->post('area_id', TRUE);
-			$idea_attachment = $this->input->post('idea_attachment', TRUE);	//TODO, upload
+			$is_public = $this->input->post('idea_is_public', true);
+			$title = $this->input->post('idea_title', true);
+			$description = $this->input->post('idea_description', true);
+			$solution = $this->input->post('idea_solution', true);
+			$differential = $this->input->post('idea_differential', true);
+			$necessary_skills = $this->input->post('idea_necessary_skills', true);
+			$target_group = $this->input->post('idea_target_group', true);
+			$area_id = $this->input->post('area_id', true);
+			$idea_attachment = $this->input->post('idea_attachment', true);	//TODO, upload
 			$user_id = $this->session->userdata('user_id');
 
 			if ($this->Idea->add($is_public, $title, $description, $solution, $differential, $necessary_skills, $target_group, $area_id, $user_id, date('Y-m-d H:i:s'))){

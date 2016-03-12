@@ -76,7 +76,6 @@
 			s
 			<?php if (isset($innovation_areas)){ ?>
 				<?php foreach ($innovation_areas as $area){ ?>
-					<!-- TODO, select area -->
 					<?php if($area->innovation_area_id == $item->area_id) { ?>
 						<option selected value="<?php echo $area->innovation_area_id; ?>"><?php echo $area->area_name; ?></option>
 					<?php }else{ ?>
