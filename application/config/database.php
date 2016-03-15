@@ -70,10 +70,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-$active_group = 'default';
+$active_group = 'production';
 $query_builder = TRUE;
 
-$db['default'] = array(
+$db['development'] = array(
 	'dsn'	=> 'pgsql:host=localhost;dbname=open-idea',
 	'hostname' => '',
 	'username' => 'postgres',
@@ -83,28 +83,6 @@ $db['default'] = array(
 	'dbprefix' => '',
 	'pconnect' => TRUE,
 	'db_debug' => TRUE,
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
-
-$db['development'] = array(
-	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
 	'cache_on' => FALSE,
 	'cachedir' => '',
 	'char_set' => 'utf8',
@@ -141,15 +119,15 @@ $db['test'] = array(
 
 
 $db['production'] = array(
-		'dsn'	=> '',
-		'hostname' => 'localhost',
-		'username' => '',
-		'password' => '',
+		'dsn'	=> 'pgsql:host=ec2-54-83-56-177.compute-1.amazonaws.com;dbname=dfa3j9chk11v7q',
+		'hostname' => '',
+		'username' => 'cvqlykguogcqch',
+		'password' => 'pYJdec54QbyxgpK1J9oDsyWdsL',
 		'database' => '',
-		'dbdriver' => 'mysqli',
+		'dbdriver' => 'pdo',
 		'dbprefix' => '',
-		'pconnect' => FALSE,
-		'db_debug' => (ENVIRONMENT !== 'production'),
+		'pconnect' => TRUE,
+		'db_debug' => TRUE,
 		'cache_on' => FALSE,
 		'cachedir' => '',
 		'char_set' => 'utf8',

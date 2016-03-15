@@ -1,8 +1,4 @@
-﻿DROP TABLE IF EXISTS tb_innovation_area;
 
-DROP TABLE IF EXISTS tb_job;
-
-DROP TABLE IF EXISTS tb_user_type;
 
 CREATE TABLE tb_innovation_area (
   innovation_area_id SERIAL  NOT NULL ,
@@ -13,22 +9,22 @@ CREATE TABLE tb_innovation_area (
 PRIMARY KEY(innovation_area_id));
 
 
-INSERT INTO tb_innovation_area(area_name, created_at) 
+INSERT INTO tb_innovation_area(area_name, created_at)
 VALUES ('Medicina', now());
 
-INSERT INTO tb_innovation_area(area_name, created_at) 
+INSERT INTO tb_innovation_area(area_name, created_at)
 VALUES ('Nanotecnologia', now());
 
-INSERT INTO tb_innovation_area(area_name, created_at) 
+INSERT INTO tb_innovation_area(area_name, created_at)
 VALUES ('Tecnologia da Informação', now());
 
-INSERT INTO tb_innovation_area(area_name, created_at) 
+INSERT INTO tb_innovation_area(area_name, created_at)
 VALUES ('Energia distribuída', now());
 
-INSERT INTO tb_innovation_area(area_name, created_at) 
+INSERT INTO tb_innovation_area(area_name, created_at)
 VALUES ('Biocombustíveis', now());
 
-INSERT INTO tb_innovation_area(area_name, created_at) 
+INSERT INTO tb_innovation_area(area_name, created_at)
 VALUES ('Computação pervasiva', now());
 
 commit;
@@ -290,5 +286,3 @@ CREATE INDEX tb_notification_FKIndex1 ON tb_notification (user_id);
 
 
 CREATE INDEX IFK_Rel_08 ON tb_notification (user_id);
-
-
