@@ -5,7 +5,7 @@ class Database extends CI_Model{
 	}
 
 	public function create_tables(){
-    return $this->run_query('query');
+    return $this->run_query('create');
 	}
 
   public function destroy_tables(){
