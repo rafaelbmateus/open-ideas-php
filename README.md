@@ -18,28 +18,28 @@ Alguns valores da Inovação Aberta são:
 ### Cors
 
 #### Ideias
-- [ ] Listar idea
-- [ ] Mostrar idea
+- [x] Listar idea
+- [x] Mostrar idea
 - [x] Cadastrar idea
 - [x] Alterar idea
 - [x] Excluir idea
 
 #### Desafios
-- [ ] Listar desafios
-- [ ] Mostar desafio
+- [x] Listar desafios
+- [x] Mostar desafio
 - [x] Cadastrar desafios
 - [x] Alterar desafio
 - [x] Exluir desafio
 
 #### Usuário
-- [ ] Cadastrar
-- [ ] Atualizar
-- [ ] Mostrar
+- [x] Cadastrar
+- [x] Atualizar
+- [x] Mostrar
 
 #### Incubadoras
 - [x] Listar
-- [ ] Cadastrar
-- [ ] Atualizar
+- [x] Cadastrar
+- [x] Atualizar
 
 ### Específicos
 - [ ] Validar CNPJ - controller
@@ -56,7 +56,7 @@ Alguns valores da Inovação Aberta são:
 - [ ] Página de ajuda
 - [ ] Salvar email no cookie quando der lock
 - [ ] Remover icone CNPJ no abrir uma conta
-- [ ] Alinhar desafios (index)
+- [x] Alinhar desafios (index)
 - [x] Listar Ideas e desafios na página do usuário
 - [ ] Criar rotas
 - [ ] Translate app_langue to English
@@ -67,8 +67,8 @@ Alguns valores da Inovação Aberta são:
 - [x] Icone iLab
 - [ ] Icone AGETEC
 - [ ] Icone Unisul
-- [ ] Comentar em uma ideia
-- [ ] Comentar em um desafio
+- [x] Comentar em uma ideia
+- [x] Comentar em um desafio
 - [ ] Curtir uma ideia
 - [ ] Curtir um desafio
 
