@@ -22,6 +22,14 @@ class Challenges extends CI_Controller{
 		$id = $this->uri->segment(3);
 		if ($id){
 			$this->data['item'] = $this->Challenge->get($id);
+			$this->load->model('users/User');
+			$this->data['list_users'] = $this->User->get();
+			$this->load->model('areas/Area');
+			$this->data['list_areas'] = $this->Area->get();
+			$this->load->model('ideas/Idea');
+			$this->data['num_ideas'] = $this->Idea->get_sum($id);
+			$this->load->model('challenges/Challenge');
+			$this->data['num_challenges'] = $this->Challenge->get_sum($id);
 			$this->data['view'] = 'show';
 			$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 		}else{
@@ -100,5 +108,24 @@ class Challenges extends CI_Controller{
 			$this->session->set_flashdata('error', $this->lang->line('delete_error'));
 		}
 		redirect (base_url() . $this->module);
+	}
+
+	function comment()
+	{
+		$this->load->library ('form_validation');
+		$this->form_validation->set_rules('Challenge_name', 'Challenge name', 'trim|required');
+		if ($this->form_validation->run() == false){
+			$this->session->set_flashdata( 'error', (validation_errors() ? validation_errors() : false));
+		}
+		$user_id = $this->session->userdata('user_id');
+		$challenge_id = $this->input->post('challenge_id', true);
+		$description = $this->input->post('comment_description', true);
+
+		$this->load->model('comments/Comment');
+		if ($this->Comment->add_challenge($user_id, $challenge_id, $description, date('Y-m-d H:i:s'))){
+			$this->session->set_flashdata ('success', $this->lang->line('save_success'));
+		}else{
+			$this->session->set_flashdata ('error', $this->lang->line('save_error'));
+		}
 	}
 }

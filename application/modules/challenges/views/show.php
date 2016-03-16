@@ -1,36 +1,61 @@
 <div class="card-panel">
-
-  <!-- navbar - start -->
-  <div id="right-aligned-links" class="section">
-    <div class="row">
-      <div class="col s12 m12 l12">
-        <nav class="cyan">
-          <div class="nav-wrapper">
-            <div class="col s12">
-              <a class="brand-logo">Desafio</a>
-              <ul class="right hide-on-med-and-down">
-                <li><a onclick="share();"><i class="fa fa-share-alt"></i></a></li>
-                <li><a onclick="like();"><i id="icon_like" class="fa fa-thumbs-up"></i></a></li>
-              </ul>
-            </div>
+  <!-- profile header - start -->
+  <div id="profile-page" class="section">
+    <div id="profile-page-header" class="card">
+      <div class="card-image waves-effect">
+        <img src="<?php echo base_url(); ?>assets/plugins/materialize/images/user-profile-bg.jpg" alt="user background">
+      </div>
+      <figure class="card-profile-image">
+        <a href="<?php echo base_url() . 'users' . '/show/' . $item->user_id; ?>"><img src="<?php echo "http://www.gravatar.com/avatar/" . md5(strtolower(trim($list_users[$item->user_id-1]->user_email))); ?>" alt="profile image" class="circle z-depth-2 responsive-img activator"></a>
+      </figure>
+      <div class="card-content">
+        <div class="row">
+          <div class="col s3 offset-s2">
+            <h4 class="card-title grey-text text-darken-4"><a href="<?php echo base_url() . 'users' . '/show/' . $item->user_id; ?>"><?php echo $list_users[$item->user_id-1]->user_name; ?></a></h4>
+            <!-- <p class="medium-small grey-text"><?php echo $list_users[$item->user_id-1]->job_id; ?></p> -->
           </div>
-        </nav>
+          <div class="col s2 center-align">
+            <h4 class="card-title grey-text text-darken-4"><?php echo $num_ideas; ?></h4>
+            <p class="medium-small grey-text"><?php echo $this->lang->line('ideas'); ?></p>
+          </div>
+          <div class="col s2 center-align">
+            <h4 class="card-title grey-text text-darken-4"><?php echo $num_challenges; ?></h4>
+            <p class="medium-small grey-text"><?php echo $this->lang->line('challenges'); ?></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <!-- navbar - end -->
+  <!-- profile header - end -->
 
-  <h5><?php echo $this->lang->line('user'); ?>:</h5>
-  <p class="caption"><?php echo $item->user_id; ?></p>
+  <div id="flow-text-demo" class="card-panel">
+    <p class="flow-text"><b><?php echo $item->challenge_title; ?></b></p>
+    <!-- TODO: tirar a gambi! -->
+    <p class="flow-text"><?php echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $item->challenge_description; ?></p>
 
-  <h5><?php echo $this->lang->line('title'); ?></h5>
-  <p class="caption"><?php echo $item->challenge_title; ?></p>
+    <p class="caption"><?php echo $this->lang->line('created_at'); ?>: <?php echo date("d/m/Y - H:i", strtotime($item->created_at)); ?></p>
+  </div>
 
-  <h5><?php echo $this->lang->line('description'); ?></h5>
-  <p class="caption"><?php echo $item->challenge_description; ?></p>
+  <br>
 
-  <p class="caption"><?php echo $this->lang->line('created_at'); ?>: <?php echo date("d/m/Y - H:i", strtotime($item->created_at)); ?></p>
+  <div id="flow-text-demo" class="card-panel">
+    <div>
+      <!--  TODO: show comments -->
+    </div>
+
+    <div class="input-field col s12">
+      <form class="" action="<?php echo base_url() . $module . '/comment';?>" method="post">
+        <input hidden="hidden" name="challenge_id" value="<?php echo $item->challenge_id; ?>">
+        <textarea name="comment_description" class="materialize-textarea" rows="8" cols="40"></textarea>
+        <label><?php echo $this->lang->line('comment');?></label>
+        <button class="btn cyan waves-effect waves-light" type="submit"><?php echo $this->lang->line('send');?><i class="fa fa-check right"></i></button>
+      </form>
+    </div>
+
+  </div>
 </div>
+
+<br><br><br>
 
 <script type="text/javascript">
   function like(){
