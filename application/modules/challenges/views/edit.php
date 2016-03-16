@@ -1,5 +1,16 @@
 <div class="card-panel">
-	<h4 class="header2"><?php echo $this->lang->line('edit');?></h4>
+	
+	<!-- navbar - start -->
+  <nav>
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a class="brand-logo center"><?php echo $this->lang->line('edit');?></a>
+      </div>
+    </div>
+  </nav>
+  <!-- navbar - end -->
+
+	<br>
 
 	<!-- form -->
 	<form action="<?php echo base_url() . $module . '/update';?>" method="post">

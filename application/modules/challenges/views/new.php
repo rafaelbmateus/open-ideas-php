@@ -1,24 +1,13 @@
 <div class="card-panel">
 
-	<!-- navbar - start -->
-  <div id="right-aligned-links" class="section">
-    <div class="row">
-      <nav class="cyan">
-        <div class="nav-wrapper">
-          <div class="col s12">
-            <a class="brand-logo"><?php echo $this->lang->line('new_challenge');?></a>
-            <!--
-            <ul class="right hide-on-med-and-down">
-              <li><a href="#">Sass</a></li>
-              <li><a href="#">Components</a></li>
-              <li><a href="#">JavaScript</a></li>
-            </ul>
-            -->
-          </div>
-        </div>
-      </nav>
+  <!-- navbar - start -->
+  <nav>
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a class="brand-logo center"><?php echo $this->lang->line('new');?></a>
+      </div>
     </div>
-  </div>
+  </nav>
   <!-- navbar - end -->
 
   <br>
