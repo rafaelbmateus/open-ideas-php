@@ -3,13 +3,12 @@
 <?php if (!empty($list)) { ?>
 	<div class="row">
 	<?php foreach($list as $item) { ?>
-		<div class="blog col s5">
+		<div class="blog col s6">
 			<br>
 			<div class="card">
 				<div class="card-image waves-effect waves-block waves-light">
 					<!-- <a href="<?php echo base_url() . $module . '/show/' . $item->challenge_id; ?>"><img src="<?php echo base_url(); ?>assets/plugins/materialize/images/img4.jpg" alt="blog-img"></a> -->
 					<img class="activator" src="<?php echo base_url() . 'assets/images/areas/' . $item->area_id . '.jpg'; ?>" alt="blog-img">
-					<!-- <img class="activator" src="<?php echo base_url(); ?>assets/plugins/materialize/images/img4.jpg" alt="blog-img"> -->
 				</div>
 				<ul class="card-action-buttons">
 					<li><a class="btn-floating waves-effect waves-light light-blue" onclick="like();"><i class="fa fa-thumbs-up"></i></a></li>
