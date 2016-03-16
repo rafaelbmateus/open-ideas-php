@@ -30,12 +30,12 @@ class App extends CI_Controller{
 	}
 
 	public function create_tables(){
-		$this->Database->create_tables();
+		echo $this->Database->create_tables();
 	}
 	public function destroy_tables(){
-		$this->Database->destroy_tables();
+		echo $this->Database->destroy_tables();
 	}
 	public function reset_tables(){
-		$this->Database->reset_tables();
+		echo $this->Database->reset_tables();
 	}
 }

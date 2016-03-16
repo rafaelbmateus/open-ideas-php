@@ -1,21 +1,19 @@
-DROP TABLE tb_notification;
+DROP TABLE IF EXISTS tb_notification;
 
-DROP TABLE tb_like;
+DROP TABLE IF EXISTS tb_like;
 
-DROP TABLE tb_comment;
+DROP TABLE IF EXISTS tb_comment;
 
-DROP TABLE tb_idea;
+DROP TABLE IF EXISTS tb_idea;
 
-DROP TABLE tb_challenge;
+DROP TABLE IF EXISTS tb_challenge;
 
-DROP TABLE tb_user;
+DROP TABLE IF EXISTS tb_user;
 
-DROP TABLE tb_incubator;
+DROP TABLE IF EXISTS tb_incubator;
 
-DROP TABLE tb_user_type;
+DROP TABLE IF EXISTS tb_user_type;
 
-DROP TABLE tb_job;
+DROP TABLE IF EXISTS tb_job;
 
-DROP TABLE tb_innovation_area;
-
-
+DROP TABLE IF EXISTS tb_innovation_area;

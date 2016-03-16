@@ -5,7 +5,7 @@ class Database extends CI_Model{
 	}
 
 	public function create_tables(){
-    return $this->run_query('create');
+    return $this->run_query('query');
 	}
 
   public function destroy_tables(){
@@ -22,9 +22,8 @@ class Database extends CI_Model{
 
     foreach($sql_contents as $query){
 			$result =  $this->db->query($query);
-      if (!$result){
-        echo "Error on import of " . $query;
-      }
     }
+
+		return $result;
 	}
 }
