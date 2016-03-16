@@ -1,10 +1,10 @@
 <div class="card-panel">
-	
+
 	<!-- navbar - start -->
   <nav>
     <div class="nav-wrapper">
       <div class="col s12">
-        <a class="brand-logo center"><?php echo $this->lang->line('edit');?></a>
+        <a class="brand-logo center"><?php echo $this->lang->line('edit_challenge');?></a>
       </div>
     </div>
   </nav>

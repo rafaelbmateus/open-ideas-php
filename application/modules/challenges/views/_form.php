@@ -49,23 +49,16 @@
 </div>
 
 <!-- attachment -->
-<div class="row">
-	<!-- <div class="file-field input-field col s6">
+<!-- <div class="row">
+	<div class="file-field input-field col s6">
 		<input class="file-path" type="text" readonly/>
 		<div class="btn">
 			<span><?php echo $this->lang->line('attachment'); ?></span>
 			<input name="idea_attachment" type="file"/>
 		</div>
-	</div> -->
-	<div class="row section">
-		<div class="col s12 m4 l3">
-			<p>Default value</p>
-		</div>
-		<div class="col s12 m8 l9">
-				<input type="file" id="input-file-now-disabled-2" class="dropify" disabled="disabled" data-default-file="images/gallary/1.jpg" />
-		</div>
 	</div>
-</div>
+</div> -->
+
 <br><br>
 
 <!-- buttons confirm/cancel -->

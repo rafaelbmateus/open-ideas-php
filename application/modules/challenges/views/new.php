@@ -4,7 +4,7 @@
   <nav>
     <div class="nav-wrapper">
       <div class="col s12">
-        <a class="brand-logo center"><?php echo $this->lang->line('new');?></a>
+        <a class="brand-logo center"><?php echo $this->lang->line('new_challenge');?></a>
       </div>
     </div>
   </nav>

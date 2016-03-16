@@ -70,12 +70,14 @@ $lang['logout'] = "Sair";
 // Challenges - start
 $lang['dont_have_challenge'] = "Não tenho desafio...";
 $lang['new_challenge'] = "Cadastrar novo desafio";
+$lang['edit_challenge'] = "Editar desafio";
 $lang['description'] = "Descrição";
 // Challenges - end
 
 // Idea - start
 $lang['dont_have_idea'] = "Não tenho ideia...";
 $lang['new_idea'] = "Cadastrar nova ideia";
+$lang['edit_idea'] = "Editar ideia";
 $lang['solution'] = "Solução";
 $lang['differential'] = "Diferencial";
 $lang['necessary_skills'] = "Competências necessárias";
