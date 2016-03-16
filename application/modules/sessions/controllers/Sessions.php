@@ -31,6 +31,8 @@ class Sessions extends CI_Controller{
 			$job = $this->input->post('job_id', true);
 			$cnpj = str_replace('/','-', '', $this->input->post('cnpj', true));
 			$password = md5($this->input->post('password', true));
+			$resume = $this->input->post('resume', true);
+			
 			if($cnpj){
 				if(!$this->validate_cnpj($cnpj)){
 					$this->session->set_flashdata('error', $this->lang->line('cnpj_error') . ' ' . $cnpj);
