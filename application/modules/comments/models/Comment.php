@@ -4,7 +4,6 @@ class Comment extends CI_Model{
 	public $primary_key = 'comment_id';
 	public $date_created_field = 'created_at';
 	public $date_updated_field = 'updated_at';
-	// public $is_deleted_field = 'is_deleted';
 	public function __construct(){
 		parent::__construct();
 		//$this->create_table();
@@ -22,16 +21,10 @@ class Comment extends CI_Model{
 			return $this->db->query($query);
 		}
 	}
-	function get($id = null){
+	function get_challenge($id = null){
 		$this->db->from($this->table);
-		$this->db->where($this->is_deleted_field, null);
-		if ($id){
-			$this->db->where($this->primary_key, $id);
-			$query = $this->db->get()->row();
-		}else{
-			$query = $this->db->get()->result();
-		}
-		return $query;
+    $this->db->where('challenge_id', $id);
+		return $this->db->get()->result();
 	}
 	public function get_all($id = null){
 		$this->db->from($this->table);

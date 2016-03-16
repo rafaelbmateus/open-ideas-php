@@ -39,8 +39,46 @@
   <br>
 
   <div id="flow-text-demo" class="card-panel">
+    <!-- list comments -->
     <div>
-      <!--  TODO: show comments -->
+      <!-- <?php print_r($list_comments); ?> -->
+      <table id="datatable" class="table table-bordered responsive-table display">
+      	<thead>
+      		<tr>
+      			<th width="8%"></th>
+            <th width="20%"></th>
+      			<th width="70%"></th>
+      			<th width="5%"></th>
+      		</tr>
+      	</thead>
+      	<tbody>
+      		<?php if (isset ( $list_comments )) { ?>
+      			<?php foreach ( $list_comments as $comment ) { ?>
+              <tr>
+                <td rowspan="2">
+                  <a href="<?php echo base_url() . 'users' . '/show/' . $comment->user_id; ?>"><img src="<?php echo "http://www.gravatar.com/avatar/" . md5(strtolower(trim($list_users[$item->user_id-1]->user_email))); ?>" alt="profile image" class="circle z-depth-2 responsive-img activator"></a>
+                </td>
+                <td colspan="2">
+                  <?php echo $list_users[$comment->user_id-1]->user_name; ?>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <?php echo date('d/m/Y', strtotime($comment->created_at)); ?>
+                  às
+                  <?php echo date('H:i:s', strtotime($comment->created_at)); ?>
+                </td>
+                <td colspan="2">
+                  <?php echo $comment->comment_description; ?>
+                </td>
+                <!-- <td>
+                  <a href="' . base_url () . $module . '/delete/' . $comment->$comment_id . '" class="btn-floating waves-effect waves-light cyan"><i class="fa fa-pencil"></i></a>
+                </td> -->
+              </tr>
+            <?php } ?>
+          <?php } ?>
+      	</tbody>
+      </table>
     </div>
 
     <div class="input-field col s12">

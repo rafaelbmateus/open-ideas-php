@@ -27,9 +27,11 @@ class Challenges extends CI_Controller{
 			$this->load->model('areas/Area');
 			$this->data['list_areas'] = $this->Area->get();
 			$this->load->model('ideas/Idea');
-			$this->data['num_ideas'] = $this->Idea->get_sum($id);
+			$this->data['num_ideas'] = $this->Idea->get_sum($this->data['item']->user_id);
 			$this->load->model('challenges/Challenge');
-			$this->data['num_challenges'] = $this->Challenge->get_sum($id);
+			$this->data['num_challenges'] = $this->Challenge->get_sum($this->data['item']->user_id);
+			$this->load->model('comments/Comment');
+			$this->data['list_comments'] = $this->Comment->get_challenge($id);
 			$this->data['view'] = 'show';
 			$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 		}else{
@@ -110,8 +112,7 @@ class Challenges extends CI_Controller{
 		redirect (base_url() . $this->module);
 	}
 
-	function comment()
-	{
+	function comment(){
 		$this->load->library ('form_validation');
 		$this->form_validation->set_rules('Challenge_name', 'Challenge name', 'trim|required');
 		if ($this->form_validation->run() == false){
@@ -127,5 +128,7 @@ class Challenges extends CI_Controller{
 		}else{
 			$this->session->set_flashdata ('error', $this->lang->line('save_error'));
 		}
+
+		redirect (base_url() . $this->module . '/show/' . $challenge_id);
 	}
 }
