@@ -33,7 +33,18 @@ class Ideas extends CI_Controller{
 		$id = $this->uri->segment(3);
 		if ($id){
 			$this->data['item'] = $this->Idea->get($id);
-			$this->load->view('show', $this->data);
+			$this->load->model('users/User');
+			$this->data['list_users'] = $this->User->get();
+			$this->load->model('areas/Area');
+			$this->data['list_areas'] = $this->Area->get();
+			$this->load->model('ideas/Idea');
+			$this->data['num_ideas'] = $this->Idea->get_sum($this->data['item']->user_id);
+			$this->load->model('challenges/Challenge');
+			$this->data['num_challenges'] = $this->Challenge->get_sum($this->data['item']->user_id);
+			$this->load->model('comments/Comment');
+			$this->data['list_comments'] = $this->Comment->get_idea($id);
+			$this->data['view'] = 'show';
+			$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 		}else{
 			redirect(base_url() . $this->module);
 		}
