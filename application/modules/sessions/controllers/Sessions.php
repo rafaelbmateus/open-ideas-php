@@ -17,10 +17,10 @@ class Sessions extends CI_Controller{
 	}
 	public function add(){
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('name', 'Nome', 'trim|required');
-		$this->form_validation->set_rules('email', 'E-mail', 'trim|required');
-		$this->form_validation->set_rules('job_id', 'Tipo', 'trim|required');
-		$this->form_validation->set_rules('password', 'Senha', 'trim|required');
+		$this->form_validation->set_rules('name', $this->lang->line('name'), 'trim|required');
+		$this->form_validation->set_rules('email', $this->lang->line('email'), 'trim|required');
+		$this->form_validation->set_rules('job_id', $this->lang->line('job'), 'trim|required');
+		$this->form_validation->set_rules('password', $this->lang->line('password'), 'trim|required');
 
 		if ($this->form_validation->run() == false){
 			$this->session->set_flashdata('error', (validation_errors() ? validation_errors() : false));
@@ -39,7 +39,7 @@ class Sessions extends CI_Controller{
 			}
 			$this->load->model('users/User');
 			if (!$this->User->get_where('user_email', $email)){
-				if ($this->User->add($name, $email, $job, '2', $password, date('Y-m-d H:i:s'))){
+				if ($this->User->add($name, $email, $job, '2', $resume, $password, date('Y-m-d H:i:s'))){
 					$user = $this->User->get_where('user_email', $email);
 					$this->session->set_flashdata('success', $this->lang->line('welcome') . ' ' . $user->user_name);
 					$this->create_session($user->user_id);
