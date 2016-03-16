@@ -2,7 +2,7 @@
 	<a href="<?php echo base_url() . $module . '/create'; ?>" class="btn cyan waves-effect waves-light"><i class="fa fa-plus"></i> <?php echo $this->lang->line('new');?></a>
 <?php } ?>
 
-<table id="datatable" class="table table-bordered responsive-table display">
+<table id="datatable" class="table table-bordered display">
 	<thead>
 		<tr>
 			<th width="10%"><?php echo $this->lang->line('name'); ?></th>

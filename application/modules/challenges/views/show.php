@@ -1,5 +1,5 @@
+<!-- profile header - start -->
 <div class="card-panel">
-  <!-- profile header - start -->
   <div id="profile-page" class="section">
     <div id="profile-page-header" class="card">
       <div class="card-image waves-effect">
@@ -38,11 +38,12 @@
 
   <br>
 
+  <!-- card comment - end -->
   <div id="flow-text-demo" class="card-panel">
-    <!-- list comments -->
+
+    <!-- list comments - start -->
     <div>
-      <!-- <?php print_r($list_comments); ?> -->
-      <table id="datatable" class="table table-bordered responsive-table display">
+      <table id="datatable" class="table bordered display">
       	<thead>
       		<tr>
       			<th width="8%"></th>
@@ -54,7 +55,7 @@
       	<tbody>
       		<?php if (isset ( $list_comments )) { ?>
       			<?php foreach ( $list_comments as $comment ) { ?>
-              <tr>
+              <tr style="border: none;">
                 <td rowspan="2">
                   <a href="<?php echo base_url() . 'users' . '/show/' . $comment->user_id; ?>"><img src="<?php echo "http://www.gravatar.com/avatar/" . md5(strtolower(trim($list_users[$item->user_id-1]->user_email))); ?>" alt="profile image" class="circle z-depth-2 responsive-img activator"></a>
                 </td>
@@ -80,7 +81,11 @@
       	</tbody>
       </table>
     </div>
+    <!-- list comments - end -->
 
+    <br><br>
+
+    <!-- input comment - start -->
     <div class="input-field col s12">
       <form class="" action="<?php echo base_url() . $module . '/comment';?>" method="post">
         <input hidden="hidden" name="challenge_id" value="<?php echo $item->challenge_id; ?>">
@@ -89,8 +94,10 @@
         <button class="btn cyan waves-effect waves-light" type="submit"><?php echo $this->lang->line('send');?><i class="fa fa-check right"></i></button>
       </form>
     </div>
+    <!-- input comment - end -->
 
   </div>
+  <!-- card comment - end -->
 </div>
 
 <br><br><br>
