@@ -223,7 +223,7 @@ CREATE TABLE tb_comment (
   challenge_id INTEGER    ,
   user_id INTEGER   NOT NULL ,
   idea_id INTEGER    ,
-  comment_description INTEGER    ,
+  comment_description VARCHAR(255)    ,
   created_at TIMESTAMP    ,
   updated_at TIMESTAMP      ,
 PRIMARY KEY(comment_id)      ,
