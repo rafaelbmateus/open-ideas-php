@@ -89,7 +89,7 @@
 </div>
 
 <!-- attachment -->
-<div class="row">
+<!-- <div class="row">
 	<div class="file-field input-field col s6">
 		<input class="file-path" type="text" readonly />
 		<div class="btn">
@@ -97,7 +97,8 @@
 			<input name="idea_attachment" type="file" />
 		</div>
 	</div>
-</div>
+</div> -->
+
 <br><br>
 
 <!-- buttons confirm/cancel -->
