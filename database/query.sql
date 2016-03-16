@@ -1,5 +1,3 @@
-
-
 CREATE TABLE tb_innovation_area (
   innovation_area_id SERIAL  NOT NULL ,
   area_name VARCHAR(255)   NOT NULL ,
@@ -140,6 +138,7 @@ CREATE TABLE tb_user (
   user_password VARCHAR(45)   NOT NULL ,
   user_name VARCHAR(45)   NOT NULL ,
   user_document INTEGER    ,
+  user_resume VARCHAR(500)    ,
   is_deleted BOOL    ,
   created_at TIMESTAMP   NOT NULL ,
   updated_at TIMESTAMP      ,
