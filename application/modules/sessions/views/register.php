@@ -36,7 +36,7 @@
         <div class="row margin">
           <div class="input-field col s12">
             <!-- <i id="cnpj_icon" class="mdi-action-assignment-ind prefix" hidden></i> -->
-            <input id="cnpj_input" name="cnpj" type="text" hidden required>
+            <input id="cnpj_input" name="cnpj" type="text" hidden>
             <label id="cnpj_label" for="cnpj" class="center-align active" hidden><?php echo $this->lang->line('cnpj'); ?></label>
           </div>
         </div>
