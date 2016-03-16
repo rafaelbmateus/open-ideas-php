@@ -26,6 +26,11 @@ class Comment extends CI_Model{
     $this->db->where('challenge_id', $id);
 		return $this->db->get()->result();
 	}
+	function get_idea($id = null){
+		$this->db->from($this->table);
+    $this->db->where('idea_id', $id);
+		return $this->db->get()->result();
+	}
 	public function get_all($id = null){
 		$this->db->from($this->table);
 		if ($id){
@@ -47,6 +52,15 @@ class Comment extends CI_Model{
 		$data = array (
         'user_id' => $user_id,
         'challenge_id' => $challenge_id,
+        'comment_description' => $description,
+				$this->date_created_field => $timestamp
+		);
+		return $this->db->insert($this->table, $data);
+	}
+	public function add_idea($user_id, $idea_id, $description, $timestamp){
+		$data = array (
+        'user_id' => $user_id,
+        'idea_id' => $idea_id,
         'comment_description' => $description,
 				$this->date_created_field => $timestamp
 		);

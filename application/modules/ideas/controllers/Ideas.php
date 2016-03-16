@@ -136,4 +136,24 @@ class Ideas extends CI_Controller{
 		}
 		redirect (base_url() . $this->module);
 	}
+
+	function comment(){
+		$this->load->library ('form_validation');
+		$this->form_validation->set_rules('comment_description', $this->lang->line('description'), 'trim|required');
+		if ($this->form_validation->run() == false){
+			$this->session->set_flashdata( 'error', (validation_errors() ? validation_errors() : false));
+		}
+		$user_id = $this->session->userdata('user_id');
+		$idea_id = $this->input->post('idea_id', true);
+		$description = $this->input->post('comment_description', true);
+
+		$this->load->model('comments/Comment');
+		if ($this->Comment->add_idea($user_id, $idea_id, $description, date('Y-m-d H:i:s'))){
+			$this->session->set_flashdata ('success', $this->lang->line('save_success'));
+		}else{
+			$this->session->set_flashdata ('error', $this->lang->line('save_error'));
+		}
+
+		redirect (base_url() . $this->module . '/show/' . $idea_id);
+	}
 }
