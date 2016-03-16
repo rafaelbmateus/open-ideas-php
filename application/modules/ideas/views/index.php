@@ -30,8 +30,9 @@
               <p class="ultra-small"><?php echo date('d/m/Y H:i:s', strtotime($item->created_at)); ?></p>
             </div>
             <div class="col m2">
-              <a class="btn-floating waves-effect waves-light light-blue" onclick="share();"><i class="mdi-social-share"></i></a>
               <a class="btn-floating waves-effect waves-light light-blue" onclick="like();"><i class="fa fa-thumbs-up"></i></a>
+              <a class="btn-floating waves-effect waves-light light-blue" onclick="share();"><i class="mdi-social-share"></i></a>
+              <a class="btn-floating waves-effect waves-light light-blue" href="<?php echo base_url() . $module . '/show/' . $item->idea_id; ?>"><i class="mdi-action-info activator"></i></a>
             </div>
           </div>
         </div>

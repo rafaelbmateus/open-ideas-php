@@ -13,7 +13,7 @@
 				<ul class="card-action-buttons">
 					<li><a class="btn-floating waves-effect waves-light light-blue" onclick="like();"><i class="fa fa-thumbs-up"></i></a></li>
 					<li><a class="btn-floating waves-effect waves-light light-blue" onclick="share();"><i class="mdi-social-share"></i></a></li>
-					<li><a class="btn-floating waves-effect waves-light light-blue"><i class="mdi-action-info activator"></i></a></li>
+					<li><a class="btn-floating waves-effect waves-light light-blue" href="<?php echo base_url() . $module . '/show/' . $item->challenge_id; ?>"><i class="mdi-action-info activator"></i></a></li>
 				</ul>
 				<div class="card-content">
 					<p class="row">
@@ -28,11 +28,6 @@
 						</div>
 						<div class="col s9"><a href="<?php echo base_url() . 'users' . '/show/' . $item->user_id; ?>"><?php echo $list_users[$item->user_id-1]->user_name; ?></a></div>
 					</div>
-				</div>
-				<div class="card-reveal">
-					<span class="card-title grey-text text-darken-4"><i class="mdi-navigation-close right"></i> <?php echo $item->challenge_title; ?></span>
-					<p><?php echo $item->challenge_description; ?></p>
-					<a href="<?php echo base_url() . $module . '/show/' . $item->challenge_id; ?>"><button class="btn"><?php echo $this->lang->line('read_more');?></button></a>
 				</div>
 			</div>
 		</div>
