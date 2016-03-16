@@ -8,7 +8,7 @@
 			<div class="card">
 				<div class="card-image waves-effect waves-block waves-light">
 					<!-- <a href="<?php echo base_url() . $module . '/show/' . $item->challenge_id; ?>"><img src="<?php echo base_url(); ?>assets/plugins/materialize/images/img4.jpg" alt="blog-img"></a> -->
-					<img class="activator" src="<?php echo base_url() . 'assets/images/areas/' . $item->area_id . '.jpg'; ?>" alt="blog-img" height="200">
+					<img class="activator" src="<?php echo base_url() . 'assets/images/areas/' . $item->area_id . '.jpg'; ?>" alt="blog-img" height="300">
 				</div>
 				<ul class="card-action-buttons">
 					<li><a class="btn-floating waves-effect waves-light light-blue" onclick="like();"><i class="fa fa-thumbs-up"></i></a></li>
