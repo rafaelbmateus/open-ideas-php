@@ -3,7 +3,7 @@
 <?php if (!empty($list)) { ?>
 	<div class="row">
 	<?php foreach($list as $item) { ?>
-		<div class="blog col s6">
+		<div class="blog col s4">
 			<br>
 			<div class="card">
 				<div class="card-image waves-effect waves-block waves-light">
