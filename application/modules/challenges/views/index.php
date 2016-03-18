@@ -5,7 +5,7 @@
 	<?php foreach($list as $item) { ?>
 		<div class="blog col s4">
 			<br>
-			<div class="card">
+			<div class="card hoverable medium">
 				<div class="card-image waves-effect waves-block waves-light">
 					<!-- <a href="<?php echo base_url() . $module . '/show/' . $item->challenge_id; ?>"><img src="<?php echo base_url(); ?>assets/plugins/materialize/images/img4.jpg" alt="blog-img"></a> -->
 					<img class="activator" src="<?php echo base_url() . 'assets/images/areas/' . $item->area_id . '.jpg'; ?>" alt="blog-img">
