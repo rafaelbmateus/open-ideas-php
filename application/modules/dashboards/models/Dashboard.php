@@ -4,7 +4,8 @@ class Dashboard extends CI_Model{
 		parent::__construct();
 	}
 	public function getTopIdeas(numIdeas = '5'){
-		
+		$this->db->from('tb_idea');
+		return $this->db->get()->result();
 	}
 
 }

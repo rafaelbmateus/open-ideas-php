@@ -12,8 +12,8 @@
 						<img class="activator" src="<?php echo base_url() . 'assets/images/areas/' . $item->area_id . '.jpg'; ?>" alt="blog-img" height="300">
 					</div>
 					<ul class="card-action-buttons">
-						<li><a class="btn-floating waves-effect waves-light light-blue" onclick="like();"><i class="fa fa-thumbs-up"></i></a></li>
-						<li><a class="btn-floating waves-effect waves-light light-blue" onclick="share();"><i class="mdi-social-share"></i></a></li>
+						<li><a id="like" value="1" class="btn-floating waves-light" onclick="like(<?php echo $item->challenge_id; ?>);"><i class="fa fa-thumbs-up"></i></a></li>
+						<li><a class="btn-floating waves-light" onclick="share();"><i class="mdi-social-share"></i></a></li>
 						<!-- <li><a class="btn-floating waves-effect waves-light light-blue" href="<?php echo base_url() . $module . '/show/' . $item->challenge_id; ?>"><i class="mdi-action-info activator"></i></a></li> -->
 					</ul>
 					<div class="card-content">
@@ -42,10 +42,29 @@
 <br><br><br>
 
 <script type="text/javascript">
-  function like(){
-    Materialize.toast('Gostei desse desafio!', 3000, 'rounded');
-    // TODO, alter icon_like
-  }
+	function like_manager(challenge_id) {
+		if (document.getElementById("like").value == "1"){
+			like();
+		}else{
+			unlike();
+		}
+	}
+	function like(challenge_id) {
+		Materialize.toast('I am like', 3000, 'rounded');
+		$.ajax({
+			type:"GET",
+			url:"<?php echo base_url(); ?>challenges/challenges_ajax/like",
+			data: "challenge_id=" + challenge_id,
+			success: function (data) {
+				document.getElementById("like").value = "1";
+				document.getElementById("like").className = "btn-floating waves-light green";
+				alert('successful: ' + data);
+			},
+			error: function (error) {
+				alert('error; ' + error);
+			}
+		});
+	}
 
   function unlike(){
     Materialize.toast('Talvez não...', 3000, 'rounded');

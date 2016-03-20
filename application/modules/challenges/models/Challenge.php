@@ -60,6 +60,19 @@ class Challenge extends CI_Model{
 		$query = $this->db->query('SELECT challenge_id FROM tb_challenge WHERE is_deleted IS NULL AND user_id=' . $user_id);
 		return $query->num_rows();
 	}
+	public function like($user_id, $challenge_id){
+		$data = array (
+				'user_id' => $user_id,
+				'challenge_id' => $challenge_id,
+				$this->date_created_field => date('Y-m-d H:i:s')
+		);
+		return $this->db->insert('tb_like', $data);
+	}
+	public function unlike($user_id, $challenge_id){
+		$this->db->where('user_id', $user_id);
+		$this->db->where('challenge_id', $challenge_id);
+		return $this->db->delete('tb_like');
+	}
 	public function add($title, $description, $deadline, $area_id, $user_id, $timestamp){
 		$data = array (
 				'challenge_title' => $title,
