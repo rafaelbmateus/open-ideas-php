@@ -11,6 +11,7 @@ class Challenges extends CI_Controller{
 	}
 	public function index(){
 		$this->data['list'] = $this->Challenge->get();
+		// $this->data['list_likes'] = $this->Challenge->get_likes($this->session->userdata('user_id'));
 		$this->load->model('users/User');
 		$this->data['list_users'] = $this->User->get();
 		$this->load->model('areas/Area');

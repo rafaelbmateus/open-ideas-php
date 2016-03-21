@@ -9,6 +9,7 @@ class Challenge extends CI_Model{
 		parent::__construct();
 		//$this->create_table();
 	}
+
 	public function create_table(){
 		if (!$this->db->table_exists($this->table)){
 			//TODO, Atualizar query da criação da tabela
@@ -22,6 +23,7 @@ class Challenge extends CI_Model{
 			return $this->db->query($query);
 		}
 	}
+
 	function get($id = null){
 		$this->db->from($this->table);
 		$this->db->where($this->is_deleted_field, null);
@@ -33,6 +35,7 @@ class Challenge extends CI_Model{
 		}
 		return $query;
 	}
+
 	public function get_all($id = null){
 		$this->db->from($this->table);
 		if ($id){
@@ -40,6 +43,7 @@ class Challenge extends CI_Model{
 		}
 		return $this->db->get()->result();
 	}
+
 	function get_where($field = "", $content = ""){
 		$this->db->from($this->table);
 		$this->db->where($field, $content);
@@ -50,16 +54,19 @@ class Challenge extends CI_Model{
 			return $query->result();
 		}
 	}
+
 	function get_public_challenges_user($user_id = null){
 		$this->db->from($this->table);
 		$this->db->where($this->is_deleted_field, null);
 		$this->db->where('user_id', $user_id);
 		return $this->db->get()->result();
 	}
+
 	function get_sum($user_id){
 		$query = $this->db->query('SELECT challenge_id FROM tb_challenge WHERE is_deleted IS NULL AND user_id=' . $user_id);
 		return $query->num_rows();
 	}
+
 	public function like($user_id, $challenge_id){
 		$data = array (
 				'user_id' => $user_id,
@@ -68,11 +75,28 @@ class Challenge extends CI_Model{
 		);
 		return $this->db->insert('tb_like', $data);
 	}
+
 	public function unlike($user_id, $challenge_id){
 		$this->db->where('user_id', $user_id);
 		$this->db->where('challenge_id', $challenge_id);
-		return $this->db->delete('tb_like');
+		$this->db->delete('tb_like');
 	}
+
+	public function get_likes($user_id){
+		$this->db->select('challenge_id');
+		$this->db->from('tb_like');
+		$this->db->where('user_id', $user_id);
+		return $this->db->get()->result();
+	}
+
+	public function is_liked($user_id, $challenge_id){
+		$this->db->select('challenge_id');
+		$this->db->from('tb_like');
+		$this->db->where('user_id', $user_id);
+		$this->db->where('challenge_id', $challenge_id);
+		return $this->db->get()->result();
+	}
+
 	public function add($title, $description, $deadline, $area_id, $user_id, $timestamp){
 		$data = array (
 				'challenge_title' => $title,
@@ -86,6 +110,7 @@ class Challenge extends CI_Model{
 		}
 		return $this->db->insert($this->table, $data);
 	}
+
 	public function update($id, $title, $description, $deadline, $area_id, $user_id, $timestamp){
 		$data = array (
 				'challenge_title' => $title,
@@ -100,6 +125,7 @@ class Challenge extends CI_Model{
 		$this->db->where($this->primary_key, $id);
 		return $this->db->update($this->table, $data);
 	}
+
 	public function delete($id){
 		$data = array (
 				$this->is_deleted_field => true
@@ -107,6 +133,7 @@ class Challenge extends CI_Model{
 		$this->db->where($this->primary_key, $id);
 		return $this->db->update($this->table, $data);
 	}
+
 	public function destroy($id){
 		$this->db->where($this->primary_key, $id);
 		$this->db->delete($this->table);

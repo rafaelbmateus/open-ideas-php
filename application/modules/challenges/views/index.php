@@ -1,5 +1,7 @@
 <!-- <a href="<?php echo base_url() . $module . '/create'; ?>" class="btn cyan waves-effect waves-light"><i class="fa fa-plus"></i> <?php echo $this->lang->line('new');?></a> -->
 
+<?php $this->load->model('Challenge'); ?>
+
 <?php if (!empty($list)) { ?>
 	<div class="row">
 	<?php foreach($list as $item) { ?>
@@ -12,7 +14,12 @@
 						<img class="activator" src="<?php echo base_url() . 'assets/images/areas/' . $item->area_id . '.jpg'; ?>" alt="blog-img" height="300">
 					</div>
 					<ul class="card-action-buttons">
-						<li><a id="like" value="1" class="btn-floating waves-light" onclick="like(<?php echo $item->challenge_id; ?>);"><i class="fa fa-thumbs-up"></i></a></li>
+						<?php if($this->Challenge->is_liked($this->session->userdata('user_id'), $item->challenge_id)) { ?>
+							<!-- <li><button id="like<?php echo $item->challenge_id; ?>" value="1" class="btn-floating waves-light z-depth-0 cyan lighten-4" onclick="like_manager(<?php echo $item->challenge_id; ?>);"><i class="fa fa-thumbs-up"></i></button></li> -->
+							<li><a id="like<?php echo $item->challenge_id; ?>" value="1" class="btn-floating waves-light z-depth-0 cyan lighten-4" onclick="like_manager(<?php echo $item->challenge_id; ?>);"><i class="fa fa-thumbs-up"></i></a></li>
+						<?php }else{ ?>
+							<li><a id="like<?php echo $item->challenge_id; ?>" value="0" class="btn-floating waves-light" onclick="like_manager(<?php echo $item->challenge_id; ?>);"><i class="fa fa-thumbs-up"></i></a></li>
+						<?php } ?>
 						<li><a class="btn-floating waves-light" onclick="share();"><i class="mdi-social-share"></i></a></li>
 						<!-- <li><a class="btn-floating waves-effect waves-light light-blue" href="<?php echo base_url() . $module . '/show/' . $item->challenge_id; ?>"><i class="mdi-action-info activator"></i></a></li> -->
 					</ul>
@@ -43,10 +50,12 @@
 
 <script type="text/javascript">
 	function like_manager(challenge_id) {
-		if (document.getElementById("like").value == "1"){
-			like();
+		value = document.getElementById("like"+challenge_id).value;
+		// alert(value);
+		if (value == "0" || value == undefined){
+			like(challenge_id);
 		}else{
-			unlike();
+			unlike(challenge_id);
 		}
 	}
 	function like(challenge_id) {
@@ -56,19 +65,29 @@
 			url:"<?php echo base_url(); ?>challenges/challenges_ajax/like",
 			data: "challenge_id=" + challenge_id,
 			success: function (data) {
-				document.getElementById("like").value = "1";
-				document.getElementById("like").className = "btn-floating waves-light green";
-				alert('successful: ' + data);
+				document.getElementById("like"+challenge_id).value = "1";
+				document.getElementById("like"+challenge_id).className = "btn-floating waves-light z-depth-0 cyan lighten-4";
 			},
 			error: function (error) {
-				alert('error; ' + error);
+				// alert('error; ' + error);
 			}
 		});
 	}
 
-  function unlike(){
+  function unlike(challenge_id){
     Materialize.toast('Talvez não...', 3000, 'rounded');
-    // TODO, alter icon_like
+		$.ajax({
+			type:"GET",
+			url:"<?php echo base_url(); ?>challenges/challenges_ajax/unlike",
+			data: "challenge_id=" + challenge_id,
+			success: function (data) {
+				document.getElementById("like"+challenge_id).value = "0";
+				document.getElementById("like"+challenge_id).className = "btn-floating waves-light";
+			},
+			error: function (error) {
+				// alert('error; ' + error);
+			}
+		});
   }
   function share(){
     Materialize.toast('Já está no ctrl+c', 3000, 'rounded');
