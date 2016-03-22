@@ -14,7 +14,7 @@ $config['app_footer'] = '   ';
 // $config['app_footer'] = 'Comunidade de inovação aberta, de código aberto, disponível no <a href="https://github.com/rafaelbmateus/open-idea-php" target="_blank" style="color: white">github</a>';
 if ($_SERVER['SERVER_NAME'] == 'localhost'){
   $config['app_footer_stakeholders'] = '<a href="http://unisul.br" target="_blank"><img width="130" height="31" style="margin-top: 10px;" src="http://' . $_SERVER['SERVER_NAME'] . '/open-idea-php' . '/assets/images/app/stakeholders/ilab.jpg"></a>';
-}else {
+}else{
   $config['app_footer_stakeholders'] = '<a href="http://unisul.br" target="_blank"><img width="130" height="31" style="margin-top: 10px;" src="http://' . $_SERVER['SERVER_NAME'] . '/assets/images/app/stakeholders/ilab.jpg"></a>';
 }
 // $config['app_footer_stakeholders'] = '<img width="100" height="50" src="http://localhost/open-idea-php/assets/images/app/stakeholders/unisul.jpg"><img width="100" height="30" src="http://localhost/open-idea-php/assets/images/app/stakeholders/ilab.jpg"><img width="100" height="30" src="http://localhost/open-idea-php/assets/images/app/stakeholders/agetec.jpg">';
