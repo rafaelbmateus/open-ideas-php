@@ -10,7 +10,7 @@
 	}
 
 	function like(challenge_id) {
-		Materialize.toast('I am like', 3000, 'rounded');
+		Materialize.toast('Gostei', 3000, 'rounded');
 		$.ajax({
 			type:"GET",
 			url:"<?php echo base_url(); ?>challenges/challenges_ajax/like",
