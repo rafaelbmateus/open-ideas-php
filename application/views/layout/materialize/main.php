@@ -76,7 +76,7 @@
                     </div>
                     <div class="col col s8 m8 l8">
                         <ul id="profile-dropdown" class="dropdown-content">
-                            <li><a href="<?php echo base_url() . 'users/edit_profile/'; ?>"><i class="mdi-action-face-unlock"></i><?php echo $this->lang->line('profile'); ?></a></li>
+                            <li><a href="<?php echo base_url() . 'users/update_profile/'; ?>"><i class="mdi-action-face-unlock"></i><?php echo $this->lang->line('profile'); ?></a></li>
                             <!-- <li><a href="#"><i class="mdi-action-settings"></i><?php echo $this->lang->line('config'); ?></a></li> -->
                             <li><a href="#"><i class="mdi-communication-live-help"></i><?php echo $this->lang->line('help'); ?></a></li>
                             <li class="divider"></li>

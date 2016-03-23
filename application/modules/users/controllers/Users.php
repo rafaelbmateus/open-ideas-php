@@ -78,11 +78,11 @@ class Users extends CI_Controller{
 			redirect (base_url() . $this->module);
 		}
 	}
-	public function edit_profile(){
+	public function update_profile(){
 		$this->load->model('jobs/Job');
 		$this->data['jobs'] = $this->Job->get();
 		$this->data['item'] = $this->User->get($this->session->userdata('user_id'));
-		$this->data['view'] = 'edit';
+		$this->data['view'] = 'update_profile';
 		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 	}
 	public function update(){

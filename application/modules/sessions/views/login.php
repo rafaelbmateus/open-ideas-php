@@ -28,7 +28,7 @@
         </div>
         <div class="row">
           <div class="input-field col s12 m12 l12  login-text">
-            <input id="remember-me" name="remember" type="checkbox"/>
+            <input id="remember-me" name="remember" type="checkbox" checked/>
             <label for="remember-me"><?php echo $this->lang->line('remember');?></label>
           </div>
         </div>

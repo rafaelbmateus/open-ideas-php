@@ -1,3 +1,4 @@
+<form action="<?php echo base_url() . $module . '/update';?>" method="post">
 <input hidden="hidden" name="user_id" type="text" value="<?php if (isset($item->user_id)) echo $item->user_id; ?>" />
 
 <div class="row">
@@ -56,30 +57,22 @@
 					</select>
 				</div>
 			</div>
-			<div class="divider"></div>
-			<div class="row">
+
+      <!--  Resumo -->
+      <div class="row">
 				<div class="input-field col s12">
 					<textarea name="resume" class="materialize-textarea" length="1200" maxlength="1200"><?php if (isset($item->user_resume)) echo $item->user_resume; ?></textarea>
 					<label><?php echo $this->lang->line('description');?></label>
 				</div>
 			</div>
-			<?php if($view=='new'){ ?>
-				<div class="row">
-					<div class="input-field col s6">
-						<input name="password" type="password" required
-							value="<?php //if (isset($item)) echo $item->user_password; ?>"/>
-						<label><?php echo $this->lang->line('password');?></label>
-					</div>
-				</div>
-			<?php } ?>
+
 			<div class="row">
-				<!-- <div class="input-field col s5">
-					<a class="btn cyan waves-effect waves-light" href="<?php echo base_url() . $module;?>"><?php echo $this->lang->line('cancel');?><i class="fa fa-times left"></i></a>
-				</div> -->
-				<button class="btn cyan waves-effect waves-light right" type="submit"><?php echo $this->lang->line('save');?><i class="fa fa-check right"></i></button>
+				<button class="btn cyan waves-effect waves-light center col s12" type="submit"><?php echo $this->lang->line('save');?> <i class="fa fa-check"></i></button>
 			</div>
+
 		</div>
 	</div>
 </div>
 
 <br><br><br>
+</form>

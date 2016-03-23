@@ -46,6 +46,7 @@ $lang['published_in'] = "Publicado em";
 $lang['read_more'] = "Ler mais...";
 $lang['comment'] = "Comentário";
 $lang['send'] = "Enviar";
+$lang['update_profile'] = "Atualizar perfil";
 // Application - end
 
 // Menu - start
