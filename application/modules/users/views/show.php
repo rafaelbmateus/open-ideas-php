@@ -44,7 +44,7 @@
         <!-- profile about - end -->
 
         <!-- total points - start TODO: -->
-        <div class="card center-align">
+        <!-- <div class="card center-align">
           <div class="card-content purple white-text">
               <p class="card-stats-title"><i class="mdi-editor-attach-money"></i>Your Profit</p>
               <h4 class="card-stats-number">$8990.63</h4>
@@ -54,7 +54,7 @@
           <div class="card-action purple darken-2">
               <div id="sales-compositebar"></div>
           </div>
-        </div>
+        </div> -->
         <!-- total points - end -->
 
       </div>
