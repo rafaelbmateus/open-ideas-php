@@ -67,7 +67,7 @@
 			</div>
 
 			<div class="row">
-				<button class="btn cyan waves-effect waves-light center col s12" type="submit"><?php echo $this->lang->line('save');?> <i class="fa fa-check"></i></button>
+				<button class="btn cyan waves-effect waves-light col s12" type="submit"><?php echo $this->lang->line('save');?> <i class="fa fa-check"></i></button>
 			</div>
 
 		</div>

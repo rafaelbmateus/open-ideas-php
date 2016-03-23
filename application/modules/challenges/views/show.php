@@ -29,6 +29,9 @@
   <!-- profile header - end -->
 
   <div id="flow-text-demo" class="card-panel">
+    <?php if ($item->user_id == $this->session->userdata('user_id')){ ?>
+      <a class="btn-floating waves-effect waves-light light-blue right" href="<?php echo base_url () . $module . '/edit/' . $item->challenge_id; ?>"><i class="fa fa-pencil"></i></a>
+    <?php } ?>
     <p class="flow-text"><b><?php echo $item->challenge_title; ?></b></p>
     <!-- TODO: tirar a gambi! -->
     <p class="flow-text"><?php echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $item->challenge_description; ?></p>

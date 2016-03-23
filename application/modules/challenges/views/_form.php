@@ -63,7 +63,7 @@
 
 <!-- buttons confirm -->
 <div class="row">
-	<div class="input-field col s7">
-		<button class="btn cyan waves-effect waves-light col s7" type="submit"><?php echo $this->lang->line('save');?> <i class="fa fa-check right"></i></button>
+	<div class="input-field">
+		<button class="btn cyan waves-effect waves-light col s12" type="submit"><?php echo $this->lang->line('save');?> <i class="fa fa-check"></i></button>
 	</div>
 </div>

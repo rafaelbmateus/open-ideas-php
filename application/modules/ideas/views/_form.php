@@ -104,6 +104,6 @@
 <!-- buttons confirm -->
 <div class="row">
 	<div class="input-field">
-		<button class="btn cyan waves-effect waves-light col l12" type="submit"><?php echo $this->lang->line('save'); ?> <i class="fa fa-check"></i></button>
+		<button class="btn cyan waves-effect waves-light col s12" type="submit"><?php echo $this->lang->line('save'); ?> <i class="fa fa-check"></i></button>
 	</div>
 </div>

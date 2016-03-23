@@ -22,6 +22,8 @@
 	<a class="btn-floating waves-effect waves-light modal-trigger red" href="#modal-delete"><i class="fa fa-trash"></i></a>
 </div>
 
+<br>
+
 <!-- modal delete - start -->
 <div id="modal-delete" class="modal bottom-sheet">
 	<div class="modal-content">
