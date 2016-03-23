@@ -78,7 +78,7 @@
                         <ul id="profile-dropdown" class="dropdown-content">
                             <li><a href="<?php echo base_url() . 'users/update_profile/'; ?>"><i class="mdi-action-face-unlock"></i><?php echo $this->lang->line('profile'); ?></a></li>
                             <!-- <li><a href="#"><i class="mdi-action-settings"></i><?php echo $this->lang->line('config'); ?></a></li> -->
-                            <li><a href="#"><i class="mdi-communication-live-help"></i><?php echo $this->lang->line('help'); ?></a></li>
+                            <li><a href="<?php echo base_url();?>app/help"><i class="mdi-communication-live-help"></i><?php echo $this->lang->line('help'); ?></a></li>
                             <li class="divider"></li>
                             <li><a href="<?php echo base_url();?>sessions/lock"><i class="mdi-action-lock-outline"></i><?php echo $this->lang->line('lock');?></a></li>
                             <li><a href="<?php echo base_url();?>sessions/logout"><i class="mdi-hardware-keyboard-tab"></i><?php echo $this->lang->line('logout');?></a></li>

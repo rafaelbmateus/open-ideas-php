@@ -4,7 +4,6 @@ class App extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
 		date_default_timezone_set('America/Sao_Paulo');
-		$this->load->model('Database');
 	}
   public function index(){
 		if($this->session->userdata('user_id')){
@@ -25,17 +24,25 @@ class App extends CI_Controller{
 		}
 	}
 
+	public function help(){
+		$this->data ['view'] = 'help';
+		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
+	}
+
 	public function translate(){
 		$this->lang->load("app_lang","english");
 	}
 
 	public function create_tables(){
+		$this->load->model('Database');
 		echo $this->Database->create_tables();
 	}
 	public function destroy_tables(){
+		$this->load->model('Database');
 		echo $this->Database->destroy_tables();
 	}
 	public function reset_tables(){
+		$this->load->model('Database');
 		echo $this->Database->reset_tables();
 	}
 }
