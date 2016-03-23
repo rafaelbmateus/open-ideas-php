@@ -101,12 +101,9 @@
 
 <br><br>
 
-<!-- buttons confirm/cancel -->
+<!-- buttons confirm -->
 <div class="row">
-	<div class="input-field col s5">
-		<!-- <a class="btn cyan waves-effect waves-light" href="<?php echo base_url() . $module; ?>"><?php echo $this->lang->line('cancel');?><i class="fa fa-times left"></i></a> -->
-	</div>
-	<div class="input-field col s7">
-		<button class="btn cyan waves-effect waves-light right" type="submit"><?php echo $this->lang->line('save'); ?><i class="fa fa-check right"></i></button>
+	<div class="input-field">
+		<button class="btn cyan waves-effect waves-light col l12" type="submit"><?php echo $this->lang->line('save'); ?> <i class="fa fa-check"></i></button>
 	</div>
 </div>
