@@ -23,10 +23,10 @@
 	</div>
 
 	<!-- deadline -->
-	<div class="input-field col s2 offset-s2">
+	<!-- <div class="input-field col s2 offset-s2">
 		<input name="challenge_deadline" type="date" class="datepicker" required>
 		<label><?php echo $this->lang->line('deadline'); ?></label>
-	</div>
+	</div> -->
 </div>
 
 <!-- title -->

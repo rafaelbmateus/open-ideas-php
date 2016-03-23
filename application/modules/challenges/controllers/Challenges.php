@@ -71,6 +71,9 @@ class Challenges extends CI_Controller{
 		$id = $this->uri->segment(3);
 		if ($id){
 			$this->data['item'] = $this->Challenge->get($id);
+			$this->load->model('areas/Area');
+			$this->data['innovation_areas'] = $this->Area->get();
+
 			$this->data['view'] = 'edit';
 			$this->load->view ($this->config->item('app_layout') . 'template', $this->data);
 		}else{
@@ -80,7 +83,8 @@ class Challenges extends CI_Controller{
 	}
 	public function update(){
 		$this->load->library ('form_validation');
-		$this->form_validation->set_rules('Challenge_name', 'Challenge name', 'trim|required');
+		$this->form_validation->set_rules('challenge_title', $this->lang->line('title'), 'trim|required');
+		$this->form_validation->set_rules('challenge_description', $this->lang->line('description'), 'trim|required');
 		if ($this->form_validation->run() == false){
 			$this->session->set_flashdata( 'error', (validation_errors() ? validation_errors() : false));
 		}else{
