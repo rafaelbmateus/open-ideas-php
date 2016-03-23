@@ -18,25 +18,21 @@ Alguns valores da Inovação Aberta são:
 - [ ] Validar CNPJ - controller
 - [ ] Máscara CNPJ
 - [ ] Layout botão excluir
-- [ ] Anexar imagem Ideia
-- [ ] Anexar imagem Desafio
 - [ ] Search bar - Google API
 - [ ] Allow create challenge only corporate profile - validate in controller
-- [ ] Buscar idea por area
 - [ ] Página de ajuda
 - [ ] Salvar email no cookie quando der lock
 - [ ] Criar rotas
-- [ ] Translate app_langue to English
 - [ ] Ação javascript no compartilhar, colocar no ctrl+c.
 - [ ] Página para acesso externo da ideia/desafio
 - [ ] Curtir uma ideia
-- [ ] Curtir um desafio
 - [ ] Curtir um desafio
 
 ### Outros para quando tiver tempo...
 - [ ] Seguir usuários
 - [ ] Pontuar o usuário por cada ação. (Gamification)
 - [ ] Adicionar dashboard de ideas
+- [ ] Translate app_langue to English
 
 
 External sources help you complete the challenge;<br>
