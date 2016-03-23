@@ -11,7 +11,7 @@
 			<br>
 				<div class="card hoverable medium">
 					<div class="card-image waves-light">
-						<img class="activator" src="<?php echo base_url() . 'assets/images/areas/' . $item->area_id . '.jpg'; ?>" alt="blog-img" height="300">
+						<img class="activator" src="<?php echo base_url() . 'assets/images/areas/' . $item->area_id . '.jpg'; ?>" alt="blog-img" height="250">
 					</div>
 					<ul class="card-action-buttons">
 						<?php if($this->Challenge->is_liked($this->session->userdata('user_id'), $item->challenge_id)) { ?>
