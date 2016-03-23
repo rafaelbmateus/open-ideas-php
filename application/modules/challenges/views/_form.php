@@ -1,8 +1,6 @@
 <!--dropify-->
-<link href="js/plugins/dropify/css/dropify.min.css" type="text/css" rel="stylesheet" media="screen,projection">
-
-<!-- dropify -->
-<script type="text/javascript" src="js/plugins/dropify/js/dropify.min.js"></script>
+<!-- <link href="js/plugins/dropify/css/dropify.min.css" type="text/css" rel="stylesheet" media="screen,projection"> -->
+<!-- <script type="text/javascript" src="js/plugins/dropify/js/dropify.min.js"></script> -->
 
 <!-- id -->
 <input hidden="hidden" name="challenge_id" type="text" value="<?php if (isset($item->challenge_id)) echo $item->challenge_id; ?>" />
