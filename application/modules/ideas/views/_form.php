@@ -73,7 +73,6 @@
 <div class="row">
 	<div class="input-field col s6">
 		<select name="area_id">
-			s
 			<?php if (isset($innovation_areas)){ ?>
 				<?php foreach ($innovation_areas as $area){ ?>
 					<?php if($area->innovation_area_id == $item->area_id) { ?>

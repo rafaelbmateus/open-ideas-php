@@ -29,10 +29,37 @@
   <!-- profile header - end -->
 
   <div id="flow-text-demo" class="card-panel">
-    <p class="flow-text"><b><?php echo $item->idea_title; ?></b></p>
+    <?php if ($item->user_id == $this->session->userdata('user_id')){ ?>
+      <a class="btn-floating waves-effect waves-light light-blue right" href="<?php echo base_url () . $module . '/edit/' . $item->idea_id; ?>"><i class="fa fa-pencil"></i></a>
+    <?php } ?>
+    <!-- title -->
+    <p class="flow-text center"><b><?php echo $item->idea_title; ?></b></p>
+    <!-- description -->
     <!-- TODO: tirar a gambi! -->
-    <p class="flow-text"><?php echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $item->idea_description; ?></p>
-
+    <p class="caption"><b><?php echo $this->lang->line('description');?>: </b>
+      <br><?php echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $item->idea_description; ?>
+    </p>
+    <!-- solution -->
+    <p class="caption"><b><?php echo $this->lang->line('solution');?>: </b>
+      <br><?php echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $item->idea_solution; ?>
+    </p>
+    <!-- differential -->
+    <p class="caption"><b><?php echo $this->lang->line('differential');?>: </b>
+      <br><?php echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $item->idea_differential; ?>
+    </p>
+    <!-- necessary_skills -->
+    <p class="caption"><b><?php echo $this->lang->line('necessary_skills');?>: </b>
+      <br><?php echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $item->idea_necessary_skills; ?>
+    </p>
+    <!-- target_group -->
+    <p class="caption"><b><?php echo $this->lang->line('target_group');?>: </b>
+      <br><?php echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $item->idea_target_group; ?>
+    </p>area_name
+    <!-- area -->
+    <p class="caption"><b><?php echo $this->lang->line('innovation_area');?>: </b>
+      <br><?php echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $list_areas[$item->area_id-1]->area_name; ?>
+    </p>
+    <!-- timestamps -->
     <p class="caption"><?php echo $this->lang->line('created_at'); ?>: <?php echo date("d/m/Y - H:i", strtotime($item->created_at)); ?></p>
   </div>
 
@@ -40,7 +67,6 @@
 
   <!-- card comment - end -->
   <div id="flow-text-demo" class="card-panel">
-
     <!-- list comments - start -->
     <div>
       <table id="datatable" class="table bordered display">
@@ -72,9 +98,11 @@
                 <td colspan="2">
                   <?php echo $comment->comment_description; ?>
                 </td>
-                <!-- <td>
-                  <a href="' . base_url () . $module . '/delete/' . $comment->$comment_id . '" class="btn-floating waves-effect waves-light cyan"><i class="fa fa-pencil"></i></a>
-                </td> -->
+                <?php if ($comment->user_id == $this->session->userdata('user_id')){ ?>
+                  <td>
+                    <a href="<?php echo base_url() . $module . '/comment_delete/' . $comment->comment_id; ?>" class="btn-floating waves-effect waves-light cyan"><i class="fa fa-trash"></i></a>
+                  </td>
+                <?php } ?>
               </tr>
             <?php } ?>
           <?php } ?>

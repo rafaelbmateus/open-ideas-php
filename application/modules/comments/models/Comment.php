@@ -76,15 +76,8 @@ class Comment extends CI_Model{
 		$this->db->where($this->primary_key, $id);
 		return $this->db->update($this->table, $data);
 	}
-	public function delete($id){
-		// $data = array (
-		// 		$this->is_deleted_field => true
-		// );
-		// $this->db->where($this->primary_key, $id);
-		// return $this->db->update($this->table, $data);
-	}
 	public function destroy($id){
 		$this->db->where($this->primary_key, $id);
-		$this->db->delete($this->table);
+		return $this->db->delete($this->table);
 	}
 }

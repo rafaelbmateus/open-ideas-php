@@ -156,4 +156,17 @@ class Ideas extends CI_Controller{
 
 		redirect (base_url() . $this->module . '/show/' . $idea_id);
 	}
+
+	function comment_delete(){
+		$comment_id = $this->uri->segment(3);
+		if ($comment_id){
+			$this->load->model('comments/Comment');
+			if ($this->Comment->destroy($comment_id)){
+				$this->session->set_flashdata ('success', $this->lang->line('delete_success'));
+			}else{
+				$this->session->set_flashdata ('error', $this->lang->line('delete_error'));
+			}
+		}
+		redirect (base_url() . $this->module);
+	}
 }
