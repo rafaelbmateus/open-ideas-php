@@ -73,7 +73,7 @@ class User extends CI_Model{
 		}
 
 		if ($password){
-			$data['password'] = $password;
+			$data['user_password'] = $password;
 		}
 		$this->db->where($this->primary_key, $id);
 		return $this->db->update($this->table, $data);

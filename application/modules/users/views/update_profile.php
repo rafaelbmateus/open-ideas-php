@@ -2,7 +2,7 @@
 <input hidden="hidden" name="user_id" type="text" value="<?php if (isset($item->user_id)) echo $item->user_id; ?>" />
 
 <div class="row">
-	<div class="col s12 m12 l6">
+	<div class="col s12 m12 l12">
 		<div class="card-panel">
 
 			<!-- navbar - start -->
@@ -16,7 +16,7 @@
 		  <!-- navbar - end -->
 
 			<div class="row">
-				<div class="input-field col s2">
+				<div class="input-field col s1">
 					<img src="<?php echo "http://www.gravatar.com/avatar/" . md5(strtolower(trim($this->session->userdata('user_email')))); ?>" class="circle responsive-img valign profile-image">
 					<a href="https://br.gravatar.com/" target="_blank">Alterar</a>
 				</div>
@@ -24,14 +24,18 @@
 
 			<br>
 			<div class="row">
-				<div class="input-field col s7">
+				<div class="input-field col s4">
 					<input name="name" type="text" required value="<?php if (isset($item)) echo $item->user_name; ?>"/>
 					<label><?php echo $this->lang->line('name');?></label>
+				</div>
+				<div class="input-field col s3 right">
+					<label><?php echo $this->lang->line('password'); ?></label>
+					<input name="password" type="password"/>
 				</div>
 			</div>
 			<br>
 			<div class="row">
-				<div class="input-field col s7">
+				<div class="input-field col s4">
 					<?php if($this->session->userdata('user_type')=='admin'){ ?>
 						<input name="email" type="text" required value="<?php if (isset($item)) echo $item->user_email; ?>"/>
 					<?php }else{ ?>
