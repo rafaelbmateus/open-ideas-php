@@ -54,7 +54,7 @@
     <!-- target_group -->
     <p class="caption"><b><?php echo $this->lang->line('target_group');?>: </b>
       <br><?php echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $item->idea_target_group; ?>
-    </p>area_name
+    </p>
     <!-- area -->
     <p class="caption"><b><?php echo $this->lang->line('innovation_area');?>: </b>
       <br><?php echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . $list_areas[$item->area_id-1]->area_name; ?>

@@ -28,9 +28,9 @@ class Idea extends CI_Model{
 	function get($id = null){
 		$this->db->from($this->table);
 		$this->db->join('tb_user', 'tb_user.user_id = tb_idea.user_id');
-		$this->db->where('tb_user.' . $this->is_deleted_field, null);
+		$this->db->where('tb_idea.' . $this->is_deleted_field, null);
 		if ($id){
-			$this->db->where($this->primary_key, $id);
+			$this->db->where('tb_idea.' . $this->primary_key, $id);
 			$query = $this->db->get()->row();
 		}else{
 			$query = $this->db->get()->result();
@@ -49,9 +49,9 @@ class Idea extends CI_Model{
 
 	function get_where($field = "", $content = ""){
 		$this->db->from($this->table);
+		$this->db->join('tb_user', 'tb_user.user_id = tb_idea.user_id');
 		$this->db->where('tb_idea.' . $this->is_deleted_field, null);
 		$this->db->where('tb_idea.' . $field, $content);
-		$this->db->join('tb_user', 'tb_user.user_id = tb_idea.user_id');
 		return $this->db->get()->result();
 	}
 

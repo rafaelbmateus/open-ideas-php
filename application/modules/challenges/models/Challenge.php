@@ -26,9 +26,10 @@ class Challenge extends CI_Model{
 
 	function get($id = null){
 		$this->db->from($this->table);
-		$this->db->where($this->is_deleted_field, null);
+		$this->db->join('tb_user', 'tb_user.user_id = tb_challenge.user_id');
+		$this->db->where('tb_challenge.' . $this->is_deleted_field, null);
 		if ($id){
-			$this->db->where($this->primary_key, $id);
+			$this->db->where('tb_challenge.' . $this->primary_key, $id);
 			$query = $this->db->get()->row();
 		}else{
 			$query = $this->db->get()->result();
@@ -38,15 +39,17 @@ class Challenge extends CI_Model{
 
 	public function get_all($id = null){
 		$this->db->from($this->table);
+		$this->db->join('tb_user', 'tb_user.user_id = tb_challenge.user_id');
 		if ($id){
-			$this->db->where($this->primary_key, $id);
+			$this->db->where('tb_challenge.' . $this->primary_key, $id);
 		}
 		return $this->db->get()->result();
 	}
 
 	function get_where($field = "", $content = ""){
 		$this->db->from($this->table);
-		$this->db->where($field, $content);
+		$this->db->join('tb_user', 'tb_user.user_id = tb_challenge.user_id');
+		$this->db->where('tb_challenge.' . $field, $content);
 		$query = $this->db->get();
 		if ($query->num_rows() == 1){
 			return $query->row();
@@ -57,8 +60,9 @@ class Challenge extends CI_Model{
 
 	function get_public_challenges_user($user_id = null){
 		$this->db->from($this->table);
-		$this->db->where($this->is_deleted_field, null);
-		$this->db->where('user_id', $user_id);
+		$this->db->join('tb_user', 'tb_user.user_id = tb_challenge.user_id');
+		$this->db->where('tb_challenge.' . $this->is_deleted_field, null);
+		$this->db->where('tb_challenge.' . 'user_id', $user_id);
 		return $this->db->get()->result();
 	}
 
