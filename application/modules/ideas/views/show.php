@@ -6,13 +6,13 @@
         <img src="<?php echo base_url(); ?>assets/plugins/materialize/images/user-profile-bg.jpg" alt="user background">
       </div>
       <figure class="card-profile-image">
-        <a href="<?php echo base_url() . 'users' . '/show/' . $item->user_id; ?>"><img src="<?php echo "http://www.gravatar.com/avatar/" . md5(strtolower(trim($list_users[$item->user_id-1]->user_email))); ?>" alt="profile image" class="circle z-depth-2 responsive-img activator"></a>
+        <a href="<?php echo base_url() . 'users' . '/show/' . $item->user_id; ?>"><img src="<?php echo "http://www.gravatar.com/avatar/" . md5(strtolower(trim($item->user_email))); ?>" alt="profile image" class="circle z-depth-2 responsive-img activator"></a>
       </figure>
       <div class="card-content">
         <div class="row">
           <div class="col s3 offset-s2">
-            <h4 class="card-title grey-text text-darken-4"><a href="<?php echo base_url() . 'users' . '/show/' . $item->user_id; ?>"><?php echo $list_users[$item->user_id-1]->user_name; ?></a></h4>
-            <!-- <p class="medium-small grey-text"><?php echo $list_users[$item->user_id-1]->job_id; ?></p> -->
+            <h4 class="card-title grey-text text-darken-4"><a href="<?php echo base_url() . 'users' . '/show/' . $item->user_id; ?>"><?php echo $item->user_name; ?></a></h4>
+            <!-- <p class="medium-small grey-text"><?php echo $item->job_id; ?></p> -->
           </div>
           <div class="col s2 center-align">
             <h4 class="card-title grey-text text-darken-4"><?php echo $num_ideas; ?></h4>
