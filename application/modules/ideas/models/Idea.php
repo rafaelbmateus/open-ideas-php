@@ -27,7 +27,8 @@ class Idea extends CI_Model{
 
 	function get($id = null){
 		$this->db->from($this->table);
-		$this->db->where($this->is_deleted_field, null);
+		$this->db->join('tb_user', 'tb_user.user_id = tb_idea.user_id');
+		$this->db->where('tb_user.' . $this->is_deleted_field, null);
 		if ($id){
 			$this->db->where($this->primary_key, $id);
 			$query = $this->db->get()->row();
@@ -39,6 +40,7 @@ class Idea extends CI_Model{
 
 	public function get_all($id = null){
 		$this->db->from($this->table);
+		$this->db->join('tb_user', 'tb_user.user_id = tb_idea.user_id');
 		if ($id){
 			$this->db->where($this->primary_key, $id);
 		}
@@ -47,16 +49,18 @@ class Idea extends CI_Model{
 
 	function get_where($field = "", $content = ""){
 		$this->db->from($this->table);
-		$this->db->where($this->is_deleted_field, null);
-		$this->db->where($field, $content);
+		$this->db->where('tb_idea.' . $this->is_deleted_field, null);
+		$this->db->where('tb_idea.' . $field, $content);
+		$this->db->join('tb_user', 'tb_user.user_id = tb_idea.user_id');
 		return $this->db->get()->result();
 	}
 
 	function get_public_ideas_user($user_id){
 		$this->db->from($this->table);
-		$this->db->where($this->is_deleted_field, null);
-		$this->db->where('idea_is_public', true);
-		$this->db->where('user_id', $user_id);
+		$this->db->join('tb_user', 'tb_user.user_id = tb_idea.user_id');
+		$this->db->where('tb_idea.' . $this->is_deleted_field, null);
+		$this->db->where('tb_idea.idea_is_public', true);
+		$this->db->where('tb_idea.user_id', $user_id);
 		return $this->db->get()->result();
 	}
 
