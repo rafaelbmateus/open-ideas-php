@@ -25,8 +25,8 @@ Alguns valores da Inovação Aberta são:
 - [ ] Criar rotas
 - [ ] Ação javascript no compartilhar, colocar no ctrl+c.
 - [ ] Página para acesso externo da ideia/desafio
-- [ ] Curtir uma ideia
-- [ ] Curtir um desafio
+- [x] Curtir uma ideia
+- [x] Curtir um desafio
 
 ### Outros para quando tiver tempo...
 - [ ] Seguir usuários
