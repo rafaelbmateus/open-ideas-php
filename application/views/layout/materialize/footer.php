@@ -1,4 +1,13 @@
   <!-- ================================================ Scripts ================================================ -->
+  
+  <script type="text/javascript">
+    window.smartlook||(function(d) {
+    var o=smartlook=function(){ o.api.push(arguments)},s=d.getElementsByTagName('script')[0];
+    var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    c.charset='utf-8';c.src='//rec.getsmartlook.com/bundle.js';s.parentNode.insertBefore(c,s);
+    })(document);
+    smartlook('init', '324bbeab5e59515c2bd2255d4187a8216d65569f');
+  </script>
 
   <!-- jQuery Library -->
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins/jquery-1.11.2.min.js"></script>
