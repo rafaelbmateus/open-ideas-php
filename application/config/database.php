@@ -73,17 +73,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 if ($_SERVER['SERVER_NAME'] == 'localhost'){
 	$active_group = 'development';
 }else{
-	$active_group = 'production';
+	$active_group = 'development';
 }
 $query_builder = TRUE;
 
 $db['development'] = array(
-	'dsn'	=> 'pgsql:host=localhost;dbname=open-idea',
-	'hostname' => '',
-	'username' => 'postgres',
-	'password' => 'postgres',
-	'database' => '',
-	'dbdriver' => 'pdo',
+	'dsn'	=> '',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '123@tarrafa',
+	'database' => 'open_ideas_php',
+	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => TRUE,
 	'db_debug' => TRUE,

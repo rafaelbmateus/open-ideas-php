@@ -42,7 +42,7 @@ $config['app_footer_right'] = 'Developed by <a class="grey-text text-lighten-4" 
 if ($_SERVER['SERVER_NAME'] == 'localhost'){
   $config['base_url'] = 'http://localhost/open-idea-php/';
 }else {
-  $config['base_url'] = 'http://open-idea.herokuapp.com/';
+  $config['base_url'] = 'http://' . $_SERVER['SERVER_NAME'];
 }
 
 /*
@@ -55,7 +55,7 @@ if ($_SERVER['SERVER_NAME'] == 'localhost'){
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -396,11 +396,11 @@ $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
 
 // config to heroku
-if ($_SERVER['SERVER_NAME'] == 'localhost'){
+//if ($_SERVER['SERVER_NAME'] == 'localhost'){
   $config['sess_save_path'] = null;
-}else {
-  $config['sess_save_path'] = 'ci_session';
-}
+//}else {
+//  $config['sess_save_path'] = 'ci_session';
+//}
 
 /*
 |--------------------------------------------------------------------------
