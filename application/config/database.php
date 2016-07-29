@@ -73,7 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 if ($_SERVER['SERVER_NAME'] == 'localhost'){
 	$active_group = 'development';
 }else{
-	$active_group = 'development';
+	$active_group = 'production';
 }
 $query_builder = TRUE;
 
@@ -121,14 +121,13 @@ $db['test'] = array(
 		'save_queries' => TRUE
 );
 
-
 $db['production'] = array(
-		'dsn'	=> 'pgsql:host=ec2-54-83-56-177.compute-1.amazonaws.com;dbname=dfa3j9chk11v7q',
-		'hostname' => '',
-		'username' => 'cvqlykguogcqch',
-		'password' => 'pYJdec54QbyxgpK1J9oDsyWdsL',
-		'database' => '',
-		'dbdriver' => 'pdo',
+		'dsn'	=> '',
+		'hostname' => 'localhost',
+		'username' => 'root',
+		'password' => '123@tarrafa',
+		'database' => 'open_ideas_php',
+		'dbdriver' => 'mysqli',
 		'dbprefix' => '',
 		'pconnect' => TRUE,
 		'db_debug' => TRUE,
