@@ -6,7 +6,7 @@
     <nav class="cyan">
       <div class="nav-wrapper">
         <!-- <h1 class="logo-wrapper"><a href="<?php echo base_url(); ?>" class="brand-logo darken-1"><img width="1" height="1" src="<?php echo base_url(); ?>assets/images/app/icons/o/o-xxxhdpi.png" alt="materialize logo">pen <img width="12" height="33" src="<?php echo base_url(); ?>assets/images/app/icons/i/i-xxxhdpi.png" alt="materialize logo">dea</a></h1> -->
-        <h1 class="logo-wrapper"><a href="<?php echo base_url(); ?>" class="brand-logo darken-1">Open Idea</a></h1>
+        <h1 class="logo-wrapper"><a href="<?php echo base_url(); ?>" class="brand-logo darken-1">Open Ideas</a></h1>
         <div class="header-search-wrapper hide-on-med-and-down">
             <i class="mdi-action-search"></i>
             <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="<?php echo $this->lang->line('search_bar'); ?>"/>
