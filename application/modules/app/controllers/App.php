@@ -1,7 +1,6 @@
 <?php defined ('BASEPATH') or exit ('No direct script access allowed');
-	// Test deploy heroku
-class App extends CI_Controller{
-	public function __construct(){
+class App extends CI_Controller {
+	public function __construct() {
 		parent::__construct();
 		date_default_timezone_set('America/Sao_Paulo');
 	}
@@ -18,31 +17,30 @@ class App extends CI_Controller{
 			$this->data['module'] = 'challenges';
 			$this->data ['view'] = 'challenges/index';
 			$this->load->view($this->config->item('app_layout') . 'template', $this->data);
-			//redirect(base_url() . 'challenges');
 		}else{
 			$this->data['module'] = 'sessions';
 			$this->load->view('sessions/login', $this->data);
 		}
 	}
 
-	public function help(){
+	public function help() {
 		$this->data ['view'] = 'help';
 		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
 	}
 
-	public function translate(){
+	public function translate() {
 		$this->lang->load("app_lang","english");
 	}
 
-	public function create_tables(){
+	public function create_tables() {
 		$this->load->model('Database');
 		echo $this->Database->create_tables();
 	}
-	public function destroy_tables(){
+	public function destroy_tables() {
 		$this->load->model('Database');
 		echo $this->Database->destroy_tables();
 	}
-	public function reset_tables(){
+	public function reset_tables() {
 		$this->load->model('Database');
 		echo $this->Database->reset_tables();
 	}

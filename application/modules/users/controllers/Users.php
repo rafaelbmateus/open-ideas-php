@@ -9,6 +9,7 @@ class Users extends CI_Controller{
 		$this->data['module'] = $this->module;
 	}
 	public function index(){
+		$this->data['menu_users'] = true;
 		$this->data['list'] = $this->User->get();
 		$this->data['view'] = 'index';
 		$this->load->view($this->config->item('app_layout') . 'template', $this->data);

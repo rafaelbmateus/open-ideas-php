@@ -1,28 +1,28 @@
 <?php defined('BASEPATH') or exit ('No direct script access allowed');
-class Sessions extends CI_Controller{
+class Sessions extends CI_Controller {
 	private $module = 'sessions';
-	public function __construct(){
+	public function __construct() {
 		parent::__construct();
 		date_default_timezone_set('America/Sao_Paulo');
 		$this->load->model ('Session');
 		$this->data['module'] = $this->module;
 	}
-	public function index(){
+	public function index() {
 		$this->load->view('login', $this->data);
 	}
-	public function register(){
+	public function register() {
 		$this->load->model('jobs/Job');
 		$this->data['jobs'] = $this->Job->get();
 		$this->load->view('register', $this->data);
 	}
-	public function add(){
+	public function add() {
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('name', $this->lang->line('name'), 'trim|required');
 		$this->form_validation->set_rules('email', $this->lang->line('email'), 'trim|required');
 		$this->form_validation->set_rules('job_id', $this->lang->line('job'), 'trim|required');
 		$this->form_validation->set_rules('password', $this->lang->line('password'), 'trim|required');
 
-		if ($this->form_validation->run() == false){
+		if ($this->form_validation->run() == false) {
 			$this->session->set_flashdata('error', (validation_errors() ? validation_errors() : false));
 			$this->load->view('register');
 		}else{
@@ -32,8 +32,8 @@ class Sessions extends CI_Controller{
 			$cnpj = str_replace('/','-', '', $this->input->post('cnpj', true));
 			$password = md5($this->input->post('password', true));
 			$resume = $this->input->post('resume', true);
-			
-			if($cnpj){
+
+			if ($cnpj) {
 				if(!$this->validate_cnpj($cnpj)){
 					$this->session->set_flashdata('error', $this->lang->line('cnpj_error') . ' ' . $cnpj);
 					redirect(base_url());
@@ -52,7 +52,7 @@ class Sessions extends CI_Controller{
 			}else{
 				$this->session->set_flashdata('error', $this->lang->line('email_error'));
 			}
-			redirect(base_url());
+			redirect(base_url() . 'app');
 		}
 	}
 	public function login(){
@@ -72,7 +72,7 @@ class Sessions extends CI_Controller{
 			}else{
 				$this->session->set_flashdata('success', $this->lang->line('login_incorrect') . ' ' . $user->user_name);
 			}
-			redirect(base_url());
+			redirect(base_url() . 'app');
 		}
 	}
 	public function create_session($user_id, $remember){

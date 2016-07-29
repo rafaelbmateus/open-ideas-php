@@ -5,7 +5,7 @@ class Database extends CI_Model{
 	}
 
 	public function create_tables(){
-    return $this->run_query('create');
+    return $this->run_query('create - mysql');
 	}
 
   public function destroy_tables(){
@@ -16,7 +16,7 @@ class Database extends CI_Model{
 		return $this->run_query('reset');
   }
 
-	public function run_query($file){
+	public function run_query($file) {
 		$sql_contents = file_get_contents(base_url() . 'database/' . $file . '.sql');
     $sql_contents = explode(";", $sql_contents);
 

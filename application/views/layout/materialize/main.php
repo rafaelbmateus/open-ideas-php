@@ -6,7 +6,7 @@
     <nav class="cyan">
       <div class="nav-wrapper">
         <!-- <h1 class="logo-wrapper"><a href="<?php echo base_url(); ?>" class="brand-logo darken-1"><img width="1" height="1" src="<?php echo base_url(); ?>assets/images/app/icons/o/o-xxxhdpi.png" alt="materialize logo">pen <img width="12" height="33" src="<?php echo base_url(); ?>assets/images/app/icons/i/i-xxxhdpi.png" alt="materialize logo">dea</a></h1> -->
-        <h1 class="logo-wrapper"><a href="<?php echo base_url(); ?>" class="brand-logo darken-1">Open Ideas</a></h1>
+        <h1 class="logo-wrapper"><a href="<?php echo base_url(); ?>app" class="brand-logo darken-1"><?php echo $this->config->item('app_title'); ?></a></h1>
         <div class="header-search-wrapper hide-on-med-and-down">
             <i class="mdi-action-search"></i>
             <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="<?php echo $this->lang->line('search_bar'); ?>"/>
@@ -88,12 +88,13 @@
                     </div>
                 </div>
             </li>
-            <li class="bold <?php if(isset($menu_challenges)) echo 'active'; ?>"><a href="<?php echo base_url(); ?>" class="waves-effect waves-cyan"><i class="fa fa-bullseye"></i><?php echo $this->lang->line('challenges');?></a></li>
-            <li class="bold <?php if(isset($menu_ideas)) echo 'active'; ?>"><a href="<?php echo base_url() . 'ideas'; ?>" class="waves-effect waves-cyan"><i class="fa fa-lightbulb-o"></i><?php echo $this->lang->line('ideas');?></a></li>
-            <!-- <li class="bold <?php if(isset($menu_my_ideas)) echo 'active'; ?>"><a href="<?php echo base_url() . 'ideas/my_ideas'; ?>" class="waves-effect waves-cyan"><i class="fa fa-diamond"></i><?php echo $this->lang->line('my_ideas');?></a></li> -->
-            <li class="bold <?php if(isset($menu_users)) echo 'active'; ?>"><a href="<?php echo base_url() . 'users'; ?>" class="waves-effect waves-cyan"><i class="fa fa-users"></i><?php echo $this->lang->line('users');?></a></li>
+            <li class="bold <?php if(isset($menu_challenges)) echo 'active'; ?>"><a href="<?php echo base_url(); ?>app" class="waves-effect waves-cyan"><i class="fa fa-bullseye"></i><?php echo $this->lang->line('challenges');?></a></li>
+            <li class="bold <?php if(isset($menu_ideas)) echo 'active'; ?>"><a href="<?php echo base_url(); ?>ideas" class="waves-effect waves-cyan"><i class="fa fa-lightbulb-o"></i><?php echo $this->lang->line('ideas');?></a></li>
+            <li class="bold <?php if(isset($menu_users)) echo 'active'; ?>"><a href="<?php echo base_url(); ?>users" class="waves-effect waves-cyan"><i class="fa fa-users"></i><?php echo $this->lang->line('users');?></a></li>
             <!-- <li class="bold <?php if(isset($menu_incubators)) echo 'active'; ?>"><a href="<?php echo base_url() . 'incubators'; ?>" class="waves-effect waves-cyan"><i class="fa fa-building"></i><?php echo $this->lang->line('incubators');?></a></li> -->
-            <?php if($this->session->userdata('user_type')=='admin'){ ?>
+
+            <!-- Menu admin -->
+            <?php if ($this->session->userdata('user_type')=='admin') { ?>
               <li class="no-padding">
                   <ul class="collapsible collapsible-accordion">
                       <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="fa fa-cog"></i><?php echo $this->lang->line('configuration');?></a>

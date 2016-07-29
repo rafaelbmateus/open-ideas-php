@@ -24,7 +24,7 @@
     <nav id="nav_f" class="default_color" role="navigation">
         <div class="container">
             <div class="nav-wrapper">
-            <a href="#" id="logo-container" class="brand-logo"><?php echo $this->config->item ( 'app_title' ); ?></a>
+            <a href="#" id="logo-container" class="brand-logo" style="font-weight: bold;"><?php echo $this->config->item ( 'app_title' ); ?></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#intro">Sobre</a></li>
                     <li><a href="#work">Cases</a></li>

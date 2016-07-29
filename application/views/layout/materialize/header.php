@@ -7,7 +7,7 @@
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="description" content="Plataforma de inovação aberta. ">
   <meta name="keywords" content="open innovation, inovação aberta, innovation, inovação,">
-  <title><?php echo $this->config->item ( 'app_title' ); ?></title>
+  <title><?php echo $this->config->item('app_title'); ?></title>
 
   <!-- Favicons-->
   <link rel="icon" href="<?php echo base_url(); ?>assets/images/app/icons/oi/oi-xxxhdpi.png" sizes="32x32">
@@ -35,7 +35,7 @@
   <link href="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
   <!-- <link href="<?php echo base_url(); ?>assets/plugins/materialize/js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection"> -->
-  
+
   <!-- Smartlook -->
   <script type="text/javascript">
     window.smartlook||(function(d) {
