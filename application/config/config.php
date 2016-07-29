@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 //$config['app_layout'] = 'layout/theme-bootstrap/';
 $config['app_layout'] = 'layout/materialize/';
-$config['app_title'] = 'Open Idea';
+$config['app_title'] = 'Open Ideas';
 $config['app_footer'] = '   ';
 // $config['app_footer'] = 'Comunidade de inovação aberta, de código aberto, disponível no <a href="https://github.com/rafaelbmateus/open-idea-php" target="_blank" style="color: white">github</a>';
 if ($_SERVER['SERVER_NAME'] == 'localhost'){
