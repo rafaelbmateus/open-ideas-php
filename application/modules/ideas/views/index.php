@@ -3,6 +3,9 @@
 <?php $this->load->model('Idea'); ?>
 <?php $this->load->view('ideas_js'); ?>
 
+<!-- TODO: if page != my_ideas { print button } -->
+<a href="<?php echo base_url() . 'ideas/my_ideas'; ?>" class="btn cyan waves-effect waves-light"><i class="fa fa-diamond"></i> <?php echo $this->lang->line('my_ideas');?></a>
+
 <?php if (!empty($list)) { ?>
 	<div class="row">
 	<?php foreach($list as $item) { ?>
