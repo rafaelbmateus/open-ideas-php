@@ -5,7 +5,8 @@ class App extends CI_Controller{
 		parent::__construct();
 		date_default_timezone_set('America/Sao_Paulo');
 	}
-  public function index(){
+
+	public function index() {
 		if($this->session->userdata('user_id')){
 			$this->data['menu_challenges'] = true;
 			$this->load->model('challenges/Challenge');
