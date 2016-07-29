@@ -118,7 +118,7 @@ class Users extends CI_Controller{
 		}else{
 			$this->load->model('sessions/Session');
 			$this->Session->create_session($this->session->userdata('user_id'));
-			redirect(base_url());
+			redirect(base_url() . 'app');
 		}
 
 	}

@@ -92,10 +92,31 @@
     </div>
 </div>
 
-<!--Work-->
+<!--Parallax-->
+<div class="parallax-container">
+    <div class="parallax"><img src="<?php echo base_url(); ?>assets/plugins/materialize - site/img/parallax1.png"></div>
+</div>
+
+<!--Team-->
+<div class="section scrollspy" id="team">
+    <div class="container">
+        <h2 class="header text_b">Demo</h2>
+        <div class="row">
+          <div class="col m3">
+             &nbsp;
+          </div>
+          <div class="col m8">
+            <iframe width="420" height="315" src="https://www.youtube.com/embed/6j9guizhLFw?controls=1"></iframe>
+          </div>
+
+        </div>
+    </div>
+</div>
+
+<!--Cases-->
 <div class="section scrollspy" id="work">
     <div class="container">
-        <h2 class="header text_b">Work </h2>
+        <h2 class="header text_b">Cases</h2>
         <div class="row">
             <div class="col s12 m4 l4">
                 <div class="card">
