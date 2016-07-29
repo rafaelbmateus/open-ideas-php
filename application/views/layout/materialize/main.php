@@ -92,7 +92,7 @@
             <li class="bold <?php if(isset($menu_ideas)) echo 'active'; ?>"><a href="<?php echo base_url() . 'ideas'; ?>" class="waves-effect waves-cyan"><i class="fa fa-lightbulb-o"></i><?php echo $this->lang->line('ideas');?></a></li>
             <!-- <li class="bold <?php if(isset($menu_my_ideas)) echo 'active'; ?>"><a href="<?php echo base_url() . 'ideas/my_ideas'; ?>" class="waves-effect waves-cyan"><i class="fa fa-diamond"></i><?php echo $this->lang->line('my_ideas');?></a></li> -->
             <li class="bold <?php if(isset($menu_users)) echo 'active'; ?>"><a href="<?php echo base_url() . 'users'; ?>" class="waves-effect waves-cyan"><i class="fa fa-users"></i><?php echo $this->lang->line('users');?></a></li>
-            <li class="bold <?php if(isset($menu_incubators)) echo 'active'; ?>"><a href="<?php echo base_url() . 'incubators'; ?>" class="waves-effect waves-cyan"><i class="fa fa-building"></i><?php echo $this->lang->line('incubators');?></a></li>
+            <!-- <li class="bold <?php if(isset($menu_incubators)) echo 'active'; ?>"><a href="<?php echo base_url() . 'incubators'; ?>" class="waves-effect waves-cyan"><i class="fa fa-building"></i><?php echo $this->lang->line('incubators');?></a></li> -->
             <?php if($this->session->userdata('user_type')=='admin'){ ?>
               <li class="no-padding">
                   <ul class="collapsible collapsible-accordion">
