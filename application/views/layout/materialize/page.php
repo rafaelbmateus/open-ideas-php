@@ -26,17 +26,17 @@
             <div class="nav-wrapper">
             <a href="#" id="logo-container" class="brand-logo"><?php echo $this->config->item ( 'app_title' ); ?></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#intro">Service</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#intro">Sobre</a></li>
+                    <li><a href="#work">Cases</a></li>
+                    <li><a href="#team">Equipe</a></li>
+                    <li><a href="#contact">Contato</a></li>
                     <li><a href="<?php echo base_url(); ?>app">Entrar</a></li>
                 </ul>
                 <ul id="nav-mobile" class="side-nav">
-                    <li><a href="#intro">Service</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#intro">Sobre</a></li>
+                    <li><a href="#work">Cases</a></li>
+                    <li><a href="#team">Equipe</a></li>
+                    <li><a href="#contact">Contato</a></li>
                     <li><a href="<?php echo base_url(); ?>app">Entrar</a></li>
                 </ul>
               <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
