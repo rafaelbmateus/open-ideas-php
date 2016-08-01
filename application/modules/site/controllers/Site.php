@@ -6,6 +6,6 @@ class Site extends CI_Controller{
 		date_default_timezone_set('America/Sao_Paulo');
 	}
   public function index() {
-    $this->load->view($this->config->item('app_layout') . 'page');
+    $this->load->view('site');
   }
 }

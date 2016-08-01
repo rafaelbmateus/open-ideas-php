@@ -1,26 +1,21 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
 | Config Application
 |--------------------------------------------------------------------------
 |
- */
-//$config['app_layout'] = 'layout/theme-bootstrap/';
-$config['app_layout'] = 'layout/materialize/';
+*/
 $config['app_title'] = 'Open Ideas';
+$config['app_folder'] = 'open-ideas-php';
+$config['app_layout'] = 'layout/materialize/';
 $config['app_footer'] = '   ';
-// $config['app_footer'] = 'Comunidade de inovação aberta, de código aberto, disponível no <a href="https://github.com/rafaelbmateus/open-idea-php" target="_blank" style="color: white">github</a>';
-if ($_SERVER['SERVER_NAME'] == 'localhost'){
-  $config['app_footer_stakeholders'] = '<a href="http://unisul.br" target="_blank"><img width="130" height="31" style="margin-top: 10px;" src="http://' . $_SERVER['SERVER_NAME'] . '/open-idea-php' . '/assets/images/app/stakeholders/ilab.jpg"></a>';
+$config['app_footer_right'] = 'Developed by <a class="grey-text text-lighten-4" href="http://rafaelbmateus.github.io/aboutme/" target="_blank">Rafael Mateus</a>';
+if ($_SERVER['SERVER_NAME'] == 'localhost') {
+  $config['app_footer_stakeholders'] = '<a href="http://unisul.br" target="_blank"><img width="130" height="31" style="margin-top: 10px;" src="http://' . $_SERVER['SERVER_NAME'] . '/open-ideas-php' . '/assets/images/app/stakeholders/ilab.jpg"></a>';
 }else{
   $config['app_footer_stakeholders'] = '<a href="http://unisul.br" target="_blank"><img width="130" height="31" style="margin-top: 10px;" src="http://' . $_SERVER['SERVER_NAME'] . '/assets/images/app/stakeholders/ilab.jpg"></a>';
 }
-// $config['app_footer_stakeholders'] = '<img width="100" height="50" src="http://localhost/open-idea-php/assets/images/app/stakeholders/unisul.jpg"><img width="100" height="30" src="http://localhost/open-idea-php/assets/images/app/stakeholders/ilab.jpg"><img width="100" height="30" src="http://localhost/open-idea-php/assets/images/app/stakeholders/agetec.jpg">';
-// $config['app_footer'] = '<a href="https://github.com/rafaelbmateus/open-idea-php" target="_blank" style="color: white"><i class="fa fa-github fa-3x"></i></a>';
-$config['app_footer_right'] = 'Developed by <a class="grey-text text-lighten-4" href="http://rafaelbmateus.github.io/aboutme/" target="_blank">Rafael Mateus</a>';
-
 
 /*
 |--------------------------------------------------------------------------
@@ -38,10 +33,9 @@ $config['app_footer_right'] = 'Developed by <a class="grey-text text-lighten-4" 
 | environments.
 |
 */
-// config to heroku
-if ($_SERVER['SERVER_NAME'] == 'localhost'){
-  $config['base_url'] = 'http://localhost/open-idea-php/';
-}else {
+if ($_SERVER['SERVER_NAME'] == 'localhost') {
+  $config['base_url'] = 'http://localhost/open-ideas-php/';
+}else{
   $config['base_url'] = 'http://' . $_SERVER['SERVER_NAME'];
 }
 

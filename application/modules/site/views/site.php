@@ -1,116 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <meta name="theme-color" content="#00bcd4">
-    <title><?php echo $this->config->item ( 'app_title' ); ?></title>
-
-    <!-- CSS  -->
-    <link href="<?php echo base_url(); ?>assets/plugins/materialize - site/min/plugin-min.css" type="text/css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>assets/plugins/materialize - site/min/custom-min.css" type="text/css" rel="stylesheet" >
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="theme-color" content="#00bcd4">
+  <title><?php echo $this->config->item('app_title'); ?></title>
+  <link href="<?php echo base_url(); ?>assets/plugins/materialize - site/min/plugin-min.css" type="text/css" rel="stylesheet">
+  <link href="<?php echo base_url(); ?>assets/plugins/materialize - site/min/custom-min.css" type="text/css" rel="stylesheet" >
 </head>
 <body id="top" class="scrollspy">
 
 <!-- Pre Loader -->
 <div id="loader-wrapper">
-    <div id="loader"></div>
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
+  <div id="loader"></div>
+  <div class="loader-section section-left"></div>
+  <div class="loader-section section-right"></div>
 </div>
 
 <!--Navigation-->
  <div class="navbar-fixed">
     <nav id="nav_f" class="default_color" role="navigation">
-        <div class="container">
-            <div class="nav-wrapper">
-            <a href="#" id="logo-container" class="brand-logo" style="font-weight: bold;"><?php echo $this->config->item ( 'app_title' ); ?></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#intro">Sobre</a></li>
-                    <li><a href="#work">Cases</a></li>
-                    <li><a href="#team">Equipe</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                    <li><a href="<?php echo base_url(); ?>app">Entrar</a></li>
-                </ul>
-                <ul id="nav-mobile" class="side-nav">
-                    <li><a href="#intro">Sobre</a></li>
-                    <li><a href="#work">Cases</a></li>
-                    <li><a href="#team">Equipe</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                    <li><a href="<?php echo base_url(); ?>app">Entrar</a></li>
-                </ul>
-              <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-            </div>
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#" id="logo-container" class="brand-logo" style="font-weight: bold;"><?php echo $this->config->item ( 'app_title' ); ?></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="#intro">Sobre</a></li>
+              <li><a href="#work">Cases</a></li>
+              <li><a href="#team">Equipe</a></li>
+              <li><a href="#contact">Contato</a></li>
+              <li><a href="<?php echo base_url(); ?>app">Entrar</a></li>
+            </ul>
+            <ul id="nav-mobile" class="side-nav">
+              <li><a href="#intro">Sobre</a></li>
+              <li><a href="#work">Cases</a></li>
+              <li><a href="#team">Equipe</a></li>
+              <li><a href="#contact">Contato</a></li>
+              <li><a href="<?php echo base_url(); ?>app">Entrar</a></li>
+            </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         </div>
+      </div>
     </nav>
 </div>
 
 <!--Hero-->
 <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-        <h1 class="text_h center header cd-headline letters type">
-            <span><!-- Open Ideas --></span>
-            <span class="cd-words-wrapper waiting" style="font-size: 60px">
-                <b class="is-visible" style="font-size: 50px">Leve suas ideias com você.</b>
-                <b style="font-size: 50px">Leve seus desafios com você.</b>
-                <b style="font-size: 50px">Isso é Inovação Aberta!</b>
-            </span>
-        </h1>
-    </div>
+  <div class="container">
+    <h1 class="text_h center header cd-headline letters type">
+      <span><!-- Open Ideas --></span>
+      <span class="cd-words-wrapper waiting" style="font-size: 60px">
+        <b class="is-visible" style="font-size: 50px">Leve suas ideias com você.</b>
+        <b style="font-size: 50px">Leve seus desafios com você.</b>
+        <b style="font-size: 50px">Isso é Inovação Aberta!</b>
+      </span>
+    </h1>
+  </div>
 </div>
 
 <!--Intro and service-->
 <div id="intro" class="section scrollspy">
-    <div class="container">
-        <div class="row">
-            <div  class="col s12">
-                <h2 class="center header text_h2">Plataforma gestão de inovação<br><span class="span_h2"> Open Ideas.</span> </h2>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div  class="col s12">
+        <h2 class="center header text_h2">Plataforma gestão de inovação<br><span class="span_h2"> Open Ideas.</span></h2>
+      </div>
 
-            <div  class="col s12 m4 l4">
-                <div class="center promo promo-example">
-                    <i class="mdi-image-flash-on"></i>
-                    <h5 class="promo-caption">Curva de aprendizado</h5>
-                    <p class="light center">A plataforma Open Ideas é simples e possui uma curva de apredizado muito rápida.</p>
-                </div>
-            </div>
-            <div class="col s12 m4 l4">
-                <div class="center promo promo-example">
-                    <i class="mdi-social-group"></i>
-                    <h5 class="promo-caption">Foco no usuário</h5>
-                    <p class="light center">A plataforma Open Ideas pode ser personalizada conforme sua necessidade de negócio.</p>
-                </div>
-            </div>
-            <div class="col s12 m4 l4">
-                <div class="center promo promo-example">
-                    <i class="mdi-hardware-desktop-windows"></i>
-                    <h5 class="promo-caption">Interface</h5>
-                    <p class="light center">A plataforma Open Ideas tem uma interface muito simples e intuitiva.</p>
-                </div>
-            </div>
+      <div  class="col s12 m4 l4">
+        <div class="center promo promo-example">
+          <i class="mdi-image-flash-on"></i>
+          <h5 class="promo-caption">Curva de aprendizado</h5>
+          <p class="light center">A plataforma Open Ideas é simples e possui uma curva de apredizado muito rápida.</p>
         </div>
+      </div>
+      <div class="col s12 m4 l4">
+        <div class="center promo promo-example">
+          <i class="mdi-social-group"></i>
+          <h5 class="promo-caption">Foco no usuário</h5>
+          <p class="light center">A plataforma Open Ideas pode ser personalizada conforme sua necessidade de negócio.</p>
+        </div>
+      </div>
+      <div class="col s12 m4 l4">
+        <div class="center promo promo-example">
+          <i class="mdi-hardware-desktop-windows"></i>
+          <h5 class="promo-caption">Interface</h5>
+          <p class="light center">A plataforma Open Ideas tem uma interface muito simples e intuitiva.</p>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <!--Parallax-->
 <div class="parallax-container">
-    <div class="parallax"><img src="<?php echo base_url(); ?>assets/plugins/materialize - site/img/parallax1.png"></div>
+  <div class="parallax"><img src="<?php echo base_url(); ?>assets/images/site/paralax1.jpg"></div>
 </div>
 
 <!--Team-->
 <div class="section scrollspy" id="team">
-    <div class="container">
-        <h2 class="header text_b">Demo</h2>
-        <div class="row">
-          <div class="col m3">
-             &nbsp;
-          </div>
-          <div class="col m8">
-            <iframe width="420" height="315" src="https://www.youtube.com/embed/6j9guizhLFw?controls=1"></iframe>
-          </div>
-
-        </div>
+  <div class="container">
+    <h2 class="header text_b">Demo</h2>
+    <div class="row">
+      <div class="col m3">
+       &nbsp;
+      </div>
+      <div class="col m8">
+        <iframe width="420" height="315" src="https://www.youtube.com/embed/6j9guizhLFw?controls=1"></iframe>
+      </div>
     </div>
+  </div>
 </div>
 
 <!--Cases-->
@@ -214,7 +211,7 @@
 
 <!--Parallax-->
 <div class="parallax-container">
-    <div class="parallax"><img src="<?php echo base_url(); ?>assets/plugins/materialize - site/img/parallax1.png"></div>
+  <div class="parallax"><img src="<?php echo base_url(); ?>assets/plugins/materialize - site/img/parallax1.png"></div>
 </div>
 
 <!--Team-->
@@ -330,47 +327,47 @@
 
 <!--Footer-->
 <footer id="contact" class="page-footer default_color scrollspy">
-    <div class="container">
-        <div class="row">
-            <div class="col l12 s12">
-                <form class="col s12" action="#" method="post">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <i class="mdi-action-account-circle prefix white-text"></i>
-                            <input id="icon_prefix" name="name" type="text" class="validate white-text">
-                            <label for="icon_prefix" class="white-text">Seu nome</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <i class="mdi-communication-email prefix white-text"></i>
-                            <input id="icon_email" name="email" type="email" class="validate white-text">
-                            <label for="icon_email" class="white-text">E-mail</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="mdi-editor-mode-edit prefix white-text"></i>
-                            <textarea id="icon_prefix2" name="message" class="materialize-textarea white-text"></textarea>
-                            <label for="icon_prefix2" class="white-text">Mensagem</label>
-                        </div>
-                        <div class="col offset-s7 s5">
-                            <button class="btn waves-effect waves-light red darken-1" type="submit">Enviar
-                                <i class="mdi-content-send right white-text"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
+  <div class="container">
+    <div class="row">
+      <div class="col l12 s12">
+        <form class="col s12" action="#" method="post">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="mdi-action-account-circle prefix white-text"></i>
+              <input id="icon_prefix" name="name" type="text" class="validate white-text">
+              <label for="icon_prefix" class="white-text">Seu nome</label>
             </div>
-        </div>
+            <div class="input-field col s6">
+              <i class="mdi-communication-email prefix white-text"></i>
+              <input id="icon_email" name="email" type="email" class="validate white-text">
+              <label for="icon_email" class="white-text">E-mail</label>
+            </div>
+            <div class="input-field col s12">
+              <i class="mdi-editor-mode-edit prefix white-text"></i>
+              <textarea id="icon_prefix2" name="message" class="materialize-textarea white-text"></textarea>
+              <label for="icon_prefix2" class="white-text">Mensagem</label>
+            </div>
+            <div class="col offset-s7 s5">
+              <button class="btn waves-effect waves-light red darken-1" type="submit">Enviar
+                <i class="mdi-content-send right white-text"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="footer-copyright default_color">
-        <div class="container">
-            Developed by <a class="white-text" href="http://www.rafaelbmateus.com.br">Rafael Mateus</a>. Thanks to <a class="white-text" href="http://materializecss.com/">materializecss</a>
-        </div>
+  </div>
+  <div class="footer-copyright default_color">
+    <div class="container">
+      Developed by <a class="white-text" href="http://www.rafaelbmateus.com.br">Rafael Mateus</a>. Thanks to <a class="white-text" href="http://materializecss.com/">materializecss</a>
     </div>
+  </div>
 </footer>
 
 
-    <!--  Scripts-->
-    <script src="<?php echo base_url(); ?>assets/plugins/materialize - site/min/plugin-min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/plugins/materialize - site/min/custom-min.js"></script>
+<!--  Scripts-->
+<script src="<?php echo base_url(); ?>assets/plugins/materialize - site/min/plugin-min.js"></script>
+<script src="<?php echo base_url(); ?>assets/plugins/materialize - site/min/custom-min.js"></script>
 
-    </body>
+</body>
 </html>
