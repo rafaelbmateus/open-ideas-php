@@ -1,18 +1,26 @@
 <?php defined ('BASEPATH') or exit ('No direct script access allowed');
 class Users extends CI_Controller{
+
 	private $module = 'users';
+
 	public function __construct(){
 		parent::__construct();
-		if(!$this->session->userdata('user_id')){redirect(base_url());}
+		// if(!$this->session->userdata('user_id')){redirect(base_url());}
 		date_default_timezone_set('America/Sao_Paulo');
-		$this->load->model('User');
+		// $this->load->model('User');
 		$this->data['module'] = $this->module;
 	}
 	public function index(){
 		$this->data['menu_users'] = true;
-		$this->data['list'] = $this->User->get();
+		// teste api
+		$this->data['list'] = $this->api();
+		// $this->data['list'] = $this->User->get();
 		$this->data['view'] = 'index';
 		$this->load->view($this->config->item('app_layout') . 'template', $this->data);
+	}
+	public function api(){
+		$this->load->model('Api/Api');
+		return $this->Api->call();
 	}
 	public function show(){
 		$id = $this->uri->segment(3);
